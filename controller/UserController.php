@@ -36,7 +36,7 @@ class User
 
         // If the id is not in db then insert to the table
         if ($count_row == 0) {
-            $sql1 = "INSERT INTO pegawai SET id_kasir='$id', nama_kasir='$nama', password='$password'";
+            $sql1 = "INSERT INTO pegawai SET id_pegawai='$id', nama_kasir='$nama', password='$password'";
             $result = mysqli_query($this->db, $sql1) or die(mysqli_connect_errno() . "Data cannot inserted");
             // If result true then insert into kategori table
             if ($result) {
@@ -105,7 +105,7 @@ class User
         $count_row = $check->num_rows;
 
         if ($count_row == 0) {
-            $sql1 = "UPDATE pegawai SET id_kasir='$id_pegawai', nama_kasir='$nama'
+            $sql1 = "UPDATE pegawai SET id_pegawai='$id_pegawai', nama_pegawai='$nama'
                 WHERE id_pegawai = $id_before
             ";
             $result = mysqli_query($this->db, $sql1) or die(mysqli_connect_errno() . "Data cannot updated");
