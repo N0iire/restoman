@@ -57,13 +57,21 @@
             </tr>
             </tfoot>
     </table>
-    <div onclick="test();">
-        <button>test</button>
+    <div>
+        <button onclick="test()">test</button>
     </div>
     <script>
         function test() {
-
-            Swal.fire('Any fool can use a computer')
+            Swal.fire({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success",
+                buttonsStyling: false,
+                confirmButtonText: "Confirm me!",
+                customClass: {
+                    confirmButton: "btn btn-warning"
+                }
+            });
         }
     </script>
 
