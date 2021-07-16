@@ -32,7 +32,7 @@ class Meja
         return $meja;
     }
 
-    // Get count menu from database
+    // Get count meja from database
     // @return $meja[]
 
 
@@ -71,7 +71,7 @@ class Meja
         if (empty($_POST['ketersediaan'])) {
             $ketersediaan = "N";
         } else {
-            $ketersediaan = "Y"];
+            $ketersediaan = "Y";
         }
         
         //SQL id meja 
@@ -107,13 +107,13 @@ class Meja
         if (empty($_POST['ketersediaan'])) {
             $ketersediaan = "N";
         } else {
-            $ketersediaan = "Y"];
+            $ketersediaan = "Y";
         }
 
         $sql1 = "UPDATE meja SET 
                  id_meja = '$id_meja',
                  ketersediaan = '$ketersediaan'
-                where id_meja = '$id_meja_before'";
+                 where id_meja = '$id_meja_before'";
         
         $query = $this->db->query($sql1);
         $result = $query;
