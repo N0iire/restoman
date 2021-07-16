@@ -2,6 +2,7 @@
 <?php include '../../header.php' ?>
 
 <body>
+
     <div class="wrapper d-flex">
         <div class="sidebar"> <small class="text-muted pl-3">WIDR PAY</small>
             <ul>
@@ -19,8 +20,10 @@
                 <li><a href="#"><i class="fas fa-code"></i>Add to Website</a></li>
             </ul>
         </div>
+
     </div>
-
-
+    <div class="container">
+        <button>test</button>
+    </div>
     <!-- end body -->
     <?php include '../../footer.php' ?>

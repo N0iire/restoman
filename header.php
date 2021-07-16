@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
     <!-- custom sidebar -->
     <link rel="stylesheet" href="../../assets/css/sidebar.css">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
     <!-- Include the Bulma theme -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
