@@ -22,16 +22,25 @@ class Meja
      /**
      * Get all meja from database
      * 
-     * return $meja
+     * return $meja[]
      */
     public function get_all()
     {
         $sql1 = "Select * from meja";
-        $result = $this->db->query($sql);
+        $result = $this->db->query($sql1);
         $meja = $result-> fetch_all(MYSQLI_ASSOC);
         return $meja;
     }
 
+    //get avalable meja 
+    //@return $meja[]
+    public function get_available()
+    {
+        $sql1 = "select * from meja where status_ketersediaan = 'Y'";
+        $result = $this->db->query($sql1);
+        $meja = $result-> fetch_all(MYSQLI_ASSOC);
+        return $meja;
+    }
     // Get count meja from database
     // @return $meja[]
 
@@ -64,14 +73,14 @@ class Meja
      * 
      * @return boolean
      */
-    public function store($id_meja,$total_pelanggan,$ketersediaan)
+    public function store()
     {
         $id_meja = $_POST['id_meja'];
         $total_pelanggan = $_POST['total_pelanggan'];
-        if (empty($_POST['ketersediaan'])) {
-            $ketersediaan = "N";
+        if (empty($_POST['status_ketersediaan'])) {
+            $status_ketersediaan = "N";
         } else {
-            $ketersediaan = "Y";
+            $status_ketersediaan = "Y";
         }
         
         //SQL id meja 
@@ -85,7 +94,7 @@ class Meja
         //If the id_meja is not in db then insert to meja table 
         if ($count_row == 0){
             $sql2 = "INSERT INTO meja 
-                     VALUES('$id_meja','$total_pelanggan','$ketersediaan')";
+                     VALUES('$id_meja','$total_pelanggan','$status_ketersediaan')";
             $result = mysqli_query($this->db,$sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
             return true;
         } else {
@@ -104,15 +113,15 @@ class Meja
     {
         $id_meja = $_POST['id_meja'];
 
-        if (empty($_POST['ketersediaan'])) {
-            $ketersediaan = "N";
+        if (empty($_POST['status_ketersediaan'])) {
+            $status_ketersediaan = "N";
         } else {
-            $ketersediaan = "Y";
+            $status_ketersediaan = "Y";
         }
 
         $sql1 = "UPDATE meja SET 
                  id_meja = '$id_meja',
-                 ketersediaan = '$ketersediaan'
+                 status_ketersediaan = '$status_ketersediaan'
                  where id_meja = '$id_meja_before'";
         
         $query = $this->db->query($sql1);

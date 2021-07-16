@@ -27,7 +27,7 @@ class Kategori
     public function get_all()
     {
         $sql1 = "Select * from kategori";
-        $result = $this->db->query($sql);
+        $result = $this->db->query($sql1);
         $kategori = $result-> fetch_all(MYSQLI_ASSOC);
         return $kategori;
     }
@@ -64,7 +64,7 @@ class Kategori
      * 
      * @return boolean
      */
-    public function store($id_kategori,$nama_kategori)
+    public function store()
     {
         $id_kategori = $_POST['id_kategori'];
         $nama_kategori = $_POST['nama_kategori'];
@@ -90,7 +90,7 @@ class Kategori
 
 
     /**
-     * Update meja
+     * Update kategori
      * @param $id_kategori
      * 
      * @return boolean
