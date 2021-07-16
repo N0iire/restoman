@@ -40,7 +40,7 @@ class Meja
     {
         $sql1 = "SELECT COUNT(*) as jmlmeja FROM meja";
         $result = $this->db->query($sql1);
-        $menu1 = $result->fetch_assoc();
+        $meja = $result->fetch_assoc();
         return $meja;
     }
 
@@ -53,7 +53,7 @@ class Meja
     {
         $sql1 = "SELECT * FROM meja WHERE id_meja = '$id_meja'";
         $result = $this->db->query($sql1);
-        $menu = $result->fetch_assoc();
+        $meja = $result->fetch_assoc();
 
         return $meja;
     }
@@ -78,8 +78,8 @@ class Meja
         $sql1 = "SELECT id_meja from meja
                 WHERE id_meja = '$id_meja'";
 
-        //Checking if the id_menu is available 
-        $check = $this->db->query($sql);
+        //Checking if the id_meja is available 
+        $check = $this->db->query($sql1);
         $count_row = $check->num_rows;
 
         //If the id_meja is not in db then insert to meja table 
@@ -130,9 +130,9 @@ class Meja
      * 
      * @return boolean
      */
-    public function destroy($id)
+    public function destroy($id_meja)
     {
-        $sql1 = "DELETE FROM meja WHERE id_meja = '$id'";
+        $sql1 = "DELETE FROM meja WHERE id_meja = '$id_meja'";
         $query = $this->db->query($sql1);
         $result = $query;
         if ($result) {
@@ -141,12 +141,4 @@ class Meja
             return false;
         }
     }
-
-      
-     
-
-
-    
-
-
 }
