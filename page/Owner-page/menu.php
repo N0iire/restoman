@@ -25,19 +25,18 @@
                         <!-- start page content -->
                         <div class="card shadow ">
                             <div class="card-header text-white bg-primary">
-                                <h3>Data Laporan</h3>
+                                <h3>Data Menu</h3>
                             </div>
 
                             <div class="card-body">
                                 <table id="example" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>ID Pesanan</th>
-                                            <th>Atas Nama </th>
-                                            <th>ID Meja</th>
-                                            <th>Total Transaksi</th>
-                                            <th>Tanggal Transaksi</th>
-                                            <th>Aksi</th>
+                                            <th>Gambar</th>
+                                            <th>ID Menu </th>
+                                            <th>Nama Menu</th>
+                                            <th>Kategori Menu</th>
+                                            <th>Konfirmasi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -46,11 +45,15 @@
                                             <td>System Architect</td>
                                             <td>Edinburgh</td>
                                             <td>61</td>
-                                            <td>2011/04/25</td>
                                             <td>
                                                 <a href="#">
-                                                    <button class="btn btn-dark btn-block">
-                                                        Detail
+                                                    <button class="btn btn-danger ">
+                                                        Tolak
+                                                    </button>
+                                                </a>
+                                                <a href="#">
+                                                    <button class="btn btn-success">
+                                                        Terima
                                                     </button>
                                                 </a>
                                             </td>
@@ -60,11 +63,15 @@
                                             <td>Accountant</td>
                                             <td>Tokyo</td>
                                             <td>63</td>
-                                            <td>2011/07/25</td>
                                             <td>
                                                 <a href="#">
-                                                    <button class="btn btn-dark btn-block">
-                                                        Detail
+                                                    <button class="btn btn-danger ">
+                                                        Tolak
+                                                    </button>
+                                                </a>
+                                                <a href="#">
+                                                    <button class="btn btn-success">
+                                                        Terima
                                                     </button>
                                                 </a>
                                             </td>

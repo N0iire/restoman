@@ -4,5 +4,5 @@
             <li><a href="#"><i class="far fa-credit-card"></i>Laporan</a></li>
             <li><a href="#"><i class="fas fa-file-invoice"></i>Pegawai</a></li>
             <li><a href="#"><i class="fas fa-file-invoice"></i>Menu</a></li>
-        </ul> 
+        </ul>
     </div>
