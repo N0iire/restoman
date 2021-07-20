@@ -9,17 +9,24 @@
         $('#example').DataTable();
     });
 
-    //add active class in selected list item
-    let list = document.querySelectorAll('.list');
-    for (let i = 0; i < list.length; i++) {
-        list[i].onclick = function() {
-            let j = 0;
-            while (j < list.length) {
-                list[j++].className = 'list';
-            }
-            list[i].className = 'lis active';
-        }
-    }
+
+    //tambah class active jika di klik
+    var url = window.location;
+
+    // untuk menambahkan class active pada menu yg tidak memiliki anak atau single link
+    $('ul li a').filter(function() {
+
+        return this.href == url;
+
+    }).parent().addClass('active');
+
+    // ini untuk menu beranak, jadi otomatis akan terbuka sesuai dengan link tujuan
+
+    $('ul li a').filter(function() {
+
+        return this.href == url;
+
+    }).parentsUntil(".navigation > .list").addClass('active');
 </script>
 
 </body>
