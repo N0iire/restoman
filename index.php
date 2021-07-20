@@ -4,8 +4,6 @@
 
     <div id="login">
 
-
-
         <form action="javascript:void(0);" method="POST">
             <div class="top">
                 <h2><span class="fontawesome-lock"></span>Login Restoman</h2>
@@ -32,11 +30,9 @@
                         <option value="kasir">Kasir</option>
                     </select>
                 </div>
-                <div class="mt-1" style="margin-left: 100px;">
-                    <button class="custom-btn btn-3" type="submit" value="Masuk"><span>Masuk</span> </button>
+                <div class="mt-1" style="margin-left: 99px;">
+                    <input class="grad" type="submit" value="Masuk">
                 </div>
-
-
             </fieldset>
 
         </form>
