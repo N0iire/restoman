@@ -27,7 +27,7 @@
     }
 </style>
 
-<div class="grey-bg container-fluid">
+<div class="container-fluid">
     <section id="minimal-statistics">
         <div class="row">
             <div class="col-12 mt-3 mb-1">

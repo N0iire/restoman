@@ -1,7 +1,7 @@
 <!-- header -->
 <?php include '../../header.php' ?>
 
-<body>
+<body style="background: #fff;">
     <div class="row">
         <div class="col-sm-12">
             <!-- navbar -->

@@ -1,7 +1,7 @@
 <!-- header -->
 <?php include '../../header.php' ?>
 
-<body>
+<body style="background: #fff;">
     <div class="row">
         <div class="col-sm-12">
             <!-- navbar -->
@@ -20,7 +20,7 @@
 
             <div class="col-sm-9">
 
-                <div class="row" style="margin-top: 40px; margin-left: -40px;">
+                <div class="row" style="margin-top: 10px; margin-left: -20px;">
 
                     <!-- left card -->
                     <div class="col-sm-4">
@@ -46,15 +46,15 @@
                                                 <input type="text" class="form-control" id="id_menu" name="id_menu" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="nama_menu">Nama Pegawai</label>
+                                                <label for="nama_menu">Nama </label>
                                                 <input type="text" class="form-control" id="nama_menu" name="nama_menu" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="comment">Password Pegawai</label>
+                                                <label for="comment">Password </label>
                                                 <textarea name="deskripsi" class="form-control" rows="5" id="comment" style="height: 50px;"></textarea>
                                             </div>
                                         </div>
-                                        Kategori Pegawai
+                                        Kategori
                                         <select name="kategori" style="margin-top: 10px;" class=" custom-select" required>
                                             <option value="">Pilih Pegawai</option>
                                         </select>
@@ -81,9 +81,9 @@
                                     <thead>
                                         <tr>
                                             <th>ID Pegawai</th>
-                                            <th>Nama Pegawai</th>
-                                            <th>Password Pegawai</th>
-                                            <th>Kategori Pegawai</th>
+                                            <th>Nama </th>
+                                            <th>Password </th>
+                                            <th>Kategori </th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>

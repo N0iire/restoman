@@ -1,8 +1,44 @@
-    <div class="sidebar">
-        <ul>
-            <li><a href="index.php"><i class="fas fa-home"></i>Dashboard</a></li>
-            <li><a href="laporan.php"><i class="far fa-credit-card"></i>Laporan</a></li>
-            <li><a href="pegawai.php"><i class="fas fa-file-invoice"></i>Pegawai</a></li>
-            <li><a href="menu.php"><i class="fas fa-file-invoice"></i>Menu</a></li>
-        </ul>
-    </div>
+  <div class="navigation">
+      <ul>
+          <li class="list active">
+              <b></b>
+              <b></b>
+              <a href="index.php">
+                  <span class="icon">
+                      <ion-icon name="cash-outline"></ion-icon>
+                  </span>
+                  <span class="title">Dashboard</span>
+              </a>
+          </li>
+          <li class="list">
+              <b></b>
+              <b></b>
+              <a href="laporan.php">
+                  <span class="icon">
+                      <ion-icon name="receipt-outline"></ion-icon>
+                  </span>
+                  <span class="title">Laporan</span>
+              </a>
+          </li>
+          <li class="list">
+              <b></b>
+              <b></b>
+              <a href="pegawai.php">
+                  <span class="icon">
+                      <ion-icon name="people-outline"></ion-icon>
+                  </span>
+                  <span class="title">Pegawai</span>
+              </a>
+          </li>
+          <li class="list">
+              <b></b>
+              <b></b>
+              <a href=menu.php>
+                  <span class="icon">
+                      <ion-icon name="fast-food-outline"></ion-icon>
+                  </span>
+                  <span class="title">Menu</span>
+              </a>
+          </li>
+      </ul>
+  </div>

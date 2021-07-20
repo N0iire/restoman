@@ -1,7 +1,7 @@
 <!-- header -->
 <?php include '../../header.php' ?>
 
-<body>
+<body style="background: #fff;">
     <div class="row">
         <div class="col-sm-12">
             <!-- navbar -->
@@ -21,7 +21,7 @@
             <div class="col-sm-9">
 
                 <div class="row">
-                    <div class="col-sm-12" style="margin-top:40px; margin-left: -30px;">
+                    <div class="col-sm-12" style="margin-top:10px; margin-left: -10px;">
                         <!-- start page content -->
                         <div class="card shadow ">
                             <div class="card-header text-white bg-primary">
