@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="../../assets/css/sidebar.css">
     <link rel="stylesheet" href="../../assets/css/sidebar2.css">
 
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="logins.css">
+
 
 
 
