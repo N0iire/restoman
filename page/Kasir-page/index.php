@@ -5,32 +5,36 @@
 
 
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-boxed-layout="full">
-        <!-- navbar -->
-        <header>
-            <?php include 'navbar.php' ?>
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- navbar -->
+                <header>
+                    <?php include 'navbar.php' ?>
 
-        </header>
-
-        <!-- sidebar -->
-        <aside>
-            <?php include 'sidebar.php' ?>
-        </aside>
-
-        <div class="page-wrapper">
-            <div class="container-fluid">
-                <!-- start page content -->
-                <div class="row">
-                    <div class="col sm-3">test</div>
-                </div>
-                <!-- disini fungsi isset -->
-
-                <!-- end page content -->
+                </header>
             </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <!-- sidebar -->
+                    <aside>
+                        <?php include 'sidebar.php' ?>
+                    </aside>
+                </div>
+
+                <div class="col-sm-9">
+                    <!-- start page content -->
+                    test
+                </div>
+            </div>
+            <!-- disini fungsi isset -->
+
+            <!-- end page content -->
+
+
+            <!-- end wrapper -->
         </div>
 
+        <!-- end body -->
+        <?php include '../../footer.php' ?>
 
-        <!-- end wrapper -->
     </div>
-
-    <!-- end body -->
-    <?php include '../../footer.php' ?>
