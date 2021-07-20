@@ -20,7 +20,20 @@
 
             <div class="col-sm-9">
                 <!-- start page content -->
-                <?php include 'dashboard.php' ?>
+                <?php
+                if (!isset($_GET['p'])) {
+                    require_once 'dashboard.php';
+                } else if ($_GET['p'] == 'dashboard') {
+                    require_once $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'laporan' || $_REQUEST['p'] == 'laporan') {
+                    require_once  $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'pegawai' || $_REQUEST['p'] == 'pegawai') {
+                    require_once  $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'menu' || $_REQUEST['p'] == 'menu') {
+                    require_once  $_GET['p'] . '.php';
+                }
+                ?>
+
             </div>
         </div>
     </div>

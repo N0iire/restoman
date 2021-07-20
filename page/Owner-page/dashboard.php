@@ -1,8 +1,4 @@
 <style>
-    .grey-bg {
-        background-color: #F5F7FA;
-    }
-
     .card {
         text-decoration: none;
         transition: color 0.3s linear;
