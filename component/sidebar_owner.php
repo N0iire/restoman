@@ -42,3 +42,8 @@
           </li>
       </ul>
   </div>
+  <script>
+      $(window).on("load", function() {
+          $(".loader").fadeOut("slow");
+      });
+  </script>

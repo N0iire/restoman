@@ -54,7 +54,7 @@
                 <h3>Data Pegawai</h3>
             </div>
             <div class="card-body">
-                <table id="example" class="table table-bordered table-hover">
+                <table id="example" class="table table-borderless">
                     <thead>
                         <tr>
                             <th>ID Pegawai</th>
