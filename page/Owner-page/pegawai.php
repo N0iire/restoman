@@ -3,7 +3,7 @@
     <div class="col-sm-4">
         <!-- start page content -->
         <div class="card shadow ">
-            <div class="card-header text-white bg-primary ">
+            <div class="card-header text-white blue-head ">
                 <thead class="thead-dark">
                     <tr>
                         <th>
@@ -37,7 +37,7 @@
                         </select>
                         <br><br><br>
                         <div>
-                            <input type="submit" name="submit" value="Tambah" class="btn btn-primary">
+                            <input type="submit" name="submit" value="Tambah" class="btn btn-blue">
                             <input type="submit" name="submit" value="Batal" class="btn btn-secondary ">
                         </div>
                     </form>
@@ -50,7 +50,7 @@
     <div class="col-sm-8" style="width: 100px;">
         <!-- start page content -->
         <div class="card shadow ">
-            <div class="card-header text-white bg-primary ">
+            <div class="card-header text-white blue-head ">
                 <h3>Data Pegawai</h3>
             </div>
             <div class="card-body">
@@ -61,7 +61,7 @@
                             <th>Nama </th>
                             <th>Password </th>
                             <th>Kategori </th>
-                            <th>Aksi</th>
+                            <th style="width:10px;">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -72,13 +72,17 @@
                             <td>61</td>
                             <td>
                                 <a href="#">
-                                    <button class="btn btn-success btn-block">
-                                        Edit
+                                    <button class="btn btn-blue btn-block" style="padding: 5px;">
+                                        <span class="icon">
+                                            <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
+                                        </span>
                                     </button>
                                 </a>
                                 <a href="#">
-                                    <button class="btn btn-danger btn-block">
-                                        Hapus
+                                    <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
+                                        <span class="icon">
+                                            <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
+                                        </span>
                                     </button>
                                 </a>
                             </td>
@@ -90,13 +94,17 @@
                             <td>63</td>
                             <td>
                                 <a href="#">
-                                    <button class="btn btn-success btn-block">
-                                        Edit
+                                    <button class="btn btn-blue btn-block" style="padding: 5px;">
+                                        <span class="icon">
+                                            <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
+                                        </span>
                                     </button>
                                 </a>
                                 <a href="#">
-                                    <button class="btn btn-danger btn-block">
-                                        Hapus
+                                    <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
+                                        <span class="icon">
+                                            <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
+                                        </span>
                                     </button>
                                 </a>
                             </td>
