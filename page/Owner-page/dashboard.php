@@ -14,12 +14,12 @@
 
     .card i:hover {
 
-        color: #fff;
+        color: #fff !important;
 
     }
 
     .icon-pencil:hover {
-        color: #fff;
+        color: #fff !important;
     }
 </style>
 
