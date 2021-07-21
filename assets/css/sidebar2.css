@@ -1,39 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-body{
-  background: #fff;
+body {
+    background: #fff;
 }
 
-.navigation{
+.navigation {
     position: fixed;
     top: 0px;
     left: 0px;
     bottom: 0px;
     width: 300px;
-    border-left: 5px solid rgba(47,128,237,1) 100%;
+    border-left: 5px solid rgba(47, 128, 237, 1) 100%;
     box-sizing: initial;
-    background: rgb(86,204,242);
-    background: rgba(47,128,237,1) 100%;
+    background: rgb(86, 204, 242);
+    background: rgba(47, 128, 237, 1) 100%;
     border-radius: 5px;
     transition: 0.5s;
     margin-top: 50px;
+    text-decoration: none;
+    transition: color 0.3s linear;
+    -webkit-transition: color 0.3s linear;
+    -moz-transition: color 0.3s linear;
 }
-.navigation ul{
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     padding-left: 5px;
-     padding-top: 40px;
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
 }
-.navigation ul li{
+
+.navigation ul li {
     position: relative;
     list-style: none;
     width: 100%;
@@ -43,12 +49,12 @@ body{
 
 }
 
-.navigation ul li.active{
+.navigation ul li.active {
     background: #fff;
     margin-left: 3px;
 }
 
-.navigation ul li b:nth-child(1){
+.navigation ul li b:nth-child(1) {
     position: absolute;
     top: -20px;
     height: 20px;
@@ -56,19 +62,20 @@ body{
     background: #fff;
     display: none;
 }
-.navigation ul li b:nth-child(1)::before{
+
+.navigation ul li b:nth-child(1)::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-bottom-right-radius:20px ;
-   background: rgba(47,128,237,1) 100%;
+    border-bottom-right-radius: 20px;
+    background: rgba(47, 128, 237, 1) 100%;
 }
 
 
-.navigation ul li b:nth-child(2){
+.navigation ul li b:nth-child(2) {
     position: absolute;
     bottom: -20px;
     height: 20px;
@@ -77,22 +84,24 @@ body{
     display: none;
 
 }
-.navigation ul li b:nth-child(2)::before{
+
+.navigation ul li b:nth-child(2)::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-top-right-radius:20px ;
-   background: rgba(47,128,237,1) 100%;
+    border-top-right-radius: 20px;
+    background: rgba(47, 128, 237, 1) 100%;
 }
 
-.navigation ul li.active b:nth-child(1),.navigation ul li.active b:nth-child(2){
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2) {
     display: block;
 }
 
-.navigation ul li a{
+.navigation ul li a {
     position: relative;
     display: block;
     width: 100%;
@@ -100,11 +109,12 @@ body{
     text-decoration: none;
     color: #fff;
 }
-.navigation ul li.active a{
+
+.navigation ul li.active a {
     color: #333;
 }
 
-.navigation ul li a .icon{
+.navigation ul li a .icon {
     position: relative;
     display: block;
     min-width: 50px;
@@ -113,11 +123,11 @@ body{
     text-align: center;
 }
 
-.navigation ul li a .icon ion-icon{
+.navigation ul li a .icon ion-icon {
     font-size: 1.5em;
 }
 
-.navigation ul li a .title{
+.navigation ul li a .title {
     position: relative;
     display: block;
     padding-left: 10px;
@@ -127,7 +137,7 @@ body{
 
 }
 
-.preloader{
+.preloader {
 
     width: 100%;
     height: 100%;
@@ -147,9 +157,9 @@ body{
     border: 3px solid #2F80ED;
     overflow: hidden;
     animation: spin 3s ease infinite;
-  }
-  
-  .box::before {
+}
+
+.box::before {
     content: '';
     position: absolute;
     top: -3px;
@@ -160,58 +170,79 @@ body{
     transform-origin: center bottom;
     transform: scaleY(1);
     animation: fill 3s linear infinite;
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
+
     50%,
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
-  @keyframes fill {
+}
+
+@keyframes fill {
+
     25%,
     50% {
-      transform: scaleY(0);
+        transform: scaleY(0);
     }
-    100% {
-      transform: scaleY(1);
-    }
-  }
 
-  table {
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+table {
     border-collapse: separate !important;
     border-spacing: 0 !important;
-  }
-  table tr th,
-  table tr td {
+}
+
+table tr th,
+table tr td {
     border-right: 1px solid #dee2e6 !important;
     border-bottom: 1px solid #dee2e6 !important;
-  }
-  table tr th:first-child,
-  table tr td:first-child {
+}
+
+table tr th:first-child,
+table tr td:first-child {
     border-left: 1px solid #dee2e6 !important;
-  }
-  table tr th {
+}
+
+table tr th {
     border-top: 1px solid #dee2e6 !important;
-  }
-  
-  /* top-left border-radius */
-  table tr:first-child th:first-child {
+}
+
+/* top-left border-radius */
+table tr:first-child th:first-child {
     border-top-left-radius: 0.25rem !important;
-  }
-  
-  /* top-right border-radius */
-  table tr:first-child th:last-child {
+}
+
+/* top-right border-radius */
+table tr:first-child th:last-child {
     border-top-right-radius: 0.25rem !important;
-  }
-  
-  /* bottom-left border-radius */
-  table tr:last-child td:first-child {
+}
+
+/* bottom-left border-radius */
+table tr:last-child td:first-child {
     border-bottom-left-radius: 0.25rem !important;
-  }
-  
-  /* bottom-right border-radius */
-  table tr:last-child td:last-child {
+}
+
+/* bottom-right border-radius */
+table tr:last-child td:last-child {
     border-bottom-right-radius: 0.25rem !important;
-  }
+}
+
+/* table */
+.blue-head {
+    background: rgba(47, 128, 237, 1) 100% !important;
+}
+
+.btn-blue {
+    background: rgba(47, 128, 237, 1) 100% !important;
+    color: white !important;
+}
+
+.btn-red {
+    background: rgb(165, 38, 38) !important;
+    color: white !important;
+}
