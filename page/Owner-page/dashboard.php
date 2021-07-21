@@ -13,9 +13,18 @@
     }
 
 
+<<<<<<< HEAD
 
     .card .icon-pencil:hover {
         color: white !important;
+=======
+        color: #fff !important;
+
+    }
+
+    .icon-pencil:hover {
+        color: #fff !important;
+>>>>>>> bbff161e694e7fc384cfe53fcf6a2f7733f81dcb
     }
 </style>
 
