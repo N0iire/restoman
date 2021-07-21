@@ -11,21 +11,6 @@
         background: rgba(47, 128, 237, 1) 100%;
         color: #fff !important;
     }
-
-
-<<<<<<< HEAD
-
-    .card .icon-pencil:hover {
-        color: white !important;
-=======
-        color: #fff !important;
-
-    }
-
-    .icon-pencil:hover {
-        color: #fff !important;
->>>>>>> bbff161e694e7fc384cfe53fcf6a2f7733f81dcb
-    }
 </style>
 
 <div class="container-fluid">
