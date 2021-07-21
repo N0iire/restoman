@@ -1,7 +1,10 @@
 <!-- header -->
 <?php include '../../header.php' ?>
 
+
 <body style="background: #fff;">
+
+
     <div class="row">
         <div class="col-sm-12">
             <!-- navbar -->
@@ -10,6 +13,7 @@
 
             </header>
         </div>
+
         <div class="row" style="margin-top: 90px;">
             <div class="col-sm-3">
                 <!-- sidebar -->
@@ -35,9 +39,16 @@
                 ?>
 
             </div>
-        </div>
-    </div>
 
+        </div>
+
+    </div>
+    <div class="preloader">
+        <div class="box">
+
+        </div>
+
+    </div>
 
     <!-- end body -->
     <?php include '../../footer.php' ?>

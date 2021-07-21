@@ -27,6 +27,11 @@
         return this.href == url;
 
     }).parentsUntil(".navigation > .list").addClass('active');
+
+    //preloader
+    $(window).on("load", function() {
+        $(".preloader").fadeOut("slow");
+    });
 </script>
 
 </body>
