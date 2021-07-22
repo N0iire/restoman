@@ -18,33 +18,39 @@ class Menu
             exit;
         }
     }
-    
-     /**
+
+    /**
      * Get all menu from database
      * 
-     * return $menu
+     * @return $menu
      */
     public function get_all()
     {
         $sql1 = "Select * from menu";
         $result = $this->db->query($sql1);
-        $menu = $result-> fetch_all(MYSQLI_ASSOC);
+        $menu = $result->fetch_all(MYSQLI_ASSOC);
         return $menu;
     }
-    
 
-    // Get Unaccepted menus
-    //return $menu_unacc[] 
+    /**
+     * Get Unaccepted menus
+     * 
+     * @return $menu_unacc[]
+     */
     public function unacc()
     {
         $sql = "Select * from menu where persetujuan = 'N'";
-        $result = $this->db->query($sql1);
-        $menu_unacc = $result-> fetch_all(MYSQLI_ASSOC);
+        $result = $this->db->query($sql);
+        $menu_unacc = $result->fetch_all(MYSQLI_ASSOC);
+
         return $menu_unacc;
     }
-    // Get count menu from database
-    // @return $menu[]
 
+    /**
+     * Get count menu from database
+     * 
+     * @return $menu[]
+     */
 
     public function get_count()
     {
@@ -74,21 +80,32 @@ class Menu
      * 
      * @return boolean
      */
-    public function store($id)
+    public function store()
     {
-        $id_menu = $_POST['id_menu'];
-        $id_pegawai = $_POST['id_pegawai'];
-        $id_kategori = $_POST['id_kategori'];
-        $nama_menu = $_POST['nama_menu'];
-        $gambar
+        $id_menu = $this->db->escape_string($_POST['id_menu']);
+        $id_pegawai = $this->db->escape_string($_POST['id_pegawai']);
+        $id_kategori = $this->db->escape_string($_POST['id_kategori']);
+        $nama_menu = $this->db->escape_string($_POST['nama_menu']);
         $harga_menu = $_POST['harga_menu'];
         $stok = $_POST['stok'];
+
         if (empty($_POST['persetujuan'])) {
             $persetujuan = "N";
         } else {
             $persetujuan = $_POST['persetujuan'];
         }
-        
+
+        // Input nama gambar
+        $nama_gambar = $_FILES['gambar']['name'];
+        $target_dir = "../assets/images/";
+
+        $target_file = $target_dir . basename($_FILES['gambar']['name']);
+
+        // Select File type
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        // Valid file extensions
+        $extensions_arr = array("jpg", "jpeg", "png", "gif");
+
         //SQL id menu (checking if menu already exists in database)
         $sql1 = "SELECT id_menu from menu
                 WHERE id_menu = '$id_menu'";
@@ -98,22 +115,27 @@ class Menu
         $count_row = $check->num_rows;
 
         //If the id_menu is not in db then insert to kategori table 
-        if ($count_row == 0){
-            $sql2 = "INSERT INTO menu 
+        if (in_array($imageFileType, $extensions_arr)) {
+            // Upload file
+            if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target_dir . $nama_gambar)) {
+                if ($count_row == 0) {
+                    $sql2 = "INSERT INTO menu 
                      VALUES(
                             '$id_menu',
                             '$id_pegawai',
                             '$id_kategori',
                             '$nama_menu',
-                            '$gambar',
-                            '$harga',
+                            '$nama_gambar',
+                            '$harga_menu',
                             '$stok',
                             '$persetujuan'
                             )";
-            $result = mysqli_query($this->db,$sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
-            return true;
-        } else {
-            return false;
+                    $result = mysqli_query($this->db, $sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         }
     }
 
@@ -130,7 +152,6 @@ class Menu
         $id_pegawai = $this->db->escape_string($_POST['id_pegawai']);
         $id_kategori = $this->db->escape_string(['id_kategori']);
         $nama_menu = $this->db->escape_string($_POST['nama_menu']);
-        $gambar 
         $harga_menu = $this->db->escape_string($_POST['harga_menu']);
         $stok = $this->db->escape_string($_POST['stok']);
         if (empty($_POST['persetujuan'])) {
@@ -139,18 +160,34 @@ class Menu
             $persetujuan = $_POST['persetujuan'];
         }
 
+
+        // Input nama gambar
+        $nama_gambar = $_FILES['gambar']['name'];
+        $target_dir = "../assets/images/";
+
+        $target_file = $target_dir . basename($_FILES['gambar']['name']);
+
+        // Select File type
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        // Valid file extensions
+        $extensions_arr = array("jpg", "jpeg", "png", "gif");
+
         //SQL update menu
-        $sql1 = "UPDATE menu SET 
+        if (in_array($imageFileType, $extensions_arr)) {
+            // Upload file
+            if (move_uploaded_file($_FILES['gambar']['tmp_name'], $target_dir . $nama_gambar)) {
+                $sql1 = "UPDATE menu SET 
                  id_menu = '$id_menu',
                  id_pegawai = '$id_pegawai',
                  id_kategori = '$id_kategori',
                  nama_menu = '$nama_menu',
-                 gambar = '$gambar',
+                 gambar = '$nama_gambar',
                  harga_menu = '$harga_menu',
                  stok = '$stok',
                  persetujuan = '$persetujuan'
                  where id_menu = '$id_menu_before'";
-        
+            }
+        }
         $query = $this->db->query($sql1);
         $result = $query;
         if ($result) {
@@ -158,7 +195,6 @@ class Menu
         } else {
             return false;
         }
-
     }
 
     /**
