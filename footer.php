@@ -27,6 +27,48 @@
         return this.href == url;
 
     }).parentsUntil(".navigation > .list").addClass('active');
+
+    //preloader
+    $(window).on("load", function() {
+        $(".preloader").fadeOut("slow");
+    });
+
+    function keluar(ev) {
+        ev.preventDefault();
+        var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
+        console.log(urlToRedirect); // verify if this is the right URL
+        Swal.fire({
+                title: "Anda yakin ingin keluar?",
+
+                showDenyButton: true,
+                confirmButtonText: `Ho'oh`,
+                icon: "question",
+                dangerMode: true,
+                denyButtonText: `Tidak`,
+                customClass: {
+                    confirmButton: "btn btn-md btn-dark mr-2 pl-2 pr-2",
+                    denyButton: "btn btn-primary"
+                },
+
+                allowOutsideClick: () => {
+                    const popup = Swal.getPopup()
+                    popup.classList.remove('swal2-show')
+                    setTimeout(() => {
+                        popup.classList.add('animate__animated', 'animate__headShake')
+                    })
+                    setTimeout(() => {
+                        popup.classList.remove('animate__animated', 'animate__headShake')
+                    }, 500)
+                    return false
+                }
+            })
+            .then((willQuit) => {
+                // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
+                if (willQuit.isConfirmed) {
+                    window.location = urlToRedirect;
+                }
+            });
+    }
 </script>
 
 </body>

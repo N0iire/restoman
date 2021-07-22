@@ -64,7 +64,7 @@ input {
   border-radius: 20px 20px 0 0;
   color: #fff;
   font-size: 28px;
-  padding: 20px 28px;
+  padding: 20px 38px;
   padding-top: 20px;
 }
 
@@ -75,8 +75,7 @@ input {
 #login fieldset {
   background-color: #fff;
   border-radius: 0 0 20px 20px;
-  padding: 20px 26px;
-  left: 10px;
+  padding: 20px 30px;
 }
 
 #login fieldset p:last-child {
@@ -87,111 +86,74 @@ input {
   border-radius: 5px;
 }
 
-input {
-  margin: 20px;
+.grad {
+  background: #56ccf2;
+  background: -webkit-gradient(linear, left top, right top, from(#2f80ed), color-stop(51%, #56ccf2), to(#2f80ed));
+  background: linear-gradient(to right, #2f80ed 0%, #56ccf2 51%, #2f80ed 100%);
 }
 
-.custom-btn {
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  outline: none;
-}
-
-.btn-3 {
-  background: #00acee;
-  background: -webkit-gradient(linear, left bottom, left top, from(#00acee), to(#027efb));
-  background: linear-gradient(0deg, #00acee 0%, #027efb 100%);
-  width: 130px;
-  height: 40px;
-  line-height: 42px;
-  padding: 0;
-  border: none;
-}
-
-.btn-3 span {
-  position: relative;
+.grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  -webkit-box-shadow: 0 0 20px #eee;
+          box-shadow: 0 0 20px #eee;
   display: block;
-  width: 100%;
-  height: 100%;
 }
 
-.btn-3:before,
-.btn-3:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: 0;
-  background: #027efb;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+@-webkit-keyframes jelly {
+  0%,
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+            transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+            transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+            transform: scale(0.95, 1.05);
+  }
 }
 
-.btn-3:before {
-  height: 0%;
-  width: 2px;
+@keyframes jelly {
+  0%,
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+            transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+            transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+            transform: scale(0.95, 1.05);
+  }
 }
 
-.btn-3:after {
-  width: 0%;
-  height: 2px;
-}
-
-.btn-3:hover {
-  background: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.btn-3:hover:before {
-  height: 100%;
-}
-
-.btn-3:hover:after {
-  width: 100%;
-}
-
-.btn-3 span:hover {
-  color: #027efb;
-}
-
-.btn-3 span:before,
-.btn-3 span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  background: #027efb;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.btn-3 span:before {
-  width: 2px;
-  height: 0%;
-}
-
-.btn-3 span:after {
-  width: 0%;
-  height: 2px;
-}
-
-.btn-3 span:hover:before {
-  height: 100%;
-}
-
-.btn-3 span:hover:after {
-  width: 100%;
+.grad:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-animation: jelly 0.5s;
+          animation: jelly 0.5s;
 }
 
 /*   color variables */

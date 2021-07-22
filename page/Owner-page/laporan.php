@@ -1,12 +1,12 @@
 <div class="col-sm-12" style="margin-top:10px; margin-left: -10px;">
     <!-- start page content -->
     <div class="card shadow-md ">
-        <div class="card-header text-white bg-primary">
+        <div class="card-header text-white blue-head">
             <h3>Data Laporan</h3>
         </div>
 
         <div class="card-body">
-            <table id="example" class="table table-bordered table-hover">
+            <table id="example" class="table table-borderless">
                 <thead>
                     <tr>
                         <th>ID Pesanan</th>

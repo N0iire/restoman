@@ -1,138 +1,69 @@
 <style>
     .card {
         text-decoration: none;
-        transition: color 0.3s linear;
-        -webkit-transition: color 0.3s linear;
-        -moz-transition: color 0.3s linear;
+        transition: color 0.2s linear;
+        -webkit-transition: color 0.2s linear;
+        -moz-transition: color 0.2s linear;
     }
 
     .card:hover {
         background: rgb(86, 204, 242);
-        background: linear-gradient(31deg, rgba(86, 204, 242, 1) 0%, rgba(47, 128, 237, 1) 100%);
-        color: #fff;
-    }
-
-    .card i:hover {
-
-        color: #fff;
-
-    }
-
-    .icon-pencil:hover {
-        color: #fff;
+        background: rgba(47, 128, 237, 1) 100%;
+        color: #fff !important;
     }
 </style>
 
 <div class="container-fluid">
     <section id="minimal-statistics">
+
         <div class="row">
-            <div class="col-12 mt-3 mb-1">
-                <h4 class="text-uppercase">Minimal Statistics Cards</h4>
-                <p>Statistics on minimal cards.</p>
+            <div class="col-12 mt-2 mb-1">
+                <h4 class="text-uppercase">
+                    Selamat Datang, Owner
+                </h4>
+
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-3 col-sm-6 col-12">
-                <a>
+
+
+            <!-- large card -->
+            <div class="row">
+                <div class="col-xl-6 col-md-12">
                     <div class="card">
                         <div class="card-content">
-                            <div class="card-body">
-                                <div class="media d-flex">
+                            <div class="card-body cleartfix">
+                                <div class="media align-items-stretch">
                                     <div class="align-self-center">
-                                        <i class="icon-pencil primary font-large-2 float-left"></i>
+                                        <h1 class="mr-2" style="color: #18ab6b;">Rp.7.456.000</h1>
                                     </div>
-                                    <div class="media-body text-right">
-                                        <h3>278</h3>
-                                        <span>New Posts</span>
+                                    <div class="media-body">
+                                        <h4>Total Pendapatan</h4>
+
+                                    </div>
+                                    <div class="align-self-center">
+                                        <ion-icon name="cash-outline" style="color: #18ab6b; font-size: 50px; margin-left: 10px;"></ion-icon>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body">
-                            <div class="media d-flex">
-                                <div class="align-self-center">
-                                    <i class="icon-speech warning font-large-2 float-left"></i>
-                                </div>
-                                <div class="media-body text-right">
-                                    <h3>156</h3>
-                                    <span>New Comments</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body">
-                            <div class="media d-flex">
-                                <div class="align-self-center">
-                                    <i class="icon-graph success font-large-2 float-left"></i>
-                                </div>
-                                <div class="media-body text-right">
-                                    <h3>64.89 %</h3>
-                                    <span>Bounce Rate</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body">
-                            <div class="media d-flex">
-                                <div class="align-self-center">
-                                    <i class="icon-pointer danger font-large-2 float-left"></i>
-                                </div>
-                                <div class="media-body text-right">
-                                    <h3>423</h3>
-                                    <span>Total Visits</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body">
-                            <div class="media d-flex">
-                                <div class="media-body text-left">
-                                    <h3 class="danger">278</h3>
-                                    <span>New Projects</span>
-                                </div>
-                                <div class="align-self-center">
-                                    <i class="icon-rocket danger font-large-2 float-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body">
-                            <div class="media d-flex">
-                                <div class="media-body text-left">
-                                    <h3 class="success">156</h3>
-                                    <span>New Clients</span>
-                                </div>
-                                <div class="align-self-center">
-                                    <i class="icon-user success font-large-2 float-right"></i>
+                <div class="col-xl-6 col-md-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body cleartfix">
+                                <div class="media align-items-stretch">
+                                    <div class="align-self-center">
+                                        <h1 class="mr-2" style="color: #1abd91;">$999999</h1>
+                                    </div>
+                                    <div class=" media-body">
+                                        <h4>Jumlah <br> Transaksi</h4>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="icon-wallet success font-large-2"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -140,43 +71,8 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body">
-                            <div class="media d-flex">
-                                <div class="media-body text-left">
-                                    <h3 class="warning">64.89 %</h3>
-                                    <span>Conversion Rate</span>
-                                </div>
-                                <div class="align-self-center">
-                                    <i class="icon-pie-chart warning font-large-2 float-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body">
-                            <div class="media d-flex">
-                                <div class="media-body text-left">
-                                    <h3 class="primary">423</h3>
-                                    <span>Support Tickets</span>
-                                </div>
-                                <div class="align-self-center">
-                                    <i class="icon-support primary font-large-2 float-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <!-- small card -->
 
-        <div class="row">
             <div class="col-xl-3 col-sm-6 col-12">
                 <div class="card">
                     <div class="card-content">
@@ -184,10 +80,10 @@
                             <div class="media d-flex">
                                 <div class="media-body text-left">
                                     <h3 class="primary">278</h3>
-                                    <span>New Posts</span>
+                                    <span>Jumlah Pengunjung</span>
                                 </div>
                                 <div class="align-self-center">
-                                    <i class="icon-book-open primary font-large-2 float-right"></i>
+                                    <ion-icon name="people-outline" style="color: #1ebdbd; font-size: 50px; margin-left: 10px;"></ion-icon>
                                 </div>
                             </div>
                             <div class="progress mt-1 mb-0" style="height: 7px;">
@@ -197,17 +93,20 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-3 col-sm-6 col-12">
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="media-body text-left">
-                                    <h3 class="warning">156</h3>
-                                    <span>New Comments</span>
+                                    <h3 class="warning">
+                                        1000
+                                    </h3>
+                                    <span>Jumlah Pegawai</span>
                                 </div>
                                 <div class="align-self-center">
-                                    <i class="icon-bubbles warning font-large-2 float-right"></i>
+                                    <i class="icon-user warning font-large-2 float-right"></i>
                                 </div>
                             </div>
                             <div class="progress mt-1 mb-0" style="height: 7px;">
@@ -225,10 +124,10 @@
                             <div class="media d-flex">
                                 <div class="media-body text-left">
                                     <h3 class="success">64.89 %</h3>
-                                    <span>Bounce Rate</span>
+                                    <span>Jumlah <br> Menu</span>
                                 </div>
                                 <div class="align-self-center">
-                                    <i class="icon-cup success font-large-2 float-right"></i>
+                                    <ion-icon name="fast-food-outline" style="color: #1abd91; font-size: 50px; margin-left: 10px;"></ion-icon>
                                 </div>
                             </div>
                             <div class="progress mt-1 mb-0" style="height: 7px;">
@@ -238,6 +137,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-3 col-sm-6 col-12">
                 <div class="card">
                     <div class="card-content">
@@ -245,10 +145,10 @@
                             <div class="media d-flex">
                                 <div class="media-body text-left">
                                     <h3 class="danger">423</h3>
-                                    <span>Total Visits</span>
+                                    <span>Konfirmasi Menu</span>
                                 </div>
                                 <div class="align-self-center">
-                                    <i class="icon-direction danger font-large-2 float-right"></i>
+                                    <ion-icon name="checkmark-done-outline" style="color: #a12755; font-size: 50px; margin-left: 10px;"></ion-icon>
                                 </div>
                             </div>
                             <div class="progress mt-1 mb-0" style="height: 7px;">
@@ -258,103 +158,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="stats-subtitle">
-        <div class="row">
-            <div class="col-12 mt-3 mb-1">
-                <h4 class="text-uppercase">Statistics With Subtitle</h4>
-                <p>Statistics on minimal cards with Title &amp; Sub Title.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-6 col-md-12">
-                <div class="card overflow-hidden">
-                    <div class="card-content">
-                        <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
-                                <div class="align-self-center">
-                                    <i class="icon-pencil primary font-large-2 mr-2"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h4>Total Posts</h4>
-                                    <span>Monthly blog posts</span>
-                                </div>
-                                <div class="align-self-center">
-                                    <h1>18,000</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-6 col-md-12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
-                                <div class="align-self-center">
-                                    <i class="icon-speech warning font-large-2 mr-2"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h4>Total Comments</h4>
-                                    <span>Monthly blog comments</span>
-                                </div>
-                                <div class="align-self-center">
-                                    <h1>84,695</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-6 col-md-12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
-                                <div class="align-self-center">
-                                    <h1 class="mr-2">$76,456.00</h1>
-                                </div>
-                                <div class="media-body">
-                                    <h4>Total Sales</h4>
-                                    <span>Monthly Sales Amount</span>
-                                </div>
-                                <div class="align-self-center">
-                                    <i class="icon-heart danger font-large-2"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-6 col-md-12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
-                                <div class="align-self-center">
-                                    <h1 class="mr-2">$36,000.00</h1>
-                                </div>
-                                <div class="media-body">
-                                    <h4>Total Cost</h4>
-                                    <span>Monthly Cost</span>
-                                </div>
-                                <div class="align-self-center">
-                                    <i class="icon-wallet success font-large-2"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 </div>
