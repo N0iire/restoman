@@ -13,18 +13,10 @@
     }
 
 
-<<<<<<< HEAD
 
-    .card .icon-pencil:hover {
-        color: white !important;
-=======
-        color: #fff !important;
-
-    }
 
     .icon-pencil:hover {
         color: #fff !important;
->>>>>>> bbff161e694e7fc384cfe53fcf6a2f7733f81dcb
     }
 </style>
 
@@ -118,7 +110,7 @@
                                     <h3 class="warning">
                                         1000
                                     </h3>
-                                    <span>Jumlah Pegawai</span>
+                                    <span>Jumlah <br>Pegawai</span>
                                 </div>
                                 <div class="align-self-center">
                                     <i class="icon-user warning font-large-2 float-right"></i>

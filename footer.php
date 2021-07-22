@@ -41,13 +41,13 @@
                 title: "Anda yakin ingin keluar?",
 
                 showDenyButton: true,
-                confirmButtonText: `Ho'oh`,
+                confirmButtonText: `Iya`,
                 icon: "question",
                 dangerMode: true,
                 denyButtonText: `Tidak`,
                 customClass: {
                     confirmButton: "btn btn-md btn-dark mr-2 pl-2 pr-2",
-                    denyButton: "btn btn-primary"
+                    denyButton: "btn btn-blue"
                 },
 
                 allowOutsideClick: () => {
