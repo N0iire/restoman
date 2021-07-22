@@ -18,8 +18,8 @@ class Meja
             exit;
         }
     }
-    
-     /**
+
+    /**
      * Get all meja from database
      * 
      * return $meja[]
@@ -28,22 +28,28 @@ class Meja
     {
         $sql1 = "Select * from meja";
         $result = $this->db->query($sql1);
-        $meja = $result-> fetch_all(MYSQLI_ASSOC);
+        $meja = $result->fetch_all(MYSQLI_ASSOC);
         return $meja;
     }
 
-    //get avalable meja 
-    //@return $meja[]
+    /**
+     * get avalable meja
+     * 
+     * @return $meja[]
+     */
     public function get_available()
     {
         $sql1 = "select * from meja where status_ketersediaan = 'Y'";
         $result = $this->db->query($sql1);
-        $meja = $result-> fetch_all(MYSQLI_ASSOC);
+        $meja = $result->fetch_all(MYSQLI_ASSOC);
         return $meja;
     }
-    // Get count meja from database
-    // @return $meja[]
 
+    /**
+     * Get count meja from database
+     * 
+     * @return $meja[]
+     */
 
     public function get_count()
     {
@@ -75,14 +81,14 @@ class Meja
      */
     public function store()
     {
-        $id_meja = $_POST['id_meja'];
-        $total_pelanggan = $_POST['total_pelanggan'];
+        $id_meja = $this->db->escape_string($_POST['id_meja']);
+        $total_pelanggan = $this->db->escape_string($_POST['total_pelanggan']);
         if (empty($_POST['status_ketersediaan'])) {
             $status_ketersediaan = "N";
         } else {
             $status_ketersediaan = "Y";
         }
-        
+
         //SQL id meja 
         $sql1 = "SELECT id_meja from meja
                 WHERE id_meja = '$id_meja'";
@@ -92,10 +98,10 @@ class Meja
         $count_row = $check->num_rows;
 
         //If the id_meja is not in db then insert to meja table 
-        if ($count_row == 0){
+        if ($count_row == 0) {
             $sql2 = "INSERT INTO meja 
                      VALUES('$id_meja','$total_pelanggan','$status_ketersediaan')";
-            $result = mysqli_query($this->db,$sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
+            $result = mysqli_query($this->db, $sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
             return true;
         } else {
             return false;
@@ -123,7 +129,7 @@ class Meja
                  id_meja = '$id_meja',
                  status_ketersediaan = '$status_ketersediaan'
                  where id_meja = '$id_meja_before'";
-        
+
         $query = $this->db->query($sql1);
         $result = $query;
         if ($result) {
@@ -131,7 +137,6 @@ class Meja
         } else {
             return false;
         }
-
     }
 
     /**

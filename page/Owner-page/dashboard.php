@@ -13,8 +13,6 @@
     }
 
 
-
-
     .icon-pencil:hover {
         color: #fff !important;
     }
