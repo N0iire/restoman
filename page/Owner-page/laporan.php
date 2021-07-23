@@ -19,11 +19,11 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
+                        <td>1</td>
+                        <td>test</td>
                         <td>Edinburgh</td>
                         <td>61</td>
-                        <td>2011/04/25</td>
+                        <td>2021/04/25</td>
                         <td>
                             <a href="#">
                                 <button class="btn btn-dark btn-block">
@@ -33,11 +33,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
+                        <td>2</td>
+                        <td>test</td>
                         <td>Tokyo</td>
                         <td>63</td>
-                        <td>2011/07/25</td>
+                        <td>2021/07/25</td>
                         <td>
                             <a href="#">
                                 <button class="btn btn-dark btn-block">

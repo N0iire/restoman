@@ -19,9 +19,9 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
+                            <td>placeholder</td>
+                            <td>1</td>
+                            <td>test</td>
                             <td>61</td>
                             <td>
                                 <a href="#">
@@ -41,9 +41,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
+                            <td>placeholder</td>
+                            <td>2</td>
+                            <td>test</td>
                             <td>63</td>
                             <td>
                                 <a href="#">

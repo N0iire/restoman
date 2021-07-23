@@ -66,8 +66,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
+                            <td>1</td>
+                            <td>tes</td>
                             <td>Edinburgh</td>
                             <td>61</td>
                             <td>
@@ -88,8 +88,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
+                            <td>2</td>
+                            <td>tes</td>
                             <td>Tokyo</td>
                             <td>63</td>
                             <td>
