@@ -3,13 +3,13 @@
         <div class="col-md-9">
             <div class="row pt-1">
 
-                <div class="col-md-4 mb-1">
+                <div class="col-md-4 mb-1 ">
                     <div class="container ">
                         <div class="harga">26.000</div>
                         <div class="menu">Ayam Bakar</div>
                         <img src="../../assets/images/ayam bakar.jpeg" alt="ayam bakar" class="image shadow-dreamy">
                         <div class="overlay">
-                            <button class="btn-grad">Tambah</button>
+                            <button class="btn-grad shadow">Tambah</button>
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                         <div class="menu">Ayam Bakar</div>
                         <img src="../../assets/images/ayam bakar.jpeg" alt="ayam bakar" class="image shadow-dreamy">
                         <div class="overlay">
-                            <button class="btn-grad">Tambah</button>
+                            <button class="btn-grad shadow">Tambah</button>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <div class="menu">Ayam Bakar</div>
                         <img src="../../assets/images/ayam bakar.jpeg" alt="ayam bakar" class="image shadow-dreamy">
                         <div class="overlay">
-                            <button class="btn-grad">Tambah</button>
+                            <button class="btn-grad shadow">Tambah</button>
                         </div>
                     </div>
                 </div>
@@ -39,10 +39,11 @@
                         <div class="menu">Ayam Bakar</div>
                         <img src="../../assets/images/ayam bakar.jpeg" alt="ayam bakar" class="image shadow-dreamy">
                         <div class="overlay">
-                            <button class="btn-grad">Tambah</button>
+                            <button class="btn-grad shadow">Tambah</button>
                         </div>
                     </div>
                 </div>
+
 
 
 
@@ -50,7 +51,7 @@
 
                 <div class="col-md-3" style="position: fixed; margin-left:50%;">
                     <div class="card cart" style="border-radius: 15px;">
-                        <div class="card-header cart blue-head text-white p-1" style="height: 90px;;">
+                        <div class="card-header cart blue-head text-white pl-2 p-1" style="height: 90px;;">
                             <h4>Pesan Baru</h4>
                             <small>0 pesanan dalam keranjang </small>
                         </div>
@@ -66,7 +67,7 @@
                                     <small>Rp. 26.000</small>
                                 </div>
                                 <div class="col-md-4">
-                                    <input class="form-control float-right" style="width: 60px; text-align: center;" value="1" type="number" name="jumlah" min="1" max="1">
+                                    <input class="form-control float-right" style="width: 60px; height:37px; margin-top:7px; text-align: center;" value="1" type="number" name="jumlah" min="1" max="">
                                 </div>
                             </div>
 
@@ -83,7 +84,7 @@
                                     <small>Total <br>Pelanggan</small>
                                 </div>
                                 <div class="col-sm-3" style="margin-right: 10px;">
-                                    <input class="form-control" style="width: 70px; height:37px;" type="text" name="pembeli">
+                                    <input class="form-control" style="width: 70px; height:37px;" type="number" name="pembeli">
                                 </div>
 
 
