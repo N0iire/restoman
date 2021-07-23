@@ -8,16 +8,19 @@
     <link rel="icon" href="../../assets/images/restoman-icon.png" type="image/x-icon">
     <title>Login Restoman</title>
     <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/litera/bootstrap.min.css" />
 
     <!-- datatables -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
     <!-- custom css -->
-    <link rel="stylesheet" href="../../assets/css/sidebar.css">
     <link rel="stylesheet" href="../../assets/css/sidebar2.css">
 
+
     <link rel="stylesheet" href="logins.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/menu.css">
+
 
 
 
