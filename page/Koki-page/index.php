@@ -1,29 +1,51 @@
 <!-- header -->
 <?php include '../../header.php' ?>
 
-<body>
+<body style="background: #fff;">
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- navbar -->
+            <header>
+                <?php include '../../component/navbar.php' ?>
 
-    <div class="wrapper d-flex">
-        <div class="sidebar"> <small class="text-muted pl-3">WIDR PAY</small>
-            <ul>
-                <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
-                <li><a href="#"><i class="far fa-credit-card"></i>Payment Page <img src="https://img.icons8.com/material-outlined/24/000000/new.png" /></a></li>
-                <li><a href="#"><i class="fas fa-file-invoice"></i>Invoices <img src="https://img.icons8.com/material-outlined/24/000000/2.png" /></a></li>
-            </ul> <small class="text-muted px-3">PRODUCTIVITY TOOLS</small>
-            <ul>
-                <li><a href="#"><i class="far fa-calendar-alt"></i>Online Scheduler</a></li>
-                <li><a href="#"><i class="fas fa-video"></i>Video Meeting</a></li>
-                <li><a href="#"><i class="fas fa-id-badge"></i>Public Profile</a></li>
-            </ul> <small class="text-muted px-3">GROW YOUR CLIENT BASE</small>
-            <ul>
-                <li><a href="#"><i class="fas fa-external-link-alt"></i>Share</a></li>
-                <li><a href="#"><i class="fas fa-code"></i>Add to Website</a></li>
-            </ul>
+            </header>
+        </div>
+
+        <div class="row" style="margin-top: 90px;">
+            <div class="col-sm-3">
+                <!-- sidebar -->
+                <aside>
+                    <?php include '../../component/sidebar_koki.php' ?>
+                </aside>
+            </div>
+
+            <div class="col-sm-9">
+                <!-- start page content -->
+                <?php
+                if (!isset($_GET['p'])) {
+                    require_once 'pesanan.php';
+                } else if ($_GET['p'] == 'pesanan') {
+                    require_once $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'menu' || $_REQUEST['p'] == 'menu') {
+                    require_once  $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'edit-menu' || $_REQUEST['p'] == 'edit-menu') {
+                    require_once  $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'kategori' || $_REQUEST['p'] == 'kategori') {
+                    require_once  $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'edit-kategori' || $_REQUEST['p'] == 'edit-kategori') {
+                    require_once  $_GET['p'] . '.php';
+                }
+                ?>
+
+            </div>
         </div>
 
     </div>
-    <div class="container">
-        <button>test</button>
+    <div class="preloader">
+        <div class="box">
+
+        </div>
+
     </div>
     <!-- end body -->
     <?php include '../../footer.php' ?>
