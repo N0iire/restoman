@@ -12,7 +12,7 @@
         <div class="col-sm-12">
             <!-- navbar -->
             <header>
-                <?php include '../../component/navbar.php' ?>
+                <?php include '../../component/navbar_pelayan.php' ?>
 
             </header>
         </div>
@@ -32,7 +32,7 @@
                 require_once 'pemesanan.php';
             } else if ($_GET['p'] == 'pemesanan') {
                 require_once $_GET['p'] . '.php';
-            } else if ($_GET['p'] == 'laporan' || $_REQUEST['p'] == 'laporan') {
+            } else if ($_GET['p'] == 'meja' || $_REQUEST['p'] == 'meja') {
                 require_once  $_GET['p'] . '.php';
             }
             ?>

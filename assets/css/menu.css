@@ -2,7 +2,7 @@
   position: relative;
   width: 70%;
   margin-bottom: 25px;
-  
+
 
 }
 
@@ -27,6 +27,7 @@
 
 .container:hover .overlay {
   height: 35%;
+	animation: fade-in-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .menu{
@@ -64,7 +65,7 @@
 }
 
 
-.btn-grad {    background: rgba(47, 128, 237, 1) 100%;
+.btn-grad {    background: #fff;
 }
 .btn-grad {
   left: 24px;
@@ -74,22 +75,51 @@
    text-transform: uppercase;
    transition: 0.5s;
    background-size: 100% auto;
-   color: white;            
+   color: #000428;            
    border-radius: 10px;
    display: block;
    border: 0;
    position: absolute;
    
  }
+
  
-      
-       
+.shadow {
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+@keyframes fade-in-bottom {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
  .btn-grad:hover {
    background-position: right center; /* change the direction of the change here */
-   color: #fff !important;
    text-decoration: none;
+   cursor: pointer;
+  
  }
+ @keyframes jelly {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
 
 .button {
   color: white;
@@ -102,4 +132,3 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
