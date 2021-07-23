@@ -20,14 +20,14 @@
 
         <form action="javascript:void(0);" method="POST">
             <div class="top">
-                <h2><span class="fontawesome-lock"></span>Login Restoman</h2>
+                <h2><span class="fontawesome-lock"></span>Restoman Login</h2>
             </div>
 
             <fieldset style="padding: 20px 40px; justify-content: center;" class="shadow">
 
                 <div class="form">
                     <input type="text" id="email" class="form__input" autocomplete="off" placeholder=" ">
-                    <label for="email" class="form__label">Username</label>
+                    <label for="email" class="form__label">Id Pengguna</label>
                 </div>
 
                 <div class="form mt-3">

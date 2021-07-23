@@ -1,18 +1,17 @@
 <!-- header -->
 <?php include '../../header.php' ?>
 
-<body style="background-color: #fff;">
-
+<body style="background: #fff;">
     <div class="row">
         <div class="col-sm-12">
             <!-- navbar -->
             <header>
-                <?php include '../../component/navbar.php'
-                ?>
+                <?php include '../../component/navbar.php' ?>
 
             </header>
         </div>
-        <div class="row" style="padding-top: 90px;">
+
+        <div class="row" style="margin-top: 90px;">
             <div class="col-sm-3">
                 <!-- sidebar -->
                 <aside>
@@ -22,15 +21,24 @@
 
             <div class="col-sm-9">
                 <!-- start page content -->
-                test
+                <?php
+                if (!isset($_GET['p'])) {
+                    require_once 'pembayaran.php';
+                } else if ($_GET['p'] == 'pembayaran') {
+                    require_once $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'laporan' || $_REQUEST['p'] == 'laporan') {
+                    require_once  $_GET['p'] . '.php';
+                }
+                ?>
+
             </div>
         </div>
-        <!-- disini fungsi isset -->
 
-        <!-- end page content -->
-
-
-        <!-- end wrapper -->
+    </div>
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="box">
+        </div>
     </div>
 
     <!-- end body -->

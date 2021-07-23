@@ -128,7 +128,7 @@
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="media-body text-left">
-                                    <h3 class="success">64.89 %</h3>
+                                    <h3 class="success">64</h3>
                                     <span>Jumlah <br> Menu</span>
                                 </div>
                                 <div class="align-self-center">

@@ -33,6 +33,8 @@
                     require_once  $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'pegawai' || $_REQUEST['p'] == 'pegawai') {
                     require_once  $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'edit-pegawai' || $_REQUEST['p'] == 'edit-pegawai') {
+                    require_once  $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'menu' || $_REQUEST['p'] == 'menu') {
                     require_once  $_GET['p'] . '.php';
                 }
