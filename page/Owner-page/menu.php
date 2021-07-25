@@ -24,7 +24,7 @@
                             <td>test</td>
                             <td>61</td>
                             <td>
-                                <a href="#">
+                                <a href="#" onclick="m10(event)">
                                     <button class="btn btn-red" style="margin-left: 15px; margin-right: 10px;">
                                         <span class="icon">
                                             <ion-icon name="close-circle-outline" style="font-size: 30px;"></ion-icon>
@@ -32,7 +32,7 @@
                                     </button>
                                 </a>
                                 <a href="#">
-                                    <button class="btn btn-blue">
+                                    <button class="btn btn-blue" onclick="m09(event)">
                                         <span class="icon">
                                             <ion-icon name="checkmark-circle-outline" style="font-size: 30px;"></ion-icon>
                                         </span>
