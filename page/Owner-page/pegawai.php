@@ -28,17 +28,20 @@
                             </div>
                             <div class="form-group">
                                 <label for="comment">Password </label>
-                                <textarea name="deskripsi" class="form-control" rows="5" id="comment" style="height: 50px;"></textarea>
+                                <textarea name="deskripsi" class="form-control" rows="5" id="comment" style="height: 50px;" required></textarea>
                             </div>
                         </div>
                         Kategori
                         <select name="kategori" style="margin-top: 10px;" class=" custom-select" required>
                             <option value="">Pilih Pegawai</option>
+                            <option value="1">1</option>
                         </select>
+
                         <br><br><br>
                         <div>
-                            <input type="submit" name="submit" value="Tambah" class="btn btn-blue">
-                            <input type="submit" name="submit" value="Batal" class="btn btn-secondary ">
+                            <input type="submit" onclick="berhasil(event)" name="submit" value="Tambah" class="btn btn-blue">
+                            <!--alertnya belum dipanggil untuk yg tambah -->
+                            <input type="reset" name="reset" value="Batal" class="btn btn-secondary ">
                         </div>
                     </form>
                 </tbody>
@@ -71,7 +74,7 @@
                             <td>Edinburgh</td>
                             <td>61</td>
                             <td>
-                                <a href="#">
+                                <a href="?p=edit-pegawai">
                                     <button class="btn btn-blue btn-block" style="padding: 5px;">
                                         <span class="icon">
                                             <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
@@ -79,7 +82,7 @@
                                     </button>
                                 </a>
                                 <a href="#">
-                                    <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
+                                    <button class="btn btn-red btn-block" onclick="konfirmasi(event)" style="padding: 5px; margin-top: 5px">
                                         <span class="icon">
                                             <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
                                         </span>
@@ -93,7 +96,7 @@
                             <td>Tokyo</td>
                             <td>63</td>
                             <td>
-                                <a href="#">
+                                <a href="?p=edit-pegawai">
                                     <button class="btn btn-blue btn-block" style="padding: 5px;">
                                         <span class="icon">
                                             <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
@@ -101,7 +104,7 @@
                                     </button>
                                 </a>
                                 <a href="#">
-                                    <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
+                                    <button class="btn btn-red btn-block" onclick="konfirmasi(event)" style="padding: 5px; margin-top: 5px">
                                         <span class="icon">
                                             <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
                                         </span>
