@@ -4,6 +4,7 @@
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="sweetalert2.all.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
@@ -38,7 +39,7 @@
         var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
         console.log(urlToRedirect); // verify if this is the right URL
         Swal.fire({
-                title: "Anda yakin ingin keluar?",
+                title: "Apakah anda yakin ingin keluar?",
 
                 showDenyButton: true,
                 confirmButtonText: `Iya`,
@@ -68,6 +69,74 @@
                     window.location = urlToRedirect;
                 }
             });
+    }
+
+    function konfirmasi(ev) {
+        ev.preventDefault();
+        var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
+        console.log(urlToRedirect); // verify if this is the right URL
+        Swal.fire({
+                title: "Apakah anda yakin ingin menghapusnya ?",
+
+                icon: "warning",
+                showDenyButton: true,
+                confirmButtonText: `Hapus`,
+                dangerMode: true,
+                denyButtonText: `Batal`,
+
+                allowOutsideClick: () => {
+                    const popup = Swal.getPopup()
+                    popup.classList.remove('swal2-show')
+                    setTimeout(() => {
+                        popup.classList.add('animate__animated', 'animate__headShake')
+                    })
+                    setTimeout(() => {
+                        popup.classList.remove('animate__animated', 'animate__headShake')
+                    }, 500)
+                    return false
+                }
+            })
+            .then((willDelete) => {
+
+                // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
+
+                if (willDelete.isConfirmed) {
+                    Swal.fire('Saved!', '', 'success', {
+                        timer: 1500
+                    })
+                    window.location = urlToRedirect;
+                } else if (willDelete.isDenied) {
+                    Swal.fire('Data Aman!', '', 'info')
+                }
+            });
+    }
+
+    function m09(ev) {
+        Swal.fire({
+            icon: 'info',
+            title: 'Menu dikonfirmasi!'
+        })
+    }
+
+    function m10(ev) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Menu ditolak!'
+        })
+    }
+
+    function berhasil(ev) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Tambah Data Berhasil!'
+        })
+    }
+
+    function gagal(ev) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Tambah Data Gagal!'
+        })
     }
 </script>
 
