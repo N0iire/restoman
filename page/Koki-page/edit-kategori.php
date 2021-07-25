@@ -8,7 +8,7 @@
                     <tr>
                         <th>
                             <center>
-                                <h3>Tambah Kategori</h3>
+                                <h3>Form Edit Kategori</h3>
                             </center>
                         </th>
                     </tr>
@@ -25,8 +25,8 @@
                         </div>
                         <br><br><br>
                         <div>
-                            <input type="submit" name="submit" value="Tambah" class="btn btn-blue">
-                            <input type="submit" name="submit" value="Reset" class="btn btn-secondary ">
+                            <input type="submit" name="submit" value="Ubah" class="btn btn-blue">
+                            <input type="submit" name="submit" value="Batal" class="btn btn-secondary ">
                         </div>
                     </form>
                 </tbody>
@@ -39,7 +39,7 @@
         <!-- start page content -->
         <div class="card shadow ">
             <div class="card-header text-white blue-head ">
-                <h3>Data Kategori</h3>
+                <h3>Edit Data Kategori</h3>
             </div>
             <div class="card-body">
                 <table id="example" class="table table-borderless">
@@ -55,40 +55,22 @@
                             <td>1</td>
                             <td>tes</td>
                             <td>
-                                <a href="?p=edit-kategori">
-                                    <button class="btn btn-blue btn-block" style="padding: 5px;">
-                                        <span class="icon">
-                                            <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
-                                        </span>
-                                    </button>
-                                </a>
-                                <a href="#">
-                                    <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
-                                        <span class="icon">
-                                            <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
-                                        </span>
-                                    </button>
-                                </a>
+                            <a href="#">
+                                <button class="btn btn-dark btn-block">
+                                    Pilih
+                                </button>
+                            </a>
                             </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>tes</td>
                             <td>
-                                <a href="?p=edit-kategori">
-                                    <button class="btn btn-blue btn-block" style="padding: 5px;">
-                                        <span class="icon">
-                                            <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
-                                        </span>
-                                    </button>
-                                </a>
-                                <a href="#">
-                                    <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
-                                        <span class="icon">
-                                            <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
-                                        </span>
-                                    </button>
-                                </a>
+                            <a href="#">
+                                <button class="btn btn-dark btn-block">
+                                    Pilih
+                                </button>
+                            </a>
                             </td>
                         </tr>
 
