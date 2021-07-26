@@ -1,3 +1,24 @@
+<?php
+session_start();
+include_once('model/db_config.php');
+include_once('controller/UserController.php');
+
+if (isset($_POST['submit'])) {
+    $user = new User();
+
+    $id = $user->db->escape_string($_POST['id_pegawai']);
+    $password = $user->db->escape_string($_POST['password']);
+    $kategori = $user->db->escape_string($_POST['kategori']);
+
+    $login = $user->login($id, $password, $kategori);
+    if ($login) {
+        header("location: page/" . $kategori . "-page/?msg=login-success");
+    } else {
+        return false;
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +39,7 @@
 
     <div id="login">
 
-        <form action="javascript:void(0);" method="POST">
+        <form action="" method="POST">
             <div class="top">
                 <h2><span class="fontawesome-lock"></span>Restoman Login</h2>
             </div>
@@ -26,18 +47,18 @@
             <fieldset style="padding: 20px 40px; justify-content: center;" class="shadow">
 
                 <div class="form">
-                    <input type="text" id="email" class="form__input" autocomplete="off" placeholder=" ">
+                    <input type="text" id="email" name="id_pegawai" class="form__input" autocomplete="off" placeholder=" " required>
                     <label for="email" class="form__label">Id Pengguna</label>
                 </div>
 
                 <div class="form mt-3">
-                    <input type="password" id="password" class="form__input" autocomplete="off" placeholder=" ">
+                    <input type="password" name="password" id="password" class="form__input" autocomplete="off" placeholder=" " required>
                     <label for="email" class="form__label">Password</label>
                 </div>
 
                 <div class="form mt-3">
-                    <select class="form-select" style="padding-left: 20px;" aria-label="Default select example">
-                        <option selected>Masuk Sebagai</option>
+                    <select class="form-select" name="kategori" style="padding-left: 20px;" aria-label="Default select example" required>
+                        <option value="">Masuk Sebagai</option>
                         <option value="owner">Owner</option>
                         <option value="pelayan">Pelayan</option>
                         <option value="koki">Koki</option>
@@ -45,7 +66,7 @@
                     </select>
                 </div>
                 <div class="mt-3" style="margin-left: 85px; justify-content: center;">
-                    <input class="grad" type="submit" value="Masuk">
+                    <input class="grad" type="submit" value="Masuk" name="submit">
                 </div>
             </fieldset>
 
