@@ -1,5 +1,71 @@
 <!-- header -->
-<?php include '../../header.php' ?>
+<?php
+session_start();
+
+include '../../header.php';
+
+if ($_SESSION['login'] && $_SESSION['kategori_p'] == "owner") {
+    include_once('../../model/db_config.php');
+    include_once('../../controller/UserController.php');
+
+    $user = new User();
+
+    if (isset($_POST['store'])) {
+        $id_pegawai = $user->db->escape_string($_POST['id_pegawai']);
+        $nama_pegawai = $user->db->escape_string($_POST['nama_pegawai']);
+        $password   = $user->db->escape_string($_POST['password']);
+        $kategori = $user->db->escape_string($_POST['kategori']);
+        if ($user->store($id_pegawai, $nama_pegawai, $password, $kategori)) {
+            header("location: index.php?p=pegawai&msg=store-success");
+            // If Success Sweet Alert Here
+        } else {
+            // If Failed Sweet Alert Here
+        }
+    }
+
+    if (isset($_GET['e'])) {
+        $user->word = $_GET['e'];
+        $id_for_edit = $user->decr();
+    }
+
+    if (isset($_POST['edit'])) {
+        $id_pegawai = $user->db->escape_string($_POST['id_pegawai']);
+        $nama_pegawai = $user->db->escape_string($_POST['nama_pegawai']);
+        $user->word = $user->db->escape_string($_POST['password']);
+        $password   = $user->encr();
+        $kategori = $user->db->escape_string($_POST['kategori']);
+
+        $user->word = $id_pegawai;
+        $id = $user->encr();
+        if ($user->update($id_for_edit)) {
+            header("location: index.php?p=edit-pegawai&e=" . $id . "&msg=edit-success");
+            // If Success Sweet Alert Here
+        } else {
+            // If Failed Sweet Alert Here
+        }
+    }
+
+    if (isset($_GET['d'])) {
+        $user->word = $_GET['d'];
+        $id_for_delete = $user->decr();
+        if ($user->destroy($id_for_delete)) {
+            header("location: index.php?p=pegawai&msg=delete-success");
+            // If Success Sweet Alert Here
+        } else {
+            // If Failed Sweet Alert Here
+        }
+    }
+
+    if (isset($_GET['r'])) {
+        if ($_GET['r'] == "logout") {
+            $user->logout();
+            header("location: ../../index.php?msg=logout-success");
+        }
+    }
+} else {
+    header("location: ../../index.php?msg=login-auth");
+}
+?>
 
 
 <body style="background: #fff;">
