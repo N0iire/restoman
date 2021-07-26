@@ -1,3 +1,6 @@
+<?php
+$data_edit = $user->view($id_for_edit);
+?>
 <div class="row" style="margin-top: 10px; margin-left: -20px;">
     <!-- left card -->
     <div class="col-sm-4">
@@ -20,24 +23,32 @@
                         <div>
                             <div class="form-group">
                                 <label for="nama_menu">Id Pegawai</label>
-                                <input type="text" class="form-control" id="id_menu" name="id_menu" required>
+                                <input type="text" class="form-control" id="id_menu" name="id_pegawai" value="<?php echo $data_edit['id_pegawai'] ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="nama_menu">Nama </label>
-                                <input type="text" class="form-control" id="nama_menu" name="nama_menu" required>
+                                <input type="text" class="form-control" id="nama_menu" name="nama_pegawai" value="<?php echo $data_edit['nama_pegawai'] ?>" required>
                             </div>
                             <div class="form-group">
                                 <label for="comment">Password </label>
-                                <textarea name="deskripsi" class="form-control" rows="5" id="comment" style="height: 50px;"></textarea>
+                                <?php
+                                $user->word = $data_edit['password'];
+                                $password = $user->decr();
+                                ?>
+                                <input type="password" name="password" class="form-control" rows="5" value="<?php echo $password; ?>" style="height: 50px;" required>
                             </div>
                         </div>
                         Kategori
                         <select name="kategori" style="margin-top: 10px;" class=" custom-select" required>
-                            <option value="">Pilih Pegawai</option>
+                            <option value="">Pilih Kategori</option>
+                            <option value="Owner">Owner</option>
+                            <option value="Pelayan">Pelayan</option>
+                            <option value="Koki">Koki</option>
+                            <option value="Kasir">Kasir</option>
                         </select>
                         <br><br><br>
                         <div>
-                            <input type="submit" name="submit" value="Tambah" class="btn btn-blue">
+                            <input type="submit" name="edit" value="Edit" class="btn btn-blue">
                             <input type="reset" name="reset" value="Batal" class="btn btn-secondary ">
                         </div>
                     </form>
@@ -66,34 +77,36 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>tes</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>
-                                <a href="#">
-                                    <button class="btn btn-blue btn-block" style="padding: 5px;">
-                                        Pilih
-                                    </button>
-                                </a>
-                            </td>
+                            <?php
+                            $data_pegawai = $user->get_all();
+                            $i = 1;
+                            foreach ($data_pegawai as $data) {
+                            ?>
+                                <td><?php echo $data['id_pegawai'] ?></td>
+                                <td><?php echo $data['nama_pegawai'] ?></td>
+                                <td>
+                                    <?php
+                                    $user->word = $data['password'];
+                                    echo $user->decr();
+                                    ?>
+                                </td>
+                                <td><?php echo $data['kategori_pegawai'] ?></td>
+                                <td>
+                                    <?php
+                                    $user->word = $data['id_pegawai'];
+                                    $id = $user->encr();
+                                    ?>
+                                    <a href="?p=edit-pegawai&e=<?php echo $id ?>">
+                                        <button class="btn btn-blue btn-block" style="padding: 5px;">
+                                            Pilih
+                                        </button>
+                                    </a>
+                                </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>tes</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>
-                                <a href="#">
-                                    <button class="btn btn-blue btn-block" style="padding: 5px;">
-                                        Pilih
-                                    </button>
-                                </a>
-
-
-                            </td>
-                        </tr>
-
+                    <?php
+                                $i++;
+                            }
+                    ?>
                     </tbody>
                 </table>
             </div>
