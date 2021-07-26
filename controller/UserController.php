@@ -3,6 +3,13 @@
 class User
 {
     public $db;
+    public $word;
+    public $ciphering = "AES-128-CTR";
+    public $option = 0;
+    // Non-NULL Initialization Vector for encryption
+    public $encryption_iv = '1234567891011121';
+    private $encryption_key = "r3st0manbuatans1";
+
 
     /**
      * Connection
@@ -25,9 +32,10 @@ class User
      * @param $id_kasir, $nama_kasir, $password
      * @return boolean
      */
-    public function store($id, $nama, $kategori, $password, $another)
+    public function store($id, $nama, $password, $kategori)
     {
-        $password = md5($password);
+        $this->word = $password;
+        $password = $this->encr();
         $sql = "SELECT * FROM pegawai WHERE id_pegawai='$id'";
 
         // Checking if the id is available
@@ -36,20 +44,14 @@ class User
 
         // If the id is not in db then insert to the table
         if ($count_row == 0) {
-            $sql1 = "INSERT INTO pegawai SET id_pegawai='$id', nama_kasir='$nama', password='$password'";
+            $sql1 = "INSERT INTO pegawai SET id_pegawai='$id', nama_pegawai='$nama', password='$password', kategori_pegawai='$kategori'";
             $result = mysqli_query($this->db, $sql1) or die(mysqli_connect_errno() . "Data cannot inserted");
             // If result true then insert into kategori table
             if ($result) {
-                $sql2 = "INSERT INTO $kategori VALUES('$another')";
-                $result2 = mysqli_query($this->db, $sql2);
-                // If result true then return true
-                if ($result2) {
-                    return true; // insert is success
-                } else {
-                    return false; // insert is failed
-                }
+                return true; // insert is succes
+            } else {
+                return false;
             }
-            return true;
         } else {
             return false;
         }
@@ -58,14 +60,12 @@ class User
     /**
      * View user
      * 
-     * @param $id, $kategori
+     * @param $id
      * @return $user
      */
-    public function view($id, $kategori)
+    public function view($id)
     {
-        $sql = "SELECT * FROM pegawai a INNER JOIN 
-            $kategori b WHERE a.id_pegawai = '$id' 
-            AND b.id_pegawai = '$id'";
+        $sql = "SELECT * FROM pegawai a WHERE a.id_pegawai = '$id'";
         $result = $this->db->query($sql);
         $user = $result->fetch_assoc();
 
@@ -92,37 +92,30 @@ class User
      * @param $id_before, $kategori
      * @return boolean;
      */
-    public function update($id_before, $kategori, $i)
+    public function update($id_before)
     {
         $id_pegawai = $this->db->escape_string($_POST['id_pegawai']);
-        $nama = $this->db->escape_string($_POST['nama']);
-        $another = $this->db->escape_string($_POST[$i]);
-        $kategori = $kategori;
+        $nama = $this->db->escape_string($_POST['nama_pegawai']);
+        $this->word = $this->db->escape_string($_POST['password']);
+        $password = $this->encr();
+        $kategori = $this->db->escape_string($_POST['kategori']);;
 
         // Checking if id_user is already taken
-        $sql = "SELECT * FROM pegawai WHERE id_kasir='$id_pegawai'";
+        $sql = "SELECT * FROM pegawai WHERE id_pegawai='$id_pegawai'";
         $check = $this->db->query($sql);
         $count_row = $check->num_rows;
 
-        if ($count_row == 0) {
-            $sql1 = "UPDATE pegawai SET id_pegawai='$id_pegawai', nama_pegawai='$nama'
-                WHERE id_pegawai = $id_before
+        if ($count_row == 0 || $id_before == $id_pegawai) {
+            $sql1 = "UPDATE pegawai SET id_pegawai='$id_pegawai', nama_pegawai='$nama', password = '$password', kategori_pegawai = '$kategori'
+                WHERE id_pegawai = '$id_before'
             ";
             $result = mysqli_query($this->db, $sql1) or die(mysqli_connect_errno() . "Data cannot updated");
             // If result true then insert into kategori table
             if ($result) {
-                $sql2 = "UPDATE $kategori SET $i = '$another' 
-                    WHERE id_pegawai = $id_before
-                ";
-                $result2 = mysqli_query($this->db, $sql2);
-                // If result true then return true
-                if ($result2) {
-                    return true; // insert is success
-                } else {
-                    return false; // insert is failed
-                }
+                return true; // insert is succes
+            } else {
+                return false;
             }
-            return true;
         } else {
             return false;
         }
@@ -154,7 +147,8 @@ class User
      */
     public function login($id, $password, $kategori)
     {
-        $password = md5($password);
+        $this->word = $this->db->escape_string($_POST['password']);
+        $password = $this->encr();
         $sql = "SELECT id_pegawai FROM pegawai WHERE id_pegawai = '$id'
             AND password = '$password'
         ";
@@ -195,5 +189,29 @@ class User
         $_SESSION['login'] = false;
         session_destroy();
         return true;
+    }
+
+    /**
+     * Encrypting
+     * 
+     * @return string $encrypted
+     */
+    public function encr()
+    {
+        $encrypted = openssl_encrypt($this->word, $this->ciphering, $this->encryption_key, $this->option, $this->encryption_iv);
+
+        return $encrypted;
+    }
+
+    /**
+     * Decrypting
+     * 
+     * @return string $decrypted
+     */
+    public function decr()
+    {
+        $decrypted = openssl_decrypt($this->word, $this->ciphering, $this->encryption_key, $this->option, $this->encryption_iv);
+
+        return $decrypted;
     }
 }
