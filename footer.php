@@ -34,6 +34,8 @@
         $(".preloader").fadeOut("slow");
     });
 
+
+    //konfirmasi logout
     function keluar(ev) {
         ev.preventDefault();
         var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
@@ -42,13 +44,15 @@
                 title: "Apakah anda yakin ingin keluar?",
 
                 showDenyButton: true,
-                confirmButtonText: `Iya`,
+                confirmButtonText: `Ya`,
                 icon: "question",
                 dangerMode: true,
-                denyButtonText: `Tidak`,
+                denyButtonColor: '#2F80ED',
+                confirmButtonColor: '#404e67',
+                denyButtonText: `Batal`,
                 customClass: {
-                    confirmButton: "btn btn-md btn-dark mr-2 pl-2 pr-2",
-                    denyButton: "btn btn-blue"
+                    confirmButton: "mr-2 pl-2 pr-2"
+
                 },
 
                 allowOutsideClick: () => {
@@ -71,18 +75,36 @@
             });
     }
 
+    //toast menu
+    function inputMenu() {
+        Swal.fire({
+            icon: 'info',
+            title: 'Pesan menu terlebih dahulu!',
+            timer: 1500,
+            type: 'danger',
+            confirmButtonColor: "#2f80ed",
+            confirmButtonClass: "pl-3 pr-3"
+        })
+    }
+
+    //konfirmasi hapus
     function konfirmasi(ev) {
         ev.preventDefault();
         var urlToRedirect = ev.currentTarget.getAttribute('href'); //use currentTarget because the click may be on the nested i tag and not a tag causing the href to be empty
         console.log(urlToRedirect); // verify if this is the right URL
         Swal.fire({
-                title: "Apakah anda yakin ingin menghapusnya ?",
+                title: "Apakah anda yakin ingin menghapus ?",
 
-                icon: "warning",
+                icon: "question",
                 showDenyButton: true,
-                confirmButtonText: `Hapus`,
-                dangerMode: true,
+                confirmButtonText: `Ya, hapus`,
+                denyButtonColor: '#2F80ED',
+                confirmButtonColor: '#404e67',
                 denyButtonText: `Batal`,
+                customClass: {
+                    confirmButton: "mr-2 pl-2 pr-2"
+
+                },
 
                 allowOutsideClick: () => {
                     const popup = Swal.getPopup()
@@ -101,41 +123,90 @@
                 // redirect with javascript here as per your logic after showing the alert using the urlToRedirect value
 
                 if (willDelete.isConfirmed) {
-                    Swal.fire('Saved!', '', 'success', {
-                        timer: 1500
-                    })
                     window.location = urlToRedirect;
-                } else if (willDelete.isDenied) {
-                    Swal.fire('Data Aman!', '', 'info')
                 }
             });
     }
 
+    //toast login
+    const Info = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        customClass: {
+            popup: 'login-toast'
+        }
+
+    })
+
+
+    Info.fire({
+        icon: 'success',
+        title: 'Login sukses'
+    })
+
+
+    //toast info
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-right',
+        iconColor: 'white',
+        customClass: {
+            popup: 'colored-toast'
+        },
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true
+    });
+
     function m09(ev) {
-        Swal.fire({
-            icon: 'info',
+        Toast.fire({
+            icon: 'success',
             title: 'Menu dikonfirmasi!'
-        })
+        });
     }
 
     function m10(ev) {
-        Swal.fire({
-            icon: 'warning',
+        Toast.fire({
+            icon: 'error',
             title: 'Menu ditolak!'
         })
     }
 
-    function berhasil(ev) {
-        Swal.fire({
+    function berhasilTambah(ev) {
+        Toast.fire({
             icon: 'success',
-            title: 'Tambah Data Berhasil!'
+            title: 'Data berhasil ditambah!'
         })
     }
 
-    function gagal(ev) {
-        Swal.fire({
+    function berhasilUbah(ev) {
+        Toast.fire({
+            icon: 'success',
+            title: 'Data berhasil diubah!'
+        })
+    }
+
+    function gagalTambah(ev) {
+        Toast.fire({
             icon: 'error',
-            title: 'Tambah Data Gagal!'
+            title: 'Gagal menambah data!'
+        })
+    }
+
+    function gagalUbah(ev) {
+        Toast.fire({
+            icon: 'error',
+            title: 'Gagal mengubah data!'
+        })
+    }
+
+    function gagalHapus(ev) {
+        Toast.fire({
+            icon: 'error',
+            title: 'Data gagal dihapus!'
         })
     }
 </script>

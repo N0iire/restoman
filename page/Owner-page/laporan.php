@@ -82,7 +82,9 @@
                 <div class="modal-header text-white blue-head">
                     <h4 class="modal-title" id="exampleModalLongTitle">Detail Laporan : ../../..</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">
+                            <ion-icon name="close-outline" style="font-size: 34px;"></ion-icon>
+                        </span>
                     </button>
                 </div>
 

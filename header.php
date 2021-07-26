@@ -45,6 +45,33 @@
             background: linear-gradient(47deg, rgba(86, 204, 242, 1) 0%, rgba(47, 128, 237, 1) 59%);
             color: white;
         }
+
+
+        .login-toast .swal2-content {
+            border: rgb(86, 204, 242) 1px !important;
+            color: black;
+        }
+
+        .colored-toast.swal2-icon-success {
+            background-color: #a5dc86 !important;
+        }
+
+        .colored-toast.swal2-icon-error {
+            background-color: #f27474 !important;
+        }
+
+        .colored-toast .swal2-title {
+            color: white;
+        }
+
+        .colored-toast .swal2-close {
+            color: white;
+        }
+
+        .colored-toast .swal2-content {
+            color: white;
+        }
     </style>
+
 
 </head>
