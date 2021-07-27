@@ -1,6 +1,6 @@
 <?php
 
-class Kategori 
+class Kategori
 {
     public $db;
 
@@ -18,8 +18,8 @@ class Kategori
             exit;
         }
     }
-    
-     /**
+
+    /**
      * Get all kategori from database
      * 
      * return $kategori
@@ -28,7 +28,7 @@ class Kategori
     {
         $sql1 = "Select * from kategori";
         $result = $this->db->query($sql1);
-        $kategori = $result-> fetch_all(MYSQLI_ASSOC);
+        $kategori = $result->fetch_all(MYSQLI_ASSOC);
         return $kategori;
     }
 
@@ -66,9 +66,9 @@ class Kategori
      */
     public function store()
     {
-        $id_kategori = $_POST['id_kategori'];
-        $nama_kategori = $_POST['nama_kategori'];
-        
+        $id_kategori = $this->db->escape_string($_POST['id_kategori']);
+        $nama_kategori = $this->db->escape_string($_POST['nama_kategori']);
+
         //SQL id kategori
         $sql1 = "SELECT id_kategori from kategori
                 WHERE id_kategori = '$id_kategori'";
@@ -78,11 +78,15 @@ class Kategori
         $count_row = $check->num_rows;
 
         //If the id_kategori is not in db then insert to kategori table 
-        if ($count_row == 0){
+        if ($count_row == 0) {
             $sql2 = "INSERT INTO kategori 
                      VALUES('$id_kategori','$nama_kategori')";
-            $result = mysqli_query($this->db,$sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
-            return true;
+            $result = mysqli_query($this->db, $sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
@@ -104,7 +108,7 @@ class Kategori
                  id_kategori = '$id_kategori',
                  nama_kategori = '$nama_kategori'
                  where id_kategori = '$id_kategori_before'";
-        
+
         $query = $this->db->query($sql1);
         $result = $query;
         if ($result) {
@@ -112,7 +116,6 @@ class Kategori
         } else {
             return false;
         }
-
     }
 
     /**
@@ -122,11 +125,18 @@ class Kategori
      */
     public function destroy($id_kategori)
     {
+        $sql = "DELETE FROM menu WHERE id_kategori = '$id_kategori'";
         $sql1 = "DELETE FROM kategori WHERE id_kategori = '$id_kategori'";
-        $query = $this->db->query($sql1);
+        $query = $this->db->query($sql);
         $result = $query;
         if ($result) {
-            return true;
+            $query1 = $this->db->query($sql1);
+            $result1 = $query1;
+            if ($result1) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
