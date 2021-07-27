@@ -79,16 +79,11 @@ class Meja
      * 
      * @return boolean
      */
-    public function store()
+    public function store($id_meja)
     {
+        $total_pelanggan = 0;
+        $status_ketersediaan = "Y";
         $id_meja = $this->db->escape_string($_POST['id_meja']);
-        $total_pelanggan = $this->db->escape_string($_POST['total_pelanggan']);
-        if (empty($_POST['status_ketersediaan'])) {
-            $status_ketersediaan = "N";
-        } else {
-            $status_ketersediaan = "Y";
-        }
-
         //SQL id meja 
         $sql1 = "SELECT id_meja from meja
                 WHERE id_meja = '$id_meja'";

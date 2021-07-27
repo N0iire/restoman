@@ -1,3 +1,4 @@
+
 <div class="col-md-9">
 
     <div class="row" style="margin-top: 10px; margin-left: -20px;">
@@ -21,14 +22,14 @@
                         <form method="POST" enctype="multipart/form-data">
                             <div>
                                 <div class="form-group">
-                                    <label for="nama_menu">Id Meja</label>
-                                    <input type="text" class="form-control" id="id_menu" name="id_menu" required>
+                                    <label for="id_meja">Id Meja</label>
+                                    <input type="text" class="form-control" id="id_meja" name="id_meja" required>
                                 </div>
                             </div>
                             <br><br><br><br>
                             <div>
-                                <input type="submit" name="submit" value="Tambah" class="btn btn-blue">
-                                <input type="submit" name="submit" value="Batal" class="btn btn-secondary ">
+                                <input type="submit" name="Tambah" value="Tambah" class="btn btn-blue">
+                                <input type="reset" name="Batal" value="Batal" class="btn btn-secondary ">
                             </div>
                         </form>
                     </tbody>
@@ -53,52 +54,43 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>8 Orang</td>
-                                <td>
-                                    <a href="#">
-                                        <button class="btn btn-blue btn-block" style="padding: 5px;">
-                                            <span class="icon">
-                                                <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
-                                            </span>
-                                        </button>
-                                    </a>
-                                    <a href="#">
-                                        <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
-                                            <span class="icon">
-                                                <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
-                                            </span>
-                                        </button>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>5 Orang</td>
-                                <td>
-                                    <a href="#">
-                                        <button class="btn btn-blue btn-block" style="padding: 5px;">
-                                            <span class="icon">
-                                                <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
-                                            </span>
-                                        </button>
-                                    </a>
-                                    <a href="#">
-                                        <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
-                                            <span class="icon">
-                                                <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
-                                            </span>
-                                        </button>
-                                    </a>
-                                </td>
-                            </tr>
-
+                                <tr>
+                                    <?php
+                                    $data_meja = $meja->get_all();
+                                    $i = 1;
+                                    foreach ($data_meja as $data) {
+                                    ?>
+                                        <td><?php echo $data['id_meja'] ?></td>
+                                        <td><?php echo $data['total_pelanggan'] ?></td>
+                                        <td>
+                                            <?php
+                                            $encrypt->word = $data['id_meja'];
+                                            $id = $encrypt->encr();
+                                            ?>
+                                            <a href="?p=edit-pegawai&e=<?php echo $id ?>">
+                                                <button class="btn btn-blue btn-block" style="padding: 5px;">
+                                                    <span class="icon">
+                                                        <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
+                                                    </span>
+                                                </button>
+                                            </a>
+                                            <a href="./index.php?d=<?php echo $id ?>" onclick="konfirmasi(event)">
+                                                <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
+                                                    <span class="icon">
+                                                        <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
+                                                    </span>
+                                                </button>
+                                            </a>
+                                        </td>
+                                </tr>   
+                                    <?php
+                                    $i++;
+                                    }
+                                    ?>     
                         </tbody>
                     </table>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

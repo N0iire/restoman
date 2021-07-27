@@ -30,7 +30,7 @@
         }
         ?>
 
-        <a class="nav-link" onclick="keluar(event);" href="#" style="color:black;">
+        <a class="nav-link" onclick="keluar(event);" href="../<?php echo $_SESSION['kategori_p'] ?>-page/index.php?r=logout" style="color:black;">
             <h5>Logout <span><i class="bi bi-power"></i></span></h5>
         </a>
     </div>
