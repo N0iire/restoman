@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     if ($login) {
         header("location: page/" . $kategori . "-page/?msg=login-success");
     } else {
-        return false;
+        header("location: index.php?msg=login-failed");
     }
 }
 
