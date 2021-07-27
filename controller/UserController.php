@@ -150,7 +150,7 @@ class User
         $this->word = $this->db->escape_string($_POST['password']);
         $password = $this->encr();
         $sql = "SELECT id_pegawai FROM pegawai WHERE id_pegawai = '$id'
-            AND password = '$password' AND kategori = '$kategori'
+            AND password = '$password' AND kategori_pegawai = '$kategori'
         ";
         $result = $this->db->query($sql);
         var_dump($result);
