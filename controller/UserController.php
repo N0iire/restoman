@@ -153,6 +153,8 @@ class User
             AND password = '$password' AND kategori = '$kategori'
         ";
         $result = $this->db->query($sql);
+        var_dump($result);
+        exit;
         $user = $result->fetch_assoc();
         $count_row = $result->num_rows;
 
