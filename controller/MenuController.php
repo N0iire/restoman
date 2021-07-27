@@ -26,7 +26,7 @@ class Menu
      */
     public function get_all()
     {
-        $sql1 = "Select * from menu";
+        $sql1 = "SELECT * FROM menu INNER JOIN kategori ON menu.id_kategori = kategori.id_kategori";
         $result = $this->db->query($sql1);
         $menu = $result->fetch_all(MYSQLI_ASSOC);
         return $menu;
@@ -86,7 +86,7 @@ class Menu
         $id_pegawai = $this->db->escape_string($_POST['id_pegawai']);
         $id_kategori = $this->db->escape_string($_POST['id_kategori']);
         $nama_menu = $this->db->escape_string($_POST['nama_menu']);
-        $harga_menu = $_POST['harga_menu'];
+        $harga_menu = $_POST['harga'];
         $stok = $_POST['stok'];
 
         if (empty($_POST['persetujuan'])) {
@@ -97,7 +97,7 @@ class Menu
 
         // Input nama gambar
         $nama_gambar = $_FILES['gambar']['name'];
-        $target_dir = "../assets/images/";
+        $target_dir = "../../assets/images/";
 
         $target_file = $target_dir . basename($_FILES['gambar']['name']);
 
@@ -135,6 +135,8 @@ class Menu
                 } else {
                     return false;
                 }
+            } else {
+                return false;
             }
         }
     }
@@ -150,9 +152,9 @@ class Menu
     {
         $id_menu = $this->db->escape_string($_POST['id_menu']);
         $id_pegawai = $this->db->escape_string($_POST['id_pegawai']);
-        $id_kategori = $this->db->escape_string(['id_kategori']);
+        $id_kategori = $this->db->escape_string($_POST['id_kategori']);
         $nama_menu = $this->db->escape_string($_POST['nama_menu']);
-        $harga_menu = $this->db->escape_string($_POST['harga_menu']);
+        $harga_menu = $this->db->escape_string($_POST['harga']);
         $stok = $this->db->escape_string($_POST['stok']);
         if (empty($_POST['persetujuan'])) {
             $persetujuan = "N";
@@ -163,7 +165,7 @@ class Menu
 
         // Input nama gambar
         $nama_gambar = $_FILES['gambar']['name'];
-        $target_dir = "../assets/images/";
+        $target_dir = "../../assets/images/";
 
         $target_file = $target_dir . basename($_FILES['gambar']['name']);
 
