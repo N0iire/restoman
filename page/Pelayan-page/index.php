@@ -92,6 +92,8 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
                 require_once $_GET['p'] . '.php';
             } else if ($_GET['p'] == 'meja' || $_REQUEST['p'] == 'meja') {
                 require_once  $_GET['p'] . '.php';
+            } else if ($_GET['p'] == 'edit-meja' || $_REQUEST['p'] == 'edit-meja') {
+                require_once  $_GET['p'] . '.php';
             }
             ?>
 
