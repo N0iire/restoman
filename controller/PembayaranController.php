@@ -41,19 +41,22 @@ class Pembayaran
         $result = mysqli_query($this->db, $sql) or die(mysqli_connect_errno() . "Data cannot inserted");
 
         return $result;
-    }
+    }   
 
     /**
-     * Get all data pembayaran
+     * Get view all data pembayaran
      * 
-     * @return $data
+     * @return $bayar
      */
-    public function get_all()
+    public function get_all_bayar()
     {
-        $sql = "SELECT * FROM pembayaran";
-        $result = $this->db->query($sql);
-        $pembayaran = $result->fetch_assoc();
+        $sql1 = "SELECT ps.id_pesanan, ps.atas_nama, ps.id_meja, pb.total_transaksi 
+                 FROM pembayaran pb inner join pesanan ps
+                 on pb.id_pesanan = ps.id_pesanan
+                 order by pb.id_pesanan asc";
+        $result = $this->db->query($sql1);
+        $pembayaran = $result->fetch_all(MYSQLI_ASSOC);
 
-        return $pembayaran;
+        return $pembayaran; 
     }
 }
