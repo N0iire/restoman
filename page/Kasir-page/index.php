@@ -1,5 +1,19 @@
 <!-- header -->
-<?php include '../../header.php' ?>
+<?php
+session_start();
+include '../../header.php';
+include_once('../../model/db_config.php');
+include_once('../../controller/UserController.php');
+
+$user = new User();
+//Logout
+if (isset($_GET['r'])) {
+    if ($_GET['r'] == "logout") {
+        $user->logout();
+        header("location: ../../index.php?msg=logout-success");
+    }
+}
+?>
 
 <body style="background: #fff;">
     <div class="row">
