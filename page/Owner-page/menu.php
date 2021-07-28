@@ -18,51 +18,39 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>placeholder</td>
-                            <td>1</td>
-                            <td>test</td>
-                            <td>61</td>
-                            <td>
-                                <a href="#" onclick="m10(event)">
-                                    <button class="btn btn-red" style="margin-left: 15px; margin-right: 10px;">
-                                        <span class="icon">
-                                            <ion-icon name="close-circle-outline" style="font-size: 30px;"></ion-icon>
-                                        </span>
-                                    </button>
-                                </a>
-                                <a href="#">
-                                    <button class="btn btn-blue" onclick="m09(event)">
-                                        <span class="icon">
-                                            <ion-icon name="checkmark-circle-outline" style="font-size: 30px;"></ion-icon>
-                                        </span>
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>placeholder</td>
-                            <td>2</td>
-                            <td>test</td>
-                            <td>63</td>
-                            <td>
-                                <a href="#">
-                                    <button class="btn btn-red" style="margin-left: 15px; margin-right: 10px;">
-                                        <span class="icon">
-                                            <ion-icon name="close-circle-outline" style="font-size: 30px;"></ion-icon>
-                                        </span>
-                                    </button>
-                                </a>
-                                <a href="#">
-                                    <button class="btn btn-blue">
-                                        <span class="icon">
-                                            <ion-icon name="checkmark-circle-outline" style="font-size: 30px;"></ion-icon>
-                                        </span>
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-
+                        <?php
+                        $data_menu = $menu->get_all();
+                        foreach ($data_menu as $data) {
+                            if ($data['persetujuan'] == "N") {
+                        ?>
+                                <tr>
+                                    <td><img src="../../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 100px; width: auto; border-radius: 15px;"></td>
+                                    <td><?php echo $data['id_menu'] ?></td>
+                                    <td><?php echo $data['nama_menu'] ?></td>
+                                    <td><?php echo $data['nama_kategori'] ?></td>
+                                    <td>
+                                        <?php
+                                        $user->word = $data['id_menu'];
+                                        $id = $user->encr();
+                                        ?>
+                                        <a href="?unacc=<?php echo $id ?>" onclick="m10(event)">
+                                            <button class="btn btn-red" style="margin-left: 15px; margin-right: 10px;">
+                                                <span class="icon">
+                                                    <ion-icon name="close-circle-outline" style="font-size: 30px;"></ion-icon>
+                                                </span>
+                                            </button>
+                                        </a>
+                                        <a href="?acc=<?php echo $id ?>">
+                                            <button class="btn btn-blue" onclick="m09(event)">
+                                                <span class="icon">
+                                                    <ion-icon name="checkmark-circle-outline" style="font-size: 30px;"></ion-icon>
+                                                </span>
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                        <?php }
+                        } ?>
                     </tbody>
                 </table>
             </div>
