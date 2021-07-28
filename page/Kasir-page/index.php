@@ -16,10 +16,7 @@
         $user = new User();
 
         //Pilih clicked
-        if (isset($_GET['p'])) {
-                header("location: ../../index.php?msg=logout-success");
-            }
-        }
+        
         //Logout
         if (isset($_GET['r'])) {
             if ($_GET['r'] == "logout") {

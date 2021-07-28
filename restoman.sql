@@ -117,7 +117,7 @@ VALUES
 ('KS001','Rizky Septiana Abdul Razak','Kasir','/cZeSt7jVVg='),
 ('KK001','Primarazaq N. P. H.','Koki','/cZeSt7jVVg='),
 ('PL001','Angga Cahya Abadi','Pelayan','/cZeSt7jVVg='),
-('PL001','Ikhsan Nurul Rizki','Pelayan','/cZeSt7jVVg=');
+('PL002','Ikhsan Nurul Rizki','Pelayan','/cZeSt7jVVg=');
 
 
 
