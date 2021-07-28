@@ -66,7 +66,7 @@
                                         $encrypt->word = $data['id_meja'];
                                         $id = $encrypt->encr();
                                         ?>
-                                        <a href="?p=edit-pegawai&e=<?php echo $id ?>">
+                                        <a href="?p=edit-meja&e=<?php echo $id ?>">
                                             <button class="btn btn-blue btn-block" style="padding: 5px;">
                                                 <span class="icon">
                                                     <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
