@@ -71,7 +71,7 @@ $data_kategori = $kategori->get_all();
                 <h3>Edit Data Menu</h3>
             </div>
             <div class="card-body">
-                <table id="example" class="table table-borderless">
+                <table id="example" class="table table-borderless table-responsive">
                     <thead>
                         <tr>
                             <th>Gambar</th>
@@ -91,7 +91,7 @@ $data_kategori = $kategori->get_all();
                             $id = $encrypt->encr();
                         ?>
                             <tr>
-                                <td><img src="../../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 100px; width: auto; border-radius: 15px;"></td>
+                                <td><img src="../../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 100px; width: 100px; border-radius: 15px;"></td>
                                 <td><?php echo $data['id_menu'] ?></td>
                                 <td><?php echo $data['nama_kategori'] ?></td>
                                 <td><?php echo $data['nama_menu'] ?></td>
