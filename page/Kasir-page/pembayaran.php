@@ -77,7 +77,7 @@
         <!-- start page content -->
         <div class="card shadow-md ">
             <div class="card-header text-white blue-head">
-                <h3>Data Laporan</h3>
+                <h3>Data Pesanan</h3>
             </div>
 
             <div class="card-body">
@@ -93,83 +93,27 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>test</td>
-                            <td>2812</td>
-                            <td>2</td>
-                            <td>
-                                <a href="#">
-                                    <button class="btn btn-blue btn-block">
-                                        Pilih
-                                    </button>
-                                </a>
-                            </td>
+                            <?php
+                            $data_bayar = $pembayaran->get_all_bayar();
+                            $i = 1;
+                            foreach ($data_bayar as $data) {
+                            ?>
+                                <td><?php echo $data['id_pesanan'] ?></td>
+                                <td><?php echo $data['atas_nama'] ?></td>
+                                <td><?php echo $data['id_meja'] ?></td>
+                                <td><?php echo $data['total_transaksi'] ?></td>
+                                <td>
+                                    <a href="index.php">
+                                        <button class="btn btn-blue btn-block">
+                                            Pilih
+                                        </button>
+                                    </a>
+                                </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>test</td>
-                            <td>1922</td>
-                            <td>4</td>
-                            <td>
-                                <a href="#">
-                                    <button class="btn btn-blue btn-block">
-                                        Pilih
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>test</td>
-                            <td>1922</td>
-                            <td>4</td>
-                            <td>
-                                <a href="#">
-                                    <button class="btn btn-blue btn-block">
-                                        Pilih
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>test</td>
-                            <td>1922</td>
-                            <td>4</td>
-                            <td>
-                                <a href="#">
-                                    <button class="btn btn-blue btn-block">
-                                        Pilih
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>test</td>
-                            <td>1922</td>
-                            <td>4</td>
-                            <td>
-                                <a href="#">
-                                    <button class="btn btn-blue btn-block">
-                                        Pilih
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>test</td>
-                            <td>1922</td>
-                            <td>4</td>
-                            <td>
-                                <a href="#">
-                                    <button class="btn btn-blue btn-block">
-                                        Pilih
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
+                    <?php
+                                $i++;
+                            }
+                    ?>
                     </tbody>
                 </table>
             </div>

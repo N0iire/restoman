@@ -2,16 +2,30 @@
 <?php
 session_start();
 include '../../header.php';
-include_once('../../model/db_config.php');
-include_once('../../controller/UserController.php');
 
-$user = new User();
-//Logout
-if (isset($_GET['r'])) {
-    if ($_GET['r'] == "logout") {
-        $user->logout();
-        header("location: ../../index.php?msg=logout-success");
+
+
+if ($_SESSION['login'] && $_SESSION['kategori_p'] == "kasir") {
+    //Masih Tahap Revisi
+    include_once('../../model/db_config.php');
+    include_once('../../controller/PembayaranController.php');
+    include_once('../../controller/UserController.php');
+    include('../../function/SSL.php');
+
+    $pembayaran = new Pembayaran();
+    $user = new User();
+
+    //Pilih clicked
+
+    //Logout
+    if (isset($_GET['r'])) {
+        if ($_GET['r'] == "logout") {
+            $user->logout();
+            header("location: ../../index.php?msg=logout-success");
+        }
     }
+} else {
+    header("location: ../../index.php?msg=login-auth");
 }
 ?>
 

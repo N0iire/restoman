@@ -43,7 +43,7 @@ CREATE TABLE `menu` (
   `gambar` VARCHAR(30) DEFAULT NULL,
   `harga_menu` INT DEFAULT NULL,
   `stok` INT DEFAULT NULL,
-  `persetujuan` ENUM('Y','N') DEFAULT NULL,
+  `status` ENUM('Y','N') DEFAULT NULL,
   PRIMARY KEY (`id_menu`),
   KEY `FK_menu_1` (`id_pegawai`),
   KEY `FK_menu_2` (`id_kategori`),
@@ -111,7 +111,13 @@ CREATE TABLE `pembayaran` (
   CONSTRAINT `FK_pembayaran_2` FOREIGN KEY (`id_pegawai`) REFERENCES `pegawai` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=INNODB;
 
-
+INSERT INTO pegawai 
+VALUES
+('OW001','Reichan Muhammad Maulana','Owner','/cZeSt7jVVg='),
+('KS001','Rizky Septiana Abdul Razak','Kasir','/cZeSt7jVVg='),
+('KK001','Primarazaq N. P. H.','Koki','/cZeSt7jVVg='),
+('PL001','Angga Cahya Abadi','Pelayan','/cZeSt7jVVg='),
+('PL002','Ikhsan Nurul Rizki','Pelayan','/cZeSt7jVVg=');
 
 
 
