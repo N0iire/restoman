@@ -6,9 +6,11 @@ include '../../header.php';
 
 if ($_SESSION['login'] && $_SESSION['kategori_p'] == "owner") {
     include_once('../../model/db_config.php');
+    include_once('../../controller/MenuController.php');
     include_once('../../controller/UserController.php');
 
     $user = new User();
+    $menu = new Menu();
 
     if (isset($_POST['store'])) {
         $id_pegawai = $user->db->escape_string($_POST['id_pegawai']);
@@ -53,6 +55,27 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "owner") {
             // If Success Sweet Alert Here
         } else {
             // If Failed Sweet Alert Here
+        }
+    }
+
+    if (isset($_GET['unacc'])) {
+        $user->word = $_GET['unacc'];
+        $id_for_delete = $user->decr();
+        if ($menu->destroy($id_for_delete)) {
+            header("location: index.php?p=menu&msg=unacc-success");
+            // If Success Sweet Alert Here
+        } else {
+            header("location: index.php?p=menu&msg=unacc-failed");
+        }
+    }
+
+    if (isset($_GET['acc'])) {
+        $user->word = $_GET['acc'];
+        $id_for_acc = $user->decr();
+        if ($menu->acc($id_for_acc)) {
+            header("location: index.php?p=menu&msg=acc-success");
+        } else {
+            header("location: index.php?p=menu&msg=acc-failed");
         }
     }
 
