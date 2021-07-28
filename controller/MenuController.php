@@ -33,17 +33,17 @@ class Menu
     }
 
     /**
-     * Get Unaccepted menus
+     * Acc Menu
      * 
-     * @return $menu_unacc[]
+     * @param $id
+     * @return boolean
      */
-    public function unacc()
+    public function acc($id)
     {
-        $sql = "Select * from menu where persetujuan = 'N'";
+        $sql = "UPDATE menu SET persetujuan = 'Y' WHERE id_menu = '$id'";
         $result = $this->db->query($sql);
-        $menu_unacc = $result->fetch_all(MYSQLI_ASSOC);
 
-        return $menu_unacc;
+        return $result;
     }
 
     /**
