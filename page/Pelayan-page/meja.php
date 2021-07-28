@@ -1,4 +1,3 @@
-
 <div class="col-md-9">
 
     <div class="row" style="margin-top: 10px; margin-left: -20px;">
@@ -28,7 +27,7 @@
                             </div>
                             <br><br><br><br>
                             <div>
-                                <input type="submit" name="Tambah" value="Tambah" class="btn btn-blue">
+                                <input type="submit" name="tambah_menu" value="Tambah" class="btn btn-blue">
                                 <input type="reset" name="Batal" value="Batal" class="btn btn-secondary ">
                             </div>
                         </form>
@@ -54,39 +53,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                                <tr>
-                                    <?php
-                                    $data_meja = $meja->get_all();
-                                    $i = 1;
-                                    foreach ($data_meja as $data) {
-                                    ?>
-                                        <td><?php echo $data['id_meja'] ?></td>
-                                        <td><?php echo $data['total_pelanggan'] ?></td>
-                                        <td>
-                                            <?php
-                                            $encrypt->word = $data['id_meja'];
-                                            $id = $encrypt->encr();
-                                            ?>
-                                            <a href="?p=edit-pegawai&e=<?php echo $id ?>">
-                                                <button class="btn btn-blue btn-block" style="padding: 5px;">
-                                                    <span class="icon">
-                                                        <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
-                                                    </span>
-                                                </button>
-                                            </a>
-                                            <a href="./index.php?d=<?php echo $id ?>" onclick="konfirmasi(event)">
-                                                <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
-                                                    <span class="icon">
-                                                        <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
-                                                    </span>
-                                                </button>
-                                            </a>
-                                        </td>
-                                </tr>   
-                                    <?php
+                            <tr>
+                                <?php
+                                $data_meja = $meja->get_all();
+                                $i = 1;
+                                foreach ($data_meja as $data) {
+                                ?>
+                                    <td><?php echo $data['id_meja'] ?></td>
+                                    <td><?php echo $data['total_pelanggan'] ?></td>
+                                    <td>
+                                        <?php
+                                        $encrypt->word = $data['id_meja'];
+                                        $id = $encrypt->encr();
+                                        ?>
+                                        <a href="?p=edit-pegawai&e=<?php echo $id ?>">
+                                            <button class="btn btn-blue btn-block" style="padding: 5px;">
+                                                <span class="icon">
+                                                    <ion-icon name="create-outline" style="font-size: 25px;"></ion-icon>
+                                                </span>
+                                            </button>
+                                        </a>
+                                        <a href="./index.php?d=<?php echo $id ?>" onclick="konfirmasi(event)">
+                                            <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
+                                                <span class="icon">
+                                                    <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
+                                                </span>
+                                            </button>
+                                        </a>
+                                    </td>
+                            </tr>
+                        <?php
                                     $i++;
-                                    }
-                                    ?>     
+                                }
+                        ?>
                         </tbody>
                     </table>
                 </div>
