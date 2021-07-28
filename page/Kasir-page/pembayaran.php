@@ -103,7 +103,7 @@
                                     <td><?php echo $data['id_meja'] ?></td>
                                     <td><?php echo $data['total_transaksi']?></td>
                                     <td>
-                                        <a href="index.php<?php echo $id?>">
+                                        <a href="index.php">
                                             <button class="btn btn-blue btn-block">
                                                 Pilih
                                             </button>

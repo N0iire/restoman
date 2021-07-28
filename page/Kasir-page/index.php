@@ -17,6 +17,8 @@
 
         //Pilih clicked
         if (isset($_GET['p'])) {
+            if ($_GET['r'] == "logout") {
+                $user->logout();
                 header("location: ../../index.php?msg=logout-success");
             }
         }
