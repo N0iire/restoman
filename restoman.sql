@@ -28,7 +28,6 @@ CREATE TABLE `pesanan` (
   `id_pegawai` VARCHAR(10) DEFAULT NULL,
   `id_meja` INT DEFAULT NULL,
   `atas_nama` VARCHAR(50) DEFAULT NULL,
-  `status_pesanan` ENUM('Y','N') DEFAULT NULL,
   `status_pembayaran` ENUM('Y','N') DEFAULT NULL,
   PRIMARY KEY (`id_pesanan`),
   KEY `FK_pesanan_1` (`id_pegawai`),
