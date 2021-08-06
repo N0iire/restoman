@@ -49,7 +49,7 @@ $data_edit = $user->view($id_for_edit);
                         <br><br><br>
                         <div>
                             <input type="submit" name="edit" value="Edit" class="btn btn-blue">
-                            <input type="reset" name="reset" value="Batal" class="btn btn-secondary ">
+                            <input type="button" name="Batal" value="Batal" class="btn btn-secondary " onclick="location.href='?p=pegawai';">
                         </div>
                     </form>
                 </tbody>

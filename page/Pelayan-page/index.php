@@ -32,6 +32,25 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
         }
     }
 
+    //Get id meja
+    if (isset($_GET['e'])) {
+        $encrypt->word = $_GET['e'];
+        $id_for_edit = $encrypt->decr();
+    }
+
+    if (isset($_POST['edit_meja'])) {
+        $id_meja = $meja->db->escape_string($_POST['id_meja']);
+
+        $meja->word = $id_meja;
+        $id = $encrypt->encr();
+        if ($meja->update($id_for_edit)) {
+            header("location: index.php?p=edit-meja&e=" . $id . "&msg=edit-success");
+            // If Success Sweet Alert Here
+        } else {
+            // If Failed Sweet Alert Here
+        }
+    }
+
     //Hapus Meja 
     if (isset($_GET['d'])) {
         $encrypt->word = $_GET['d'];
