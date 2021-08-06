@@ -43,7 +43,7 @@ if (isset($_SESSION['cart'])) {
                 <?php
                 $data_m = $menu->get_all();
                 foreach ($data_m as $data) {
-                    if ($data['persetujuan'] == "Y") {
+                    if ($data['status'] == "Y") {
                 ?>
                         <div class="col-md-4 mb-1 ">
                             <div class="container ">

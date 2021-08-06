@@ -21,7 +21,7 @@
                         <?php
                         $data_menu = $menu->get_all();
                         foreach ($data_menu as $data) {
-                            if ($data['persetujuan'] == "N") {
+                            if ($data['status'] == "N") {
                         ?>
                                 <tr>
                                     <td><img src="../../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 100px; width: auto; border-radius: 15px;"></td>
