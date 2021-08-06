@@ -119,9 +119,9 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
             <?php
             if (!isset($_GET['p'])) {
                 require_once 'pemesanan.php';
-                echo "<script> const Toast = Swal.mixin({
+                echo "<script> const Msg = Swal.mixin({
                     toast: true,
-                    position: 'top-start',
+                    position: 'top-end',
                     showConfirmButton: false,
                     timer: 3000,
                     timerProgressBar: true,
@@ -132,7 +132,7 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
                 })
         
                
-                    Toast.fire({
+                    Msg.fire({
                         icon: 'success',
                         title: 'Login berhasil'
                     })
