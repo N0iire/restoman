@@ -140,7 +140,7 @@ if (isset($_SESSION['cart'])) {
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="submit" value="Bayar Pesanan" name="bayar" onclick="inputMenu();" class="btn btn-red btn-block">
+                                        <input type="submit" value="Pesan" name="bayar" class="btn btn-red btn-block">
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@ if (isset($_SESSION['cart'])) {
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="submit" value="Bayar Pesanan" name="bayar" onclick="inputMenu();" class="btn btn-red btn-block">
+                                <input type="submit" value="Pesan" name="bayar" onclick="inputMenu();" class="btn btn-red btn-block">
                             </div>
                         </div>
                     </div>
