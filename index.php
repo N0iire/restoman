@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
 
     $login = $user->login($id, $password, $kategori);
     if ($login) {
-        header("location: page/" . $kategori . "-page/index.php?p=login-success");
+        header("location: page/" . $kategori . "-page/index.php?msg=login-success");
     } else {
         header("location: index.php?msg=login-failed");
     }
