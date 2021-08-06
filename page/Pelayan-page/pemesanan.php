@@ -64,85 +64,145 @@ if (isset($_SESSION['cart'])) {
                 } ?>
 
                 <!-- CART  -->
-                <!-- if (!empty($_SESSION['cart'])) { -->
-                <div class="col-md-3" style="position: fixed; margin-left:50%;">
-                    <div class="card cart" style="border-radius: 15px;">
-                        <div class="card-header cart blue-head text-white pl-2 p-1" style="height: 90px;;">
-                            <h4>Pesan Baru</h4>
-                            <small><?php echo count($cart); ?> pesanan dalam keranjang </small>
-                        </div>
-                        <div class="card-body">
-                            <?php
-                            for ($i = 0; $i < count($cart); $i++) {
-                                $total = $_SESSION['cart'][$i]['harga'] * $_SESSION['cart'][$i]['pembelian'];
-                                $total_bayar += $total;
-                            ?>
+
+                <?php
+                if (!empty($_SESSION['cart'])) {
+
+                ?>
+                    <div class="col-md-3" style="position: fixed; margin-left:50%;">
+                        <div class="card cart" style="border-radius: 15px;">
+                            <div class="card-header cart blue-head text-white pl-2 p-1" style="height: 90px;;">
+                                <h4>Pesan Baru</h4>
+                                <small><?php echo count($cart); ?> pesanan dalam keranjang </small>
+                            </div>
+                            <div class="card-body">
+                                <?php
+                                for ($i = 0; $i < count($cart); $i++) {
+                                    $total = $_SESSION['cart'][$i]['harga'] * $_SESSION['cart'][$i]['pembelian'];
+                                    $total_bayar += $total;
+                                ?>
+                                    <div class="row">
+                                        <div class="col-md-1" style="padding-top:5px; margin-right:5px;">
+                                            <a href="?index=<?= $index; ?>"><i class=" bi bi-trash align-self-center" style="font-size:1.5rem;  color:red !important;"></i></a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span><b><?php echo $cart[$i]['nama_menu'] ?></b></span><br>
+                                            <small>Rp. <?php echo $cart[$i]['harga'] ?></small>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input class="form-control float-right" style="width: 65px; height: 42px; text-align: center;" value="<?php echo $cart[$i]['pembelian']; ?>" type="number" name="jumlah" min="1" max="<?php echo $cart[$i]['pembelian']; ?>">
+                                        </div>
+                                    </div>
+                                <?php $index++;
+                                }
+                                // hapus produk dalam cart
+                                if (isset($_GET['index'])) {
+                                    $cart = unserialize(serialize($_SESSION['cart']));
+                                    unset($cart[$_GET['index']]);
+                                    $cart = array_values($cart);
+                                    $_SESSION['cart'] = $cart;
+                                }
+                                ?>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row mb-1">
+                                    <div class="col-md-12 pull-left">
+                                        <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
+                                    </div>
+
+                                </div>
+                                <div class="row mb-1">
+                                    <div class="col-md-4 float-left">
+                                        <small>Total <br>Pelanggan</small>
+                                    </div>
+                                    <div class="col-sm-3" style="margin-right: 10px;">
+                                        <input class="form-control" style="width: 70px; height:37px;" type="number" name="pembeli">
+                                    </div>
+
+
+                                    <div class=" col-sm-2 pull-left">
+                                        <select class="form-select" style=" width: 87px; padding-right: 7px;" aria-label="Default select example">
+                                            <option selected>Meja</option>
+                                            <option value="owner">1</option>
+                                            <option value="pelayan">2</option>
+                                            <option value="koki">3</option>
+                                            <option value="kasir">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-1">
+                                    <div class="col-md-6 float-left">
+                                        <h4>Total :</h4>
+                                    </div>
+                                    <div class=" col-md-6 text-right">
+                                        Rp. <?php echo $total_bayar; ?>
+                                    </div>
+                                </div>
                                 <div class="row">
-                                    <div class="col-md-1" style="padding-top:5px; margin-right:5px;">
-                                        <a href="?index=<?= $index; ?>""><i class=" bi bi-trash align-self-center" style="font-size:1.5rem;  color:red !important;"></i></a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span><b><?php echo $cart[$i]['nama_menu'] ?></b></span><br>
-                                        <small>Rp. <?php echo $cart[$i]['harga'] ?></small>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input class="form-control float-right" style="width: 50px; text-align: center;" value="<?php echo $cart[$i]['pembelian']; ?>" type="number" name="jumlah" min="1" max="<?php echo $cart[$i]['pembelian']; ?>">
+                                    <div class="col-md-12">
+                                        <input type="submit" value="Bayar Pesanan" name="bayar" onclick="inputMenu();" class="btn btn-red btn-block">
                                     </div>
                                 </div>
-                            <?php $index++;
-                            }
-                            // hapus produk dalam cart
-                            if (isset($_GET['index'])) {
-                                $cart = unserialize(serialize($_SESSION['cart']));
-                                unset($cart[$_GET['index']]);
-                                $cart = array_values($cart);
-                                $_SESSION['cart'] = $cart;
-                            }
-                            ?>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                            <div class="row mb-1">
-                                <div class="col-md-12 pull-left">
-                                    <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
-                                </div>
+                    </div>
 
+            </div>
+        <?php
+                } else {
+        ?>
+
+            <div class="col-md-3" style="position: fixed; margin-left:50%;">
+                <div class="card cart" style="border-radius: 15px;">
+                    <div class="card-header cart blue-head text-white pl-2 p-1" style="height: 90px;;">
+                        <h4>Pesan Baru</h4>
+                        <small> 0 pesanan dalam keranjang </small>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row mb-1">
+                            <div class="col-md-12 pull-left">
+                                <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
                             </div>
-                            <div class="row mb-1">
-                                <div class="col-md-4 float-left">
-                                    <small>Total <br>Pelanggan</small>
-                                </div>
-                                <div class="col-sm-3" style="margin-right: 10px;">
-                                    <input class="form-control" style="width: 70px; height:37px;" type="number" name="pembeli">
-                                </div>
+
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col-md-4 float-left">
+                                <small>Total <br>Pelanggan</small>
+                            </div>
+                            <div class="col-sm-3" style="margin-right: 10px;">
+                                <input class="form-control" style="width: 70px; height:37px;" type="number" name="pembeli">
+                            </div>
 
 
-                                <div class=" col-sm-2 pull-left">
-                                    <select class="form-select" style=" width: 87px; padding-right: 7px;" aria-label="Default select example">
-                                        <option selected>Meja</option>
-                                        <option value="owner">1</option>
-                                        <option value="pelayan">2</option>
-                                        <option value="koki">3</option>
-                                        <option value="kasir">4</option>
-                                    </select>
-                                </div>
+                            <div class=" col-sm-2 pull-left">
+                                <select class="form-select" style=" width: 87px; padding-right: 7px;" aria-label="Default select example">
+                                    <option selected>Meja</option>
+                                    <option value="owner">1</option>
+                                    <option value="pelayan">2</option>
+                                    <option value="koki">3</option>
+                                    <option value="kasir">4</option>
+                                </select>
                             </div>
-                            <div class="row mb-1">
-                                <div class="col-md-6 float-left">
-                                    <h4>Total :</h4>
-                                </div>
-                                <div class=" col-md-6 text-right">
-                                    Rp. <?php echo $total_bayar; ?>
-                                </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col-md-6 float-left">
+                                <h4>Total :</h4>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" value="Bayar Pesanan" name="bayar" onclick="inputMenu();" class="btn btn-red btn-block">
-                                </div>
+                            <div class=" col-md-6 text-right">
+                                Rp. 0
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="submit" value="Bayar Pesanan" name="bayar" onclick="inputMenu();" class="btn btn-red btn-block">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        <?php
+                }
+        ?>
 
         </div>
     </div>
