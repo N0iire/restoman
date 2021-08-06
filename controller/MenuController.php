@@ -186,7 +186,7 @@ class Menu
                  gambar = '$nama_gambar',
                  harga_menu = '$harga_menu',
                  stok = '$stok',
-                 persetujuan = '$persetujuan'
+                 status = '$persetujuan'
                  where id_menu = '$id_menu_before'";
             }
         }
