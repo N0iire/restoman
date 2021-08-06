@@ -51,7 +51,9 @@ class Detail_pesanan
      */
     public function view($id_pesanan)
     {
-        $sql1 = "SELECT * FROM detail_pesanan WHERE id_pesanan = '$id_pesanan'";
+        $sql1 = "SELECT a.id_pesanan, a.jumlah, a.sub_total, b.nama_menu FROM detail_pesanan a 
+            INNER JOIN menu b ON a.id_menu = b.id_menu
+            WHERE a.id_pesanan = '$id_pesanan'";
         $result = $this->db->query($sql1);
         $detail_pesanan = $result->fetch_all(MYSQLI_ASSOC);
 

@@ -10,11 +10,15 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "koki") {
     include_once("../../controller/KategoriController.php");
     include_once("../../controller/MenuController.php");
     include_once("../../controller/UserController.php");
+    include_once("../../controller/PesananController.php");
+    include_once("../../controller/DetailPesananController.php");
 
     $encrypt = new SSL();
     $kategori = new Kategori();
     $menu = new Menu();
     $user = new User();
+    $pesanan = new Pesanan();
+    $detail_pesanan = new Detail_pesanan();
 
     if (isset($_GET['e'])) {
         $encrypt->word = $_GET['e'];
