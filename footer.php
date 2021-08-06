@@ -141,11 +141,13 @@
 
     })
 
+    function sukses() {
+        Info.fire({
+            icon: 'success',
+            title: 'Login sukses'
+        })
+    }
 
-    Info.fire({
-        icon: 'success',
-        title: 'Login sukses'
-    })
 
 
     //toast info

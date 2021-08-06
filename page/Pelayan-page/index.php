@@ -119,6 +119,25 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
             <?php
             if (!isset($_GET['p'])) {
                 require_once 'pemesanan.php';
+                echo "<script> const Msg = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+        
+               
+                    Msg.fire({
+                        icon: 'success',
+                        title: 'Login berhasil'
+                    })
+                    </script>
+                ";
             } else if ($_GET['p'] == 'pemesanan') {
                 require_once $_GET['p'] . '.php';
             } else if ($_GET['p'] == 'meja' || $_REQUEST['p'] == 'meja') {
@@ -126,6 +145,7 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
             } else if ($_GET['p'] == 'edit-meja' || $_REQUEST['p'] == 'edit-meja') {
                 require_once  $_GET['p'] . '.php';
             }
+
             ?>
 
         </div>

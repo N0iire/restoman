@@ -10,7 +10,7 @@
                 <table id="example" class="table table-borderless">
                     <thead>
                         <tr>
-                            <th>Gambar</th>
+                            <th style="width: 100px;">Gambar</th>
                             <th>ID Menu </th>
                             <th>Nama Menu</th>
                             <th>Kategori Menu</th>
@@ -24,7 +24,7 @@
                             if ($data['status'] == "N") {
                         ?>
                                 <tr>
-                                    <td><img src="../../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 100px; width: auto; border-radius: 15px;"></td>
+                                    <td><img src="../../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 100px; width: 100px; border-radius: 15px;"></td>
                                     <td><?php echo $data['id_menu'] ?></td>
                                     <td><?php echo $data['nama_menu'] ?></td>
                                     <td><?php echo $data['nama_kategori'] ?></td>
