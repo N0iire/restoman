@@ -27,15 +27,17 @@ class Pesanan
      */
     public function store()
     {
-        $id_pegawai = $this->db->escape_string($_POST['id_pegawai']);
+        $id_pegawai = $_SESSION['id'];
         $id_meja = $this->db->escape_string($_POST['id_meja']);
-        $atas_nama = $this->db->escape_string($_POST['atas_nama']);
+        $atas_nama = $this->db->escape_string($_POST['pembeli']);
+        $status = "N";
 
-        $sql = "INSERT INTO pesanan(`id_pegawai`, `id_meja`, `atas_nama`)
+        $sql = "INSERT INTO pesanan(`id_pegawai`, `id_meja`, `atas_nama`, `status_pembayaran`)
                 VALUES(
                     '$id_pegawai',
                     '$id_meja',
-                    '$atas_nama'
+                    '$atas_nama',
+                    '$status'
                 )";
         $result = mysqli_query($this->db, $sql) or die(mysqli_connect_errno() . "Data cannot inserted");
 
