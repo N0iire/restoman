@@ -64,21 +64,15 @@ class Detail_pesanan
      * 
      * @return boolean
      */
-    public function store()
+    public function store($id_pesanan, $id_menu, $jumlah, $sub_total)
     {
-        $id_pesanan = $this->db->escape_string($_POST['id_pesanan']);
-        $id_menu = $this->db->escape_string($_POST['id_kategori']);
-        $jumlah = $this->db->escape_string($_POST['jumlah']);
-        $sub_total = $this->db->escape_string($_POST['sub_total']);
-
-
-            $sql2 = "INSERT INTO detail_pesanan
+        $sql2 = "INSERT INTO detail_pesanan
                      VALUES('$id_pesanan','$id_menu','$jumlah','$sub_total')";
-            $result = mysqli_query($this->db, $sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
-            if ($result) {
-                return true;
-            } else {
-                return false;
-            }
+        $result = mysqli_query($this->db, $sql2) or die(mysqli_connect_errno() . "Data cannot inserted");
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

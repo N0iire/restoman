@@ -105,44 +105,47 @@ if (isset($_SESSION['cart'])) {
                                 ?>
                             </div>
                             <div class="card-footer">
-                                <div class="row mb-1">
-                                    <div class="col-md-12 pull-left">
-                                        <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
+                                <form action="" method="POST">
+                                    <div class="row mb-1">
+                                        <div class="col-md-12 pull-left">
+                                            <input class="form-control" type="text" name="pembeli" placeholder="Atasnama Pembeli">
+                                        </div>
                                     </div>
+                                    <div class="row mb-1">
+                                        <div class="col-md-4 float-left">
+                                            <small>Total <br>Pelanggan</small>
+                                        </div>
+                                        <div class="col-sm-3" style="margin-right: 10px;">
+                                            <input class="form-control" style="width: 70px; height:37px;" type="number" name="jumlah_pelanggan" required>
+                                        </div>
 
-                                </div>
-                                <div class="row mb-1">
-                                    <div class="col-md-4 float-left">
-                                        <small>Total <br>Pelanggan</small>
-                                    </div>
-                                    <div class="col-sm-3" style="margin-right: 10px;">
-                                        <input class="form-control" style="width: 70px; height:37px;" type="number" name="pembeli">
-                                    </div>
 
-
-                                    <div class=" col-sm-2 pull-left">
-                                        <select class="form-select" style=" width: 87px; padding-right: 7px;" aria-label="Default select example">
-                                            <option selected>Meja</option>
-                                            <option value="owner">1</option>
-                                            <option value="pelayan">2</option>
-                                            <option value="koki">3</option>
-                                            <option value="kasir">4</option>
-                                        </select>
+                                        <div class=" col-sm-2 pull-left">
+                                            <select name="id_meja" class="form-select" style=" width: 87px; padding-right: 7px;" aria-label="Default select example" required>
+                                                <option value="">Meja</option>
+                                                <?php
+                                                $data_meja = $meja->get_all();
+                                                foreach ($data_meja as $data) {
+                                                ?>
+                                                    <option value="<?php echo $data['id_meja'] ?>"><?php echo $data['id_meja'] ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
                                     </div>
+                                    <div class="row mb-1">
+                                        <div class="col-md-6 float-left">
+                                            <h4>Total :</h4>
+                                        </div>
+                                        <div class=" col-md-6 text-right">
+                                            Rp. <?php echo $total_bayar; ?>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="submit" value="Pesan" name="bayar" class="btn btn-red btn-block">
                                 </div>
-                                <div class="row mb-1">
-                                    <div class="col-md-6 float-left">
-                                        <h4>Total :</h4>
-                                    </div>
-                                    <div class=" col-md-6 text-right">
-                                        Rp. <?php echo $total_bayar; ?>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <input type="submit" value="Pesan" name="bayar" class="btn btn-red btn-block">
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -175,12 +178,14 @@ if (isset($_SESSION['cart'])) {
 
 
                             <div class=" col-sm-2 pull-left">
-                                <select class="form-select" style=" width: 87px; padding-right: 7px;" aria-label="Default select example">
-                                    <option selected>Meja</option>
-                                    <option value="owner">1</option>
-                                    <option value="pelayan">2</option>
-                                    <option value="koki">3</option>
-                                    <option value="kasir">4</option>
+                                <select class="form-select" style=" width: 87px; padding-right: 7px;" aria-label="Default select example" required>
+                                    <option value="">Meja</option>
+                                    <?php
+                                    $data_meja = $meja->get_all();
+                                    foreach ($data_meja as $data) {
+                                    ?>
+                                        <option value="<?php echo $data['id_meja'] ?>"><?php echo $data['id_meja'] ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
