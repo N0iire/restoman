@@ -18,20 +18,22 @@
                     <?php
                     $data_pesanan = $pesanan->get_all();
                     foreach ($data_pesanan as $data) {
+                        if ($data['status_pembayaran'] == "N") {
                     ?>
-                        <tr>
-                            <td><?php echo $data['id_pesanan'] ?></td>
-                            <td><?php echo $data['atas_nama'] ?></td>
-                            <td><?php echo $data['id_meja'] ?></td>
-                            <td>
-                                <a href="?id=<?php echo $data['id_pesanan'] ?>">
-                                    <button class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModalCenter">
-                                        Detail Pesanan
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                    <?php } ?>
+                            <tr>
+                                <td><?php echo $data['id_pesanan'] ?></td>
+                                <td><?php echo $data['atas_nama'] ?></td>
+                                <td><?php echo $data['id_meja'] ?></td>
+                                <td>
+                                    <a href="?id=<?php echo $data['id_pesanan'] ?>">
+                                        <button class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModalCenter">
+                                            Detail Pesanan
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
+                    <?php }
+                    } ?>
                 </tbody>
             </table>
         </div>
