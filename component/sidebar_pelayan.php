@@ -36,7 +36,7 @@
             <li class="list">
             <b></b>
             <b></b>
-            <a href="index.php?p=pemesanan">
+            <a href="index.php">
                 <span class="icon">
                     <ion-icon name="fast-food-outline"></ion-icon>
                 </span>

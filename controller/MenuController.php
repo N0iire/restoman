@@ -45,7 +45,15 @@ class Menu
 
         return $result;
     }
+    //get kategori 
+    public function categorize($kategori)
+    {
+        $sql1 = "SELECT * FROM menu WHERE id_kategori = '$kategori'";
+        $result = $this->db->query($sql1);
+        $menu = $result->fetch_all(MYSQLI_ASSOC);
 
+        return $menu;
+    }
     /**
      * Get count menu from database
      * 

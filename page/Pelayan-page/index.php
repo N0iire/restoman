@@ -28,9 +28,9 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
 
         $tambah = $meja->store($id_meja);
         if ($tambah) {
-            header("location: index.php?p=meja&?msg=store_success");
+            header("location: index.php?p=meja&msg=store-success");
         } else {
-            header("location: index.php?p=meja&?msg=store_failed");
+            header("location: index.php?p=meja&msg=store-failed");
         }
     }
 
@@ -52,6 +52,7 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
             // If Failed Sweet Alert Here
         }
     }
+
 
     //tampil kategori di sidebar
     if (isset($_GET['k'], $_GET['i'])) {
@@ -174,25 +175,6 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
             <?php
             if (!isset($_GET['p'])) {
                 require_once 'pemesanan.php';
-                echo "<script> const Msg = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
-        
-               
-                    Msg.fire({
-                        icon: 'success',
-                        title: 'Login berhasil'
-                    })
-                    </script>
-                ";
             } else if ($_GET['p'] == 'pemesanan') {
                 require_once $_GET['p'] . '.php';
             } else if ($_GET['p'] == 'meja' || $_REQUEST['p'] == 'meja') {
