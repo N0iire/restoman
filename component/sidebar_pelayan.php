@@ -2,7 +2,7 @@
     <ul>
         <!-- isset sidebar pengelolaan pesanan -->
         <?php
-        if (!isset($_GET['p'])) {
+        if (!isset($_GET['p']) || isset($_GET['p']) == 'pemesanan' || isset($_GET['p']) == 'pemesanan') {
             echo '  <li class="list">
             <b></b>
             <b></b>
@@ -40,7 +40,7 @@
             <li class="list">
             <b></b>
             <b></b>
-            <a href="index.php">
+            <a href="index.php?p=pemesanan">
                 <span class="icon">
                     <ion-icon name="fast-food-outline"></ion-icon>
                 </span>
