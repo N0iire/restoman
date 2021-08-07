@@ -8,7 +8,7 @@ class SSL
     public $option = 0;
     // Non-NULL Initialization Vector for encryption
     public $encryption_iv = '1234567891011121';
-    private $encryption_key = "r3st0manbuatans2";
+    private $encryption_key = "r3st0manbuatans1";
 
     /**
      * Encrypting
