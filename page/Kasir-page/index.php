@@ -9,11 +9,17 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "kasir") {
     //Masih Tahap Revisi
     include_once('../../model/db_config.php');
     include_once('../../controller/PembayaranController.php');
+    include_once('../../controller/MejaController.php');
+    include_once('../../controller/PesananController.php');
     include_once('../../controller/UserController.php');
+    include_once('../../controller/DetailPesananController.php');
     include('../../function/SSL.php');
 
     $pembayaran = new Pembayaran();
     $user = new User();
+    $detail_pesanan = new Detail_pesanan();
+    $meja = new Meja();
+    $pesanan = new Pesanan();
 
     //Pilih clicked
 
@@ -22,6 +28,17 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "kasir") {
         if ($_GET['r'] == "logout") {
             $user->logout();
             header("location: ../../index.php?msg=logout-success");
+        }
+    }
+
+    // Checkout
+    if ($_POST['bayar']) {
+        if ($pembayaran->store()) {
+            $pesanan->statusY($_POST['id_pesanan']);
+            $meja->statusY($_POST['id_meja']);
+            header("location: index.php?msg=pembayaran-success");
+        } else {
+            header("location: index.php?msg=pembayaran-failed");
         }
     }
 } else {
