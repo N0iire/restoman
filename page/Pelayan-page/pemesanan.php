@@ -1,8 +1,9 @@
 <?php
+
 if (isset($_POST['tambah'])) {
     $id_menu = $_POST['id_menu'];
     $pembelian = $_POST['pembelian'];
-    $data_menu = $menu->view($id_menu);
+    $view_menu = $menu->view($id_menu);
 
     if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
 
@@ -22,8 +23,8 @@ if (isset($_POST['tambah'])) {
     if ($index == -1) {
         $_SESSION['cart'][] = [
             'id_menu' => $id_menu,
-            'nama_menu' => $data_menu['nama_menu'],
-            'harga' => $data_menu['harga_menu'],
+            'nama_menu' => $view_menu['nama_menu'],
+            'harga' => $view_menu['harga_menu'],
             'pembelian' => $pembelian
         ];
     }
@@ -183,9 +184,12 @@ if (isset($_SESSION['cart'])) {
                                     <?php
                                     $data_meja = $meja->get_all();
                                     foreach ($data_meja as $data) {
+                                        if ($data['status_ketersediaan'] == "Y") {
                                     ?>
-                                        <option value="<?php echo $data['id_meja'] ?>"><?php echo $data['id_meja'] ?></option>
-                                    <?php } ?>
+                                            <option value="<?php echo $data['id_meja'] ?>"><?php echo $data['id_meja'] ?></option>
+                                    <?php
+                                        }
+                                    } ?>
                                 </select>
                             </div>
                         </div>
