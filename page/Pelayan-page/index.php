@@ -89,6 +89,8 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
             $total_bayar += $cart[$i]['pembelian'] * $cart[$i]['harga'];
         }
         $store_pesanan = $pesanan->store();
+        $meja->anggota($_POST['id_meja']);
+        $meja->status($_POST['id_meja']);
         if ($store_pesanan) {
             $sql = "SELECT id_pesanan FROM pesanan ORDER BY id_pesanan DESC LIMIT 1";
             $query = $detail_pesanan->db->query($sql);

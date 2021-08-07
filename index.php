@@ -2,12 +2,15 @@
 session_start();
 include_once('model/db_config.php');
 include_once('controller/UserController.php');
+include_once('function/SSL.php');
 
 if (isset($_POST['submit'])) {
     $user = new User();
+    $encry = new SSL();
 
     $id = $user->db->escape_string($_POST['id_pegawai']);
-    $password = $user->db->escape_string($_POST['password']);
+    $encry->word = $user->db->escape_string($_POST['password']);
+    $password = $encry->encr();
     $kategori = $user->db->escape_string($_POST['kategori']);
 
     $login = $user->login($id, $password, $kategori);
