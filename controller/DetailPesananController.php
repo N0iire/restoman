@@ -77,4 +77,22 @@ class Detail_pesanan
             return false;
         }
     }
+
+    /**
+     * View
+     * 
+     * 
+     */
+    public function detail($id)
+    {
+        $sql1 = "SELECT a.id_pesanan, a.sub_total ,b.nama_menu, b.harga_menu, a.jumlah, c.atas_nama, c.id_pegawai, c.id_meja, c.jml_pelanggan
+        FROM detail_pesanan a 
+        INNER JOIN menu b ON a.id_menu = b.id_menu 
+        INNER JOIN pesanan c ON a.id_pesanan = c.id_pesanan
+            WHERE a.id_pesanan ='$id'";
+        $result = $this->db->query($sql1);
+        $detail_pesanan = $result->fetch_all(MYSQLI_ASSOC);
+
+        return $detail_pesanan;
+    }
 }
