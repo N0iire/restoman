@@ -33,7 +33,7 @@
                                         $user->word = $data['id_menu'];
                                         $id = $user->encr();
                                         ?>
-                                        <a href="?unacc=<?php echo $id ?>" onclick="m10(event)">
+                                        <a href="?unacc=<?php echo $id ?>">
                                             <button class="btn btn-red" style="margin-left: 15px; margin-right: 10px;">
                                                 <span class="icon">
                                                     <ion-icon name="close-circle-outline" style="font-size: 30px;"></ion-icon>
@@ -41,7 +41,7 @@
                                             </button>
                                         </a>
                                         <a href="?acc=<?php echo $id ?>">
-                                            <button class="btn btn-blue" onclick="m09(event)">
+                                            <button class="btn btn-blue">
                                                 <span class="icon">
                                                     <ion-icon name="checkmark-circle-outline" style="font-size: 30px;"></ion-icon>
                                                 </span>

@@ -89,7 +89,7 @@ $data_kategori = $kategori->get_all();
                         foreach ($data_menu as $data) {
                         ?>
                             <tr>
-                                <td><img src="../../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 100px; width: 100px; border-radius: 15px;"></td>
+                                <td><img src="../../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 75px; width: 80px; border-radius: 10px;"></td>
                                 <td><?php echo $data['id_menu'] ?></td>
                                 <td><?php echo $data['nama_kategori'] ?></td>
                                 <td><?php echo $data['nama_menu'] ?></td>
@@ -108,7 +108,7 @@ $data_kategori = $kategori->get_all();
                                         </button>
                                     </a>
 
-                                    <a href="?d_menu=<?php echo $id ?>">
+                                    <a href="?d_menu=<?php echo $id ?>" onclick="konfirmasi(event);">
                                         <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
                                             <span class="icon">
                                                 <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>

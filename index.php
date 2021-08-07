@@ -31,11 +31,13 @@ if (isset($_POST['submit'])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/litera/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="logins.css">
 </head>
 
 <body>
+
 
     <div id="login">
 
@@ -71,7 +73,20 @@ if (isset($_POST['submit'])) {
             </fieldset>
 
         </form>
+        <?php
+        if (!isset($_GET['msg'])) {
+        } else if ($_GET['msg'] == 'login-failed') {
+            echo "<script>  Swal.fire({
+                icon: 'warning',
+                title: 'ID atau Password salah!',
+                timer: 2000,
+                confirmButtonColor: '#2f80ed',
+                confirmButtonClass: 'pl-3 pr-3'
+            })</script>";
+        }
 
+
+        ?>
     </div> <!-- end login -->
 
 </body>

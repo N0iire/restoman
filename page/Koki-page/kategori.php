@@ -74,7 +74,7 @@
                                             </span>
                                         </button>
                                     </a>
-                                    <a href="?d_kategori=<?php echo $id ?>">
+                                    <a href="?d_kategori=<?php echo $id ?>" onclick="konfirmasi(event);">
                                         <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
                                             <span class="icon">
                                                 <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
