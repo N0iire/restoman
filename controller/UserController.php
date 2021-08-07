@@ -34,8 +34,6 @@ class User
      */
     public function store($id, $nama, $password, $kategori)
     {
-        $this->word = $password;
-        $password = $this->encr();
         $sql = "SELECT * FROM pegawai WHERE id_pegawai='$id'";
 
         // Checking if the id is available
@@ -147,8 +145,6 @@ class User
      */
     public function login($id, $password, $kategori)
     {
-        $this->word = $this->db->escape_string($_POST['password']);
-        $password = $this->encr();
         $sql = "SELECT id_pegawai FROM pegawai WHERE id_pegawai = '$id'
             AND password = '$password' AND kategori_pegawai = '$kategori'
         ";
