@@ -40,7 +40,7 @@ class Menu
      */
     public function acc($id)
     {
-        $sql = "UPDATE menu SET persetujuan = 'Y' WHERE id_menu = '$id'";
+        $sql = "UPDATE menu SET status = 'Y' WHERE id_menu = '$id'";
         $result = $this->db->query($sql);
 
         return $result;
