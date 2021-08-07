@@ -17,33 +17,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>test</td>
-                        <td>2812</td>
-                        <td>2</td>
-                        <td>
-                            <a href="#">
-                                <button class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModalCenter">
-                                    Detail
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>test</td>
-                        <td>1922</td>
-                        <td>4</td>
-                        <td>
-                            <a href="#">
-                                <button class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModalCenter">
-                                    Detail
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-
+                    <?php
+                    $data_pembayaran = $pembayaran->get_all_bayar();
+                    foreach ($data_pembayaran as $data) {
+                    ?>
+                        <tr>
+                            <td><?php echo $data['id_pesanan'] ?></td>
+                            <td><?php echo $data['atas_nama'] ?></td>
+                            <td><?php echo $data['id_meja'] ?></td>
+                            <td><?php echo $data['total_transaksi'] ?></td>
+                            <td>
+                                <a href="#">
+                                    <button class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModalCenter">
+                                        Detail
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
             <br><br>
