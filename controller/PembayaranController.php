@@ -50,9 +50,10 @@ class Pembayaran
      */
     public function get_all_bayar()
     {
-        $sql1 = "SELECT ps.id_pesanan, ps.atas_nama, ps.id_meja, pb.total_transaksi 
+        $sql1 = "SELECT ps.id_pesanan, ps.atas_nama, ps.id_meja, pb.total_transaksi, pb.tgl_transaksi
                  FROM pembayaran pb inner join pesanan ps
                  on pb.id_pesanan = ps.id_pesanan
+                 WHERE MONTH(pb.tgl_transaksi) = MONTH(now())
                  order by pb.id_pesanan asc";
         $result = $this->db->query($sql1);
         $pembayaran = $result->fetch_all(MYSQLI_ASSOC);

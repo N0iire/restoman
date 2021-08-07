@@ -19,6 +19,7 @@
                 <tbody>
                     <?php
                     $data_pembayaran = $pembayaran->get_all_bayar();
+                    $pendapatan = 0;
                     foreach ($data_pembayaran as $data) {
                     ?>
                         <tr>
@@ -34,7 +35,9 @@
                                 </a>
                             </td>
                         </tr>
-                    <?php } ?>
+                    <?php
+                        $pendapatan = $pendapatan + $data['total_transaksi'];
+                    } ?>
                 </tbody>
             </table>
             <br><br>
@@ -50,7 +53,7 @@
                     <p class="text-right mt-auto" for="pendapatan">Total Pendapatan Per-Bulan </p>
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control ml-auto" id="pendapatan" name="pendapatan" style="width: 200px; height: 30px;" readonly>
+                    <input type="text" value="<?php echo $pendapatan ?>" class="form-control ml-auto" id="pendapatan" name="pendapatan" style="width: 200px; height: 30px;" readonly>
                 </div>
             </div>
         </div>
