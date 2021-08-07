@@ -30,6 +30,25 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "kasir") {
 ?>
 
 <body style="background: #fff;">
+    <?php
+    include '../../sweetalert.php';
+    if (!isset($_GET['msg'])) {
+    } else if ($_GET['msg'] == 'store-success') {
+        echo '<script>berhasilTambah();</script>';
+    } else if ($_GET['msg'] == 'store-fail') {
+        echo '<script>gagalTambah();</script>';
+    } else if ($_GET['msg'] == 'edit-success') {
+        echo '<script>berhasilUbah();</script>';
+    } else if ($_GET['msg'] == 'edit-fail') {
+        echo '<script>gagalUbah();</script>';
+    } else if ($_GET['msg'] == 'delete-success') {
+        echo '<script>berhasilHapus();</script>';
+    } else if ($_GET['msg'] == 'delete-failed') {
+        echo '<script>gagalHapus();</script';
+    } else if ($_GET['msg'] == 'login-success') {
+        echo '<script>sukses();</script';
+    }
+    ?>
     <div class="row">
         <div class="col-sm-12">
             <!-- navbar -->

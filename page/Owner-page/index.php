@@ -92,6 +92,29 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "owner") {
 
 
 <body style="background: #fff;">
+    <?php
+    include '../../sweetalert.php';
+    if (!isset($_GET['msg'])) {
+    } else if ($_GET['msg'] == 'store-success') {
+        echo '<script>berhasilTambah();</script>';
+    } else if ($_GET['msg'] == 'store-fail') {
+        echo '<script>gagalTambah();</script>';
+    } else if ($_GET['msg'] == 'edit-success') {
+        echo '<script>berhasilUbah();</script>';
+    } else if ($_GET['msg'] == 'edit-fail') {
+        echo '<script>gagalUbah();</script>';
+    } else if ($_GET['msg'] == 'delete-success') {
+        echo '<script>berhasilHapus();</script>';
+    } else if ($_GET['msg'] == 'delete-failed') {
+        echo '<script>gagalHapus();</script';
+    } else if ($_GET['msg'] == 'acc-success') {
+        echo '<script>m09();</script';
+    } else if ($_GET['msg'] == 'unacc-success') {
+        echo '<script>m10();</script';
+    } else if ($_GET['msg'] == 'login-success') {
+        echo '<script>sukses();</script';
+    }
+    ?>
 
 
     <div class="row">

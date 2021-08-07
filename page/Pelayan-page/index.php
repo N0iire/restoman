@@ -6,6 +6,7 @@ include '../../header.php';
 if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
     include_once('../../model/db_config.php');
     include_once('../../controller/MejaController.php');
+    include_once('../../controller/KategoriController.php');
     include_once('../../controller/UserController.php');
     include_once('../../controller/MenuController.php');
     include_once('../../controller/PesananController.php');
@@ -18,6 +19,7 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
     $user = new User();
     $pesanan = new Pesanan();
     $detail_pesanan = new Detail_pesanan();
+    $kategori = new Kategori();
 
     //Tambah Meja
     if (isset($_POST['tambah_meja'])) {
@@ -49,6 +51,19 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
         } else {
             // If Failed Sweet Alert Here
         }
+    }
+
+    //tampil kategori di sidebar
+    if (isset($_GET['k'], $_GET['i'])) {
+
+        foreach ($kategori->get_all() as $data) {
+            if ($_GET['k'] == $data['nama_kategori']) {
+                $id_kategori = $_GET['i'];
+                $data_menu = $menu->categorize($id_kategori);
+            }
+        }
+    } else {
+        $data_menu = $menu->get_all();
     }
 
     //Hapus Meja 
@@ -116,6 +131,25 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
 </style>
 
 <body style="background: #fff;">
+    <?php
+    include '../../sweetalert.php';
+    if (!isset($_GET['msg'])) {
+    } else if ($_GET['msg'] == 'store-success') {
+        echo '<script>berhasilTambah();</script>';
+    } else if ($_GET['msg'] == 'store-fail') {
+        echo '<script>gagalTambah();</script>';
+    } else if ($_GET['msg'] == 'edit-success') {
+        echo '<script>berhasilUbah();</script>';
+    } else if ($_GET['msg'] == 'edit-fail') {
+        echo '<script>gagalUbah();</script>';
+    } else if ($_GET['msg'] == 'delete-success') {
+        echo '<script>berhasilHapus();</script>';
+    } else if ($_GET['msg'] == 'delete-failed') {
+        echo '<script>gagalHapus();</script';
+    } else if ($_GET['msg'] == 'login-success') {
+        echo '<script>sukses();</script';
+    }
+    ?>
     <div class="row">
         <div class="col-sm-12">
             <!-- navbar -->
