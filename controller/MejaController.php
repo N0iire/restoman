@@ -184,4 +184,18 @@ class Meja
 
         return $result;
     }
+
+    /**
+     * Update status meja
+     * 
+     * @return boolean
+     */
+    public function statusY($id)
+    {
+        $status_ketersediaan = "Y";
+        $sql = "UPDATE meja SET status_ketersediaan = '$status_ketersediaan' WHERE id_meja = '$id'";
+        $result = $this->db->query($sql);
+
+        return $result;
+    }
 }
