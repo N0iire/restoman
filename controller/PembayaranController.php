@@ -29,7 +29,7 @@ class Pembayaran
         $id_pesanan = $this->db->escape_string($_POST['id_pesanan']);
         $id_pegawai = $this->db->escape_string($_POST['id_pegawai']);
         $total_transaksi = $this->db->escape_string($_POST['total_transaksi']);
-        $tgl = $this->db->escape_string($_POST['total_transaksi']);
+        $tgl = date('Y-m-d');
 
         $sql = "INSERT INTO pembayaran VALUES(
             '$id_pesanan',
@@ -41,7 +41,7 @@ class Pembayaran
         $result = mysqli_query($this->db, $sql) or die(mysqli_connect_errno() . "Data cannot inserted");
 
         return $result;
-    }   
+    }
 
     /**
      * Get view all data pembayaran
@@ -57,6 +57,6 @@ class Pembayaran
         $result = $this->db->query($sql1);
         $pembayaran = $result->fetch_all(MYSQLI_ASSOC);
 
-        return $pembayaran; 
+        return $pembayaran;
     }
 }
