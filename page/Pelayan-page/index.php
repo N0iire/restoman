@@ -6,6 +6,7 @@ include '../../header.php';
 if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
     include_once('../../model/db_config.php');
     include_once('../../controller/MejaController.php');
+    include_once('../../controller/KategoriController.php');
     include_once('../../controller/UserController.php');
     include_once('../../controller/MenuController.php');
     include_once('../../controller/PesananController.php');
@@ -18,6 +19,7 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
     $user = new User();
     $pesanan = new Pesanan();
     $detail_pesanan = new Detail_pesanan();
+    $kategori = new Kategori();
 
     //Tambah Meja
     if (isset($_POST['tambah_meja'])) {
@@ -49,6 +51,19 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
         } else {
             // If Failed Sweet Alert Here
         }
+    }
+
+    //tampil kategori di sidebar
+    if (isset($_GET['k'], $_GET['i'])) {
+
+        foreach ($kategori->get_all() as $data) {
+            if ($_GET['k'] == $data['nama_kategori']) {
+                $id_kategori = $_GET['i'];
+                $data_menu = $menu->categorize($id_kategori);
+            }
+        }
+    } else {
+        $data_menu = $menu->get_all();
     }
 
     //Hapus Meja 
