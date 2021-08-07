@@ -96,4 +96,34 @@ class Pesanan
 
         return $result;
     }
+
+    /**
+     * Get pesanan with inner join
+     * 
+     * @return $data
+     */
+    public function get_pesanan()
+    {
+        $sql = "SELECT a.id_pesanan, b.atas_nama, b.id_meja, sum(a.sub_total) as total FROM detail_pesanan a 
+                INNER JOIN pesanan b ON a.id_pesanan = b.id_pesanan 
+                WHERE b.status_pembayaran = 'N' GROUP BY a.id_pesanan ";
+        $query = $this->db->query($sql);
+        $result = $query->fetch_all(MYSQLI_ASSOC);
+
+        return $result;
+    }
+
+    /**
+     * Update status pembayaran
+     * 
+     * 
+     */
+    public function statusY($id)
+    {
+        $status_pembayaran = "Y";
+        $sql = "UPDATE pesanan SET status_pembayaran = '$status_pembayaran' WHERE id_pesanan = '$id'";
+        $result = $this->db->query($sql);
+
+        return $result;
+    }
 }
