@@ -66,13 +66,16 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#myModal').on('show.bs.modal', function(e) {
-                var rowid = $(e.relatedTarget).data('id_pesanan');
+                let id_pesanan = $(e.relatedTarget).attr("data-id");
                 //menggunakan fungsi ajax untuk pengambilan data
                 $.ajax({
                     type: 'post',
                     url: 'detail.php',
-                    data: 'rowid=' + rowid,
+                    data: {
+                        rowid: id_pesanan
+                    },
                     success: function(data) {
+
                         $('.fetched-data').html(data); //menampilkan data ke dalam modal
                     }
                 });
