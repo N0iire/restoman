@@ -1,10 +1,13 @@
 <?php
-
-
+include_once('../../model/db_config.php');
+include_once('../../controller/DetailPesananController.php');
+$detail_pesanan = new Detail_pesanan();
 if ($_POST['rowid']) {
-    $id = $_POST['rowid'];
+    $id_pesanan = $_POST['rowid'];
     $jumlah = 0;
-    $data_detail = $detail_pesanan->view($id);
+    $data_detail = $detail_pesanan->view($id_pesanan);
+    var_dump($id_pesanan);
+    exit;
     foreach ($data_detail as $data) {
 ?>
         <div class="row">
@@ -13,6 +16,7 @@ if ($_POST['rowid']) {
             </div>
             <div class="col">
                 <p><?php echo $data['jumlah'] ?></p>
+
             </div>
         </div>
     <?php

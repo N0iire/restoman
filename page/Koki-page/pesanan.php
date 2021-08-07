@@ -26,7 +26,7 @@
                                 <td><?php echo $data['id_meja'] ?></td>
                                 <td>
                                     <a href="#myModal">
-                                        <button class="btn btn-dark btn-block" data-toggle="modal" id="custId" data-id="<?php $data['id_pesanan'] ?>" data-target="#myModal">
+                                        <button class="btn btn-dark btn-block" data-toggle="modal" id="custId" data-id="<?php echo $data['id_pesanan'] ?>" data-target="#myModal">
                                             Detail Pesanan
                                         </button>
                                     </a>
