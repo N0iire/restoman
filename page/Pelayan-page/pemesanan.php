@@ -41,8 +41,8 @@ if (isset($_SESSION['cart'])) {
         <div class="col-md-9">
             <div class="row pt-1">
                 <?php
-                $data_m = $menu->get_all();
-                foreach ($data_m as $data) {
+
+                foreach ($data_menu as $data) {
                     if ($data['status'] == "Y") {
                 ?>
                         <div class="col-md-4 mb-1 ">
