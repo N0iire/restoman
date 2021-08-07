@@ -150,4 +150,38 @@ class Meja
             return false;
         }
     }
+
+    /**
+     * Update total anggota
+     * 
+     * @return boolean
+     */
+    public function anggota($id)
+    {
+        $meja = $this->view($id);
+        $pelanggan_before = $meja['total_pelanggan'];
+        $pelanggan_now = $pelanggan_before + $_POST['jumlah_pelanggan'];
+
+        $sql2 = "UPDATE meja SET total_pelanggan = '$pelanggan_now' WHERE id_meja = '$id'";
+        $result = $this->db->query($sql2);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Update status meja
+     * 
+     * @return boolean
+     */
+    public function status($id)
+    {
+        $status_ketersediaan = "N";
+        $sql = "UPDATE meja SET status_ketersediaan = '$status_ketersediaan' WHERE id_meja = '$id'";
+        $result = $this->db->query($sql);
+
+        return $result;
+    }
 }
