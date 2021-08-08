@@ -1,6 +1,6 @@
 <div class="row">
     <!-- cart left -->
-    <div class="col-md-3" style="position: fixed; margin-top:10px; ">
+    <div class="col-sm-4">
         <div class="card cart" style="border-radius: 15px;">
             <div class="card-header cart blue-head text-white pl-2 p-1" style="height: 90px;">
                 <h3 style="margin-top: 15px;">Checkout</h3>
@@ -169,7 +169,7 @@
         </div>
     </div>
     <!-- tables right -->
-    <div class="col-md-8" style="margin-top:10px; margin-left:33%;">
+    <div class="col-sm-8">
         <!-- start page content -->
         <div class="card shadow-md ">
             <div class="card-header text-white blue-head">
