@@ -91,7 +91,7 @@ if (isset($_SESSION['cart'])) {
                                             <small>Rp. <?php echo $cart[$i]['harga'] ?></small>
                                         </div>
                                         <div class="col-md-4">
-                                            <input class="form-control float-right" style="width: 65px; height: 42px; text-align: center;" value="<?php echo $cart[$i]['pembelian']; ?>" type="number" name="jumlah" min="1" max="<?php echo $cart[$i]['pembelian']; ?>">
+                                            <input class="form-control float-right" style="width: 65px; height: 42px; text-align: center;" value="<?php echo $cart[$i]['pembelian']; ?>" type="number" name="jumlah" min="1" readonly>
                                         </div>
                                     </div>
                                 <?php $index++;

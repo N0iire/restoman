@@ -27,7 +27,7 @@
                                 </small>
                             </div>
                             <div class="col-md-4">
-                                <input class="form-control float-right" style="width: 60px; height:37px; margin-top:7px; text-align: center;" value="<?php echo $data['jumlah'] ?>" type="number" name="jumlah" min="1" max="">
+                                <input class="form-control float-right" style="width: 60px; height:37px; margin-top:7px; text-align: center;" value="<?php echo $data['jumlah'] ?>" type="number" name="jumlah" min="1" max="" readonly>
                             </div>
                         <?php
                             $atas_nama = $data['atas_nama'];
