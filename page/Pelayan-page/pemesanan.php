@@ -127,9 +127,11 @@ if (isset($_SESSION['cart'])) {
                                                 <?php
                                                 $data_meja = $meja->get_all();
                                                 foreach ($data_meja as $data) {
+                                                    if ($data['status_ketersediaan'] == "Y") {
                                                 ?>
-                                                    <option value="<?php echo $data['id_meja'] ?>"><?php echo $data['id_meja'] ?></option>
-                                                <?php } ?>
+                                                        <option value="<?php echo $data['id_meja'] ?>"><?php echo $data['id_meja'] ?></option>
+                                                <?php }
+                                                } ?>
                                             </select>
                                         </div>
                                     </div>
