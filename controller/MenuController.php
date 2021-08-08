@@ -62,8 +62,22 @@ class Menu
 
     public function get_count()
     {
-        $sql1 = "SELECT COUNT(*) as jmlmenu FROM menu";
+        $sql1 = "SELECT COUNT(*) as jmlmenu FROM menu WHERE status = 'Y' ";
         $result = $this->db->query($sql1);
+        $menu = $result->fetch_assoc();
+        return $menu;
+    }
+
+    /**
+     * Get count menu from database
+     * 
+     * @return $menu[]
+     */
+
+    public function get_count2()
+    {
+        $sql8 = "SELECT COUNT(status) as jmlmenu FROM menu WHERE status = 'N' ";
+        $result = $this->db->query($sql8);
         $menu = $result->fetch_assoc();
         return $menu;
     }
