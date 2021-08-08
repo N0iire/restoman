@@ -76,7 +76,7 @@ class Pembayaran
         return $pembayaran;
     }
 
-    // Get count menu from database
+    // Get sum total transaksi from database
     // @return $menu1[]
 
 
