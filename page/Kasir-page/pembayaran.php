@@ -52,7 +52,7 @@
 
                         </div>
                         <div class="col-md-2" style="margin-top:10px; margin-left: -40px;">
-                            <small>: <?php echo $jml_pl ?></small>
+                            <span>: <?php echo $jml_pl ?></span>
                         </div>
                         <div class="col-sm-5 float-right" style="margin-left: 40px; margin-top:10px;">
                             <span>Meja : <?php echo $id_meja ?></span>
@@ -61,36 +61,36 @@
                     <form action="" method="POST">
                         <div class="row mb-1">
                             <!-- baris total -->
-                            <div class="col-md-6 float-left mb-2">
+                            <div class="col-md-5 float-left mb-2">
                                 <h4>Total : </h4>
                             </div>
                             <div class="col-md-1 text-center">
                                 <label>Rp.</label>
                             </div>
-                            <div class=" col-md-5 text-right" style="margin-top: -10px;">
-                                <input type="number" class="form-control" name="total_transaksi" id="total" value="<?php echo $total ?>" readonly="true">
+                            <div class=" col-md-5 text-right" style="margin-top: -10px; ">
+                                <input type="number" style="width:110px" class="form-control" name="total_transaksi" id="total" value="<?php echo $total ?>" readonly="true">
                             </div>
 
                             <!-- baris bayar -->
-                            <div class="col-md-6 float-left mb-2">
+                            <div class="col-md-5 float-left mb-2">
                                 <h4>Bayar :</h4>
                             </div>
                             <div class="col-md-1 text-center">
                                 <label>Rp.</label>
                             </div>
                             <div class=" col-md-5 text-right" style="margin-top: -10px;">
-                                <input type="number" class="form-control" value="" name="bayar" id="bayar" oninput="hitungKembali()" required>
+                                <input type="number" style="width:110px" class="form-control" value="" name="bayar" id="bayar" oninput="hitungKembali()" required>
                             </div>
 
                             <!-- baris kembali -->
-                            <div class="col-md-6 float-left">
-                                <h4>Kembali : </h4>
+                            <div class="col-md-5 float-left">
+                                <h4>Kembali : <h4>
                             </div>
                             <div class="col-md-1 text-center">
                                 <label>Rp.</label>
                             </div>
                             <div class=" col-md-5 text-right" style="margin-top: -10px;">
-                                <input type="number" value="" class="form-control" name="kembalian" id="kembali" disabled required>
+                                <input type="number" style="width:110px" value="" class="form-control" name="kembalian" id="kembali" disabled required>
                             </div>
 
                         </div>
@@ -115,22 +115,14 @@
             } else { ?>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-1" style="padding-top:5px; margin-right:5px;">
 
-                        </div>
-                        <div class="col-md-6">
-
-                        </div>
-                        <div class="col-md-4">
-
-                        </div>
                     </div>
 
                 </div>
                 <div class="card-footer">
                     <div class="row mb-1">
                         <div class="col-md-12 pull-left" style="margin-left: 30px;">
-                            <span>Atas Nama :</span>
+                            <span>Atas Nama : -</span>
                         </div>
 
                     </div>
@@ -140,10 +132,10 @@
 
                         </div>
                         <div class="col-md-2" style="margin-top:10px; margin-left: -40px;">
-                            <small>: </small>
+                            <small>: -</small>
                         </div>
                         <div class="col-sm-5 float-right" style="margin-left: 40px; margin-top:10px;">
-                            <span>Meja :</span>
+                            <span>Meja : -</span>
                         </div>
                     </div>
                     <div class="row mb-1">

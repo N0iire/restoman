@@ -30,14 +30,16 @@ class Pesanan
         $id_pegawai = $_SESSION['id'];
         $id_meja = $this->db->escape_string($_POST['id_meja']);
         $atas_nama = $this->db->escape_string($_POST['pembeli']);
+        $jml_pelanggan = $this->db->escape_string($_POST['jumlah_pelanggan']);
         $status = "N";
 
-        $sql = "INSERT INTO pesanan(`id_pegawai`, `id_meja`, `atas_nama`, `status_pembayaran`)
+        $sql = "INSERT INTO pesanan(`id_pegawai`, `id_meja`, `atas_nama`, `status_pembayaran`, `jml_pelanggan`)
                 VALUES(
                     '$id_pegawai',
                     '$id_meja',
                     '$atas_nama',
-                    '$status'
+                    '$status',
+                    '$jml_pelanggan '
                 )";
         $result = mysqli_query($this->db, $sql) or die(mysqli_connect_errno() . "Data cannot inserted");
 
