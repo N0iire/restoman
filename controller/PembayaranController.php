@@ -75,4 +75,16 @@ class Pembayaran
 
         return $pembayaran;
     }
+
+    // Get count menu from database
+    // @return $menu1[]
+
+
+    public function get_sum()
+    {
+        $sql3 = "SELECT sum(total_transaksi) as pendapatan, count(*) as jml_transaksi FROM pembayaran";
+        $result = $this->db->query($sql3);
+        $pembayaran = $result->fetch_assoc();
+        return $pembayaran;
+    }
 }
