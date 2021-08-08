@@ -88,8 +88,8 @@
                                 <td><?php echo $data['kategori_pegawai'] ?></td>
                                 <td>
                                     <?php
-                                    $user->word = $data['id_pegawai'];
-                                    $id = $user->encr();
+                                    $encrypt->word = $data['id_pegawai'];
+                                    $id = $encrypt->encr();
                                     ?>
                                     <a href="?p=edit-pegawai&e=<?php echo $id ?>">
                                         <button class="btn btn-blue btn-block" style="padding: 5px;">
