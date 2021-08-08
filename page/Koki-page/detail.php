@@ -15,7 +15,7 @@ if ($_POST['rowid']) {
                 <p><?php echo $data['nama_menu'] ?></p>
             </div>
             <div class="col">
-                <p><?php echo $data['jumlah'] ?></p>
+                <p><?php echo $data['jumlah'] ?> pcs</p>
 
             </div>
         </div>
@@ -29,7 +29,7 @@ if ($_POST['rowid']) {
             <h5>Total Harga</h5>
         </div>
         <div class="col">
-            <h5><?php echo $jumlah ?></h5>
+            <h5>Rp. <?php echo $jumlah ?></h5>
         </div>
     </div>
 <?php
