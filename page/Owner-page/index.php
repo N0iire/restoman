@@ -8,9 +8,11 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "owner") {
     include_once('../../model/db_config.php');
     include_once('../../controller/MenuController.php');
     include_once('../../controller/UserController.php');
+    include_once('../../function/SSL.php');
 
     $user = new User();
     $menu = new Menu();
+    $encrypt = new SSL();
 
     if (isset($_POST['store'])) {
         $id_pegawai = $user->db->escape_string($_POST['id_pegawai']);
