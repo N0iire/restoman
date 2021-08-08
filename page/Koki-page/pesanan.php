@@ -44,7 +44,9 @@
             <div class="modal-content">
 
                 <div class="modal-header text-white blue-head">
-                    <h4 class="modal-title" id="exampleModalLongTitle">Detail Laporan : ../../..</h4>
+                    <div class="title-data">
+
+                    </div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">
                             <ion-icon name="close-outline" style="font-size: 34px;"></ion-icon>
@@ -77,6 +79,17 @@
                     success: function(data) {
 
                         $('.fetched-data').html(data); //menampilkan data ke dalam modal
+                    }
+                });
+                $.ajax({
+                    type: 'post',
+                    url: 'modaltitle.php',
+                    data: {
+                        rowid: id_pesanan
+                    },
+                    success: function(data) {
+
+                        $('.title-data').html(data); //menampilkan data ke dalam modal
                     }
                 });
             });

@@ -60,4 +60,19 @@ class Pembayaran
 
         return $pembayaran;
     }
+
+    /**
+     * @param $id_pesanan
+     * 
+     * @return $tgl_transaksi
+     */
+    public function view($id_pesanan)
+    {
+        $sql2 = "SELECT YEAR(tgl_transaksi) AS thn, DATE_FORMAT(tgl_transaksi, '%m') AS bln, DATE_FORMAT(tgl_transaksi, '%d') AS tgl FROM pembayaran 
+            WHERE id_pesanan = '$id_pesanan'";
+        $result = $this->db->query($sql2);
+        $pembayaran = $result->fetch_all(MYSQLI_ASSOC);
+
+        return $pembayaran;
+    }
 }
