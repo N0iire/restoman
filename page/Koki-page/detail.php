@@ -20,7 +20,7 @@ if ($_POST['rowid']) {
             </div>
         </div>
     <?php
-        $jumlah = +$data['sub_total'];
+        $jumlah = $jumlah + $data['sub_total'];
     }
     ?>
     <br><br>
