@@ -50,7 +50,7 @@
                     </a>
                 </div>
                 <div class="col">
-                    <p class="text-right mt-auto" for="pendapatan">Total Pendapatan Per-Bulan </p>
+                    <p class="text-right mt-auto" style="margin-right: -130px;" for="pendapatan">Total Pendapatan :</p>
                 </div>
                 <div class="col">
                     <input type="text" value="<?php echo $pendapatan ?>" class="form-control ml-auto" id="pendapatan" name="pendapatan" style="width: 200px; height: 30px;" readonly>

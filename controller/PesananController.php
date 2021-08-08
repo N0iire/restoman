@@ -128,4 +128,40 @@ class Pesanan
 
         return $result;
     }
+
+    // get sum pelanggan
+    public function get_sum()
+    {
+        $sql3 = "SELECT sum(jml_pelanggan) as jml_pelanggan FROM pesanan";
+        $result = $this->db->query($sql3);
+        $pembayaran = $result->fetch_assoc();
+        return $pembayaran;
+    }
+
+    //view 
+    public function view($id_pesanan)
+    {
+        $sql2 = "SELECT * FROM pesanan 
+            WHERE id_pesanan = '$id_pesanan'";
+        $result = $this->db->query($sql2);
+        $pembayaran = $result->fetch_all(MYSQLI_ASSOC);
+
+        return $pembayaran;
+    }
+
+    /**
+     * Get laporan with inner join for owner
+     * 
+     * @return $data
+     */
+    public function get_laporan()
+    {
+        $sql = "SELECT a.id_pesanan, a.atas_nama, a.id_meja, b.total_transaksi, b.tgl_transaksi
+                FROM pesanan a inner join pembayaran b on a.id_pesanan = b.id_pesanan
+                GROUP BY a.id_pesanan ";
+        $query = $this->db->query($sql);
+        $result = $query->fetch_all(MYSQLI_ASSOC);
+
+        return $result;
+    }
 }

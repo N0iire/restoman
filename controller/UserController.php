@@ -210,4 +210,18 @@ class User
 
         return $decrypted;
     }
+
+    /**
+     * Get count menu from database
+     * 
+     * @return $menu[]
+     */
+
+    public function get_count()
+    {
+        $sql1 = "SELECT COUNT(*) as jmlpegawai FROM pegawai WHERE kategori_pegawai not like '%Owner%' ";
+        $result = $this->db->query($sql1);
+        $menu = $result->fetch_assoc();
+        return $menu;
+    }
 }

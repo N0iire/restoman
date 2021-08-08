@@ -9,9 +9,14 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "owner") {
     include_once('../../controller/MenuController.php');
     include_once('../../controller/UserController.php');
     include_once('../../function/SSL.php');
+    include_once('../../controller/PembayaranController.php');
+    include_once('../../controller/PesananController.php');
+
 
     $user = new User();
     $menu = new Menu();
+    $pembayaran = new Pembayaran();
+    $pesanan = new Pesanan();
     $encrypt = new SSL();
 
     if (isset($_POST['store'])) {

@@ -48,7 +48,7 @@ if (isset($_SESSION['cart'])) {
                 ?>
                         <div class="col-md-4 mb-1 ">
                             <div class="container ">
-                                <div class="harga"><?php echo $data['harga_menu'] ?></div>
+                                <div class="harga">Rp.<?php echo $data['harga_menu'] ?></div>
                                 <div class="menu"><?php echo $data['nama_menu'] ?></div>
                                 <img src="../../assets/images/<?php echo $data['gambar'] ?>" alt="ayam bakar" class="image shadow-dreamy">
                                 <form method="POST">

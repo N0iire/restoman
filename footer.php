@@ -15,7 +15,7 @@
     var url = window.location;
 
     // untuk menambahkan class active pada menu yg tidak memiliki anak atau single link
-    $('ul li a').filter(function() {
+    $('a').filter(function() {
 
         return this.href == url;
 
@@ -23,11 +23,13 @@
 
     // ini untuk menu beranak, jadi otomatis akan terbuka sesuai dengan link tujuan
 
-    $('ul li a').filter(function() {
+    $('a').filter(function() {
 
         return this.href == url;
 
     }).parentsUntil(".navigation > .list").addClass('active');
+
+
 
     //preloader
     $(window).on("load", function() {
