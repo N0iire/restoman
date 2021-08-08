@@ -32,7 +32,7 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "kasir") {
     }
 
     // Checkout
-    if ($_POST['bayar']) {
+    if (isset($_POST['bayar'])) {
         if ($pembayaran->store()) {
             $pesanan->statusY($_POST['id_pesanan']);
             $meja->statusY($_POST['id_meja']);
