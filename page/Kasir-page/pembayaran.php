@@ -60,24 +60,39 @@
                     </div>
                     <form action="" method="POST">
                         <div class="row mb-1">
-                            <div class="col-md-6 float-left">
+                            <!-- baris total -->
+                            <div class="col-md-6 float-left mb-2">
                                 <h4>Total : </h4>
                             </div>
-                            <div class=" col-md-6 text-right">
-                                <input type="number" name="total_transaksi" id="total" value="<?php echo $total ?>" readonly="true">
+                            <div class="col-md-1 text-center">
+                                <label>Rp.</label>
                             </div>
-                            <div class="col-md-6 float-left">
+                            <div class=" col-md-5 text-right" style="margin-top: -10px;">
+                                <input type="number" class="form-control" name="total_transaksi" id="total" value="<?php echo $total ?>" readonly="true">
+                            </div>
+
+                            <!-- baris bayar -->
+                            <div class="col-md-6 float-left mb-2">
                                 <h4>Bayar :</h4>
                             </div>
-                            <div class=" col-md-6 text-right">
+                            <div class="col-md-1 text-center">
+                                <label>Rp.</label>
+                            </div>
+                            <div class=" col-md-5 text-right" style="margin-top: -10px;">
                                 <input type="number" class="form-control" value="" name="bayar" id="bayar" oninput="hitungKembali()" required>
                             </div>
+
+                            <!-- baris kembali -->
                             <div class="col-md-6 float-left">
                                 <h4>Kembali : </h4>
                             </div>
-                            <div class=" col-md-6 text-right">
+                            <div class="col-md-1 text-center">
+                                <label>Rp.</label>
+                            </div>
+                            <div class=" col-md-5 text-right" style="margin-top: -10px;">
                                 <input type="number" value="" class="form-control" name="kembalian" id="kembali" disabled required>
                             </div>
+
                         </div>
                         <div class="row">
                             <div class="col-md-12">
@@ -101,14 +116,13 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-1" style="padding-top:5px; margin-right:5px;">
-                            <a href=""><i class="bi bi-trash align-self-center" style="font-size:1.5rem;  color:red !important;"></i></a>
+
                         </div>
                         <div class="col-md-6">
-                            <span><b>ayam bakar</b></span><br>
-                            <small>Rp. 26.000</small>
+
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control float-right" style="width: 60px; height:37px; margin-top:7px; text-align: center;" value="1" type="number" name="jumlah" min="1" max="">
+
                         </div>
                     </div>
 
