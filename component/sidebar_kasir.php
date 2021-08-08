@@ -3,7 +3,7 @@
         <li class="list">
             <b></b>
             <b></b>
-            <a href="?p=pembayaran">
+            <a href="index.php?p=pembayaran">
                 <span class="icon">
                     <ion-icon name="cash-outline"></ion-icon>
                 </span>
@@ -13,7 +13,7 @@
         <li class="list">
             <b></b>
             <b></b>
-            <a href="?p=laporan">
+            <a href="index.php?p=laporan">
                 <span class="icon">
                     <ion-icon name="receipt-outline"></ion-icon>
                 </span>

@@ -10,7 +10,7 @@
                   <span class="title">Dashboard</span>
               </a>
           </li>
-          <li class="list ">
+          <li class="list">
               <b></b>
               <b></b>
               <a href="?p=laporan">
@@ -33,7 +33,7 @@
           <li class="list ">
               <b></b>
               <b></b>
-              <a href="?p=menu">
+              <a href="index.php?p=menu">
                   <span class="icon">
                       <ion-icon name="fast-food-outline"></ion-icon>
                   </span>

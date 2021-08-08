@@ -44,6 +44,19 @@
             </a>
             </li>
             ';
+        } else if ($_GET['p'] == 'edit-meja' || $_REQUEST['p'] == 'edit-meja') {
+            echo '
+            <li class="list">
+            <b></b>
+            <b></b>
+            <a href="index.php">
+                <span class="icon">
+                    <ion-icon name="fast-food-outline"></ion-icon>
+                </span>
+                <span class="title">Pengelolaan Pesanan</span>
+            </a>
+            </li>
+            ';
         }
         ?>
 
