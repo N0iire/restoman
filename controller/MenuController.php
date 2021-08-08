@@ -237,4 +237,21 @@ class Menu
             return false;
         }
     }
+
+    /**
+     * Update Stok
+     * 
+     */
+    public function updateStok($id, $jumlah)
+    {
+        $sql = "SELECT stok FROM menu WHERE id_menu = '$id'";
+        $query = $this->db->query($sql);
+        $result = $query->fetch_assoc();
+        $stok_sebelum = $result['stok'];
+        $stok_sekarang = $stok_sebelum - $jumlah;
+        $sql1 = "UPDATE menu SET stok ='$stok_sekarang' WHERE id_menu ='$id'";
+        $result2 = $this->db->query($sql1);
+
+        return $result2;
+    }
 }

@@ -101,6 +101,8 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
                 $id_pesanan = $dataQuery['id_pesanan'];
                 $subtotal = $pembelian * $cart[$i]['harga'];
                 $data_transaksi = $detail_pesanan->store($id_pesanan, $id_menu, $pembelian, $subtotal);
+                $jumlah = $cart[$i]['pembelian'];
+                $kurang_stok = $menu->updateStok($id_menu, $jumlah);
             }
             unset($_SESSION['cart']);
             header("location:?msg=pemesanan_berhasil");
