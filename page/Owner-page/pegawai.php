@@ -81,8 +81,8 @@
                                 <td><?php echo $data['nama_pegawai'] ?></td>
                                 <td>
                                     <?php
-                                    $user->word = $data['password'];
-                                    echo $user->decr();
+                                    $encrypt->word = $data['password'];
+                                    echo $encrypt->decr();
                                     ?>
                                 </td>
                                 <td><?php echo $data['kategori_pegawai'] ?></td>

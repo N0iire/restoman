@@ -22,7 +22,8 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "owner") {
     if (isset($_POST['store'])) {
         $id_pegawai = $user->db->escape_string($_POST['id_pegawai']);
         $nama_pegawai = $user->db->escape_string($_POST['nama_pegawai']);
-        $password   = $user->db->escape_string($_POST['password']);
+        $encrypt->word =  $user->db->escape_string($_POST['password']);
+        $password   = $encrypt->encr();
         $kategori = $user->db->escape_string($_POST['kategori']);
         if ($user->store($id_pegawai, $nama_pegawai, $password, $kategori)) {
             header("location: index.php?p=pegawai&msg=store-success");
