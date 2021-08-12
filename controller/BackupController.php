@@ -77,7 +77,6 @@ class Backup
         TERMINATED BY '-'
         ENCLOSED BY '`'";
 
-        mysqli_select_db($this->db, 'restoman');
         $retval = mysqli_query($this->db, $sql);
 
         if (!$retval) {
