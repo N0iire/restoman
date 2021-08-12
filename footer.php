@@ -49,7 +49,7 @@
                 confirmButtonText: `Ya`,
                 icon: "question",
                 dangerMode: true,
-                denyButtonColor: '#2F80ED',
+                denyButtonColor: 'rgba(29,151,108,1)',
                 confirmButtonColor: '#404e67',
                 denyButtonText: `Batal`,
                 customClass: {
@@ -84,7 +84,7 @@
             title: 'Pesan menu terlebih dahulu!',
             timer: 1500,
             type: 'danger',
-            confirmButtonColor: "#2f80ed",
+            confirmButtonColor: "#38ef7d",
             confirmButtonClass: "pl-3 pr-3"
         })
     }
@@ -100,7 +100,7 @@
                 icon: "question",
                 showDenyButton: true,
                 confirmButtonText: `Ya, hapus`,
-                denyButtonColor: '#2F80ED',
+                denyButtonColor: '#38ef7d',
                 confirmButtonColor: '#404e67',
                 denyButtonText: `Batal`,
                 customClass: {

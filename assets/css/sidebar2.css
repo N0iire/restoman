@@ -233,11 +233,15 @@ table tr:last-child td:last-child {
 
 /* table */
 .blue-head {
-    background: rgba(47, 128, 237, 1) 100% !important;
+    background: rgba(29,151,108,1) 100% !important;
 }
 
 .btn-blue {
     background: rgba(47, 128, 237, 1) 100% !important;
+    color: white !important;
+}
+.btn-green {
+    background: rgba(52,214,113,1) 100% !important;
     color: white !important;
 }
 
