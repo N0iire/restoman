@@ -154,7 +154,8 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "koki") {
                     require_once  $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'edit-kategori' || $_REQUEST['p'] == 'edit-kategori') {
                     require_once  $_GET['p'] . '.php';
-                }
+                } else if ($_GET['p'] == 'backuprestore' || $_REQUEST['p'] == 'backuprestore') {
+                    require_once  $_GET['p'] . '.php';
                 ?>
 
             </div>

@@ -40,6 +40,16 @@
                   <span class="title">Menu</span>
               </a>
           </li>
+          <li class="list ">
+              <b></b>
+              <b></b>
+              <a href="index.php?p=backuprestore">
+                  <span class="icon">
+                      <ion-icon name="cog-outline"></ion-icon>
+                  </span>
+                  <span class="title">Backup & Restore</span>
+              </a>
+          </li>
       </ul>
   </div>
   <script>

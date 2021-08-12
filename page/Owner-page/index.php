@@ -157,6 +157,8 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "owner") {
                     require_once  $_GET['p'] . '.php';
                 } else if ($_GET['p'] == 'menu' || $_REQUEST['p'] == 'menu') {
                     require_once  $_GET['p'] . '.php';
+                } else if ($_GET['p'] == 'backuprestore' || $_REQUEST['p'] == 'backuprestore') {
+                    require_once  $_GET['p'] . '.php';
                 }
                 ?>
 
