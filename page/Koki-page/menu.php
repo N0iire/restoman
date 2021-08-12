@@ -55,7 +55,7 @@ $data_kategori = $kategori->get_all();
                         <br><br><br>
                         <div>
                             <input type="submit" name="tambah_menu" value="Tambah" class="btn btn-green">
-                            <input type="reset" name="reset" value="Reset" class="btn btn-secondary ">
+                            <input type="reset" name="reset" value="Reset" class="btn btn-grey ">
                         </div>
                     </form>
                 </tbody>

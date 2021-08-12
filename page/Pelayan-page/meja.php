@@ -27,8 +27,8 @@
                             </div>
                             <br><br><br><br>
                             <div>
-                                <input type="submit" name="tambah_meja" value="Tambah" class="btn btn-blue">
-                                <input type="reset" name="Batal" value="Batal" class="btn btn-secondary ">
+                                <input type="submit" name="tambah_meja" value="Tambah" class="btn btn-green">
+                                <input type="reset" name="Batal" value="Batal" class="btn btn-grey ">
                             </div>
                         </form>
                     </tbody>

@@ -1,5 +1,5 @@
 <?php
-$data_edit = $meja->view($id_for_edit); 
+$data_edit = $meja->view($id_for_edit);
 ?>
 <div class="col-md-9">
     <div class="row" style="margin-top: 10px; margin-left: -20px;">
@@ -11,7 +11,7 @@ $data_edit = $meja->view($id_for_edit);
                     <thead class="thead-dark">
                         <tr>
                             <th>
-                                <center>                                                                                
+                                <center>
                                     <h3>Form Edit Meja</h3>
                                 </center>
                             </th>
@@ -29,8 +29,8 @@ $data_edit = $meja->view($id_for_edit);
                             </div>
                             <br><br><br><br>
                             <div>
-                                <input type="submit" name="edit_meja" value="Ubah" class="btn btn-blue">
-                                <input type="button" name="Batal" value="Batal" class="btn btn-secondary " onclick="location.href='?p=meja';"/>
+                                <input type="submit" name="edit_meja" value="Ubah" class="btn btn-green">
+                                <input type="button" name="Batal" value="Batal" class="btn btn-grey " onclick="location.href='?p=meja';" />
                             </div>
                         </form>
                     </tbody>
@@ -69,9 +69,9 @@ $data_edit = $meja->view($id_for_edit);
                                         $id = $encrypt->encr();
                                         ?>
                                         <a href="?p=edit-meja&e=<?php echo $id ?>">
-                                        <button class="btn btn-dark btn-block" data-toggle="modal" data-target="#exampleModalCenter">
-                                    Pilih
-                                </button>
+                                            <button class="btn btn-grey btn-block" data-toggle="modal" data-target="#exampleModalCenter">
+                                                Pilih
+                                            </button>
                                         </a>
                                     </td>
                             </tr>

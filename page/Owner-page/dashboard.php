@@ -152,11 +152,11 @@
                         <div class="card-body">
                             <div class="media d-flex">
                                 <div class="media-body text-left">
-                                    <h3 class="danger"><?php echo $data_menu2['jmlmenu'] ?></h3>
+                                    <h3 class="" style="color: #00a4ff;"><?php echo $data_menu2['jmlmenu'] ?></h3>
                                     <span>Konfirmasi <br> Menu</span>
                                 </div>
                                 <div class="align-self-center">
-                                    <ion-icon name="checkmark-done-outline" style="color: #a12755; font-size: 50px; margin-left: 10px;"></ion-icon>
+                                    <ion-icon name="checkmark-done-outline" style="color: #00a4ff; font-size: 50px; margin-left: 10px;"></ion-icon>
                                 </div>
                             </div>
                             <div class="progress mt-1 mb-0" style="height: 7px;">

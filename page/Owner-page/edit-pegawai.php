@@ -48,8 +48,8 @@ $data_edit = $user->view($id_for_edit);
                         </select>
                         <br><br><br>
                         <div>
-                            <input type="submit" name="edit" value="Edit" class="btn btn-blue">
-                            <input type="button" name="Batal" value="Batal" class="btn btn-secondary " onclick="location.href='?p=pegawai';">
+                            <input type="submit" name="edit" value="Edit" class="btn btn-green">
+                            <input type="button" name="Batal" value="Batal" class="btn btn-grey " onclick="location.href='?p=pegawai';">
                         </div>
                     </form>
                 </tbody>
@@ -97,7 +97,7 @@ $data_edit = $user->view($id_for_edit);
                                     $id = $user->encr();
                                     ?>
                                     <a href="?p=edit-pegawai&e=<?php echo $id ?>">
-                                        <button class="btn btn-blue btn-block" style="padding: 5px;">
+                                        <button class="btn btn-green btn-block" style="padding: 5px;">
                                             Pilih
                                         </button>
                                     </a>

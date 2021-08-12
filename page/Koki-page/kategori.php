@@ -30,7 +30,7 @@
                         <br><br><br>
                         <div>
                             <input type="submit" name="tambah_kategori" value="Tambah" class="btn btn-green">
-                            <input type="reset" name="reset" value="Reset" class="btn btn-secondary ">
+                            <input type="reset" name="reset" value="Reset" class="btn btn-grey ">
                         </div>
                     </form>
                 </tbody>
