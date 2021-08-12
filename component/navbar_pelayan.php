@@ -24,7 +24,7 @@
         <?php
         if (!isset($_GET['p'])) {
             echo '
-            <a href="?p=meja" class="nav-link">Pengelolaan Meja</a>
+            <a href="?p=meja" class="nav-link" style="color: #11998e !important;">Pengelolaan Meja</a>
           ';
         } else if ($_GET['p'] == 'pemesanan') {
         }
