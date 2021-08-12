@@ -195,11 +195,11 @@ input {
 }
 
 .form__input:hover {
-  border-color: #adffff;
+  border-color: #adffb0;
 }
 
 .form__input:focus {
-  border-color: #18ffff;
+  border-color: #34d671;
 }
 
 .form__label {

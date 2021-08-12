@@ -105,9 +105,9 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
                 $kurang_stok = $menu->updateStok($id_menu, $jumlah);
             }
             unset($_SESSION['cart']);
-            header("location:?msg=pemesanan_berhasil");
+            header("location:?msg=pemesanan-berhasil");
         } else {
-            header("location:?msg=pemesanan_gagal");
+            header("location:?msg=pemesanan-gagal");
         }
     }
 
@@ -151,6 +151,10 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "pelayan") {
         echo '<script>berhasilHapus();</script>';
     } else if ($_GET['msg'] == 'delete-failed') {
         echo '<script>gagalHapus();</script';
+    } else if ($_GET['msg'] == 'pemesanan-berhasil') {
+        echo '<script>berhasilPesan();</script>';
+    } else if ($_GET['msg'] == 'pemesanan-gagal') {
+        echo '<script>gagalPesan();</script';
     } else if ($_GET['msg'] == 'login-success') {
         echo '<script>sukses();</script';
     }

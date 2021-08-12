@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row pr-1 mt-1">
     <!-- cart left -->
     <div class="col-sm-4">
         <div class="card cart" style="border-radius: 15px;">

@@ -143,13 +143,14 @@ if (isset($_SESSION['cart'])) {
                                             Rp. <?php echo $total_bayar; ?>
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="submit" value="Pesan" name="bayar" class="btn btn-red btn-block">
+                                        </div>
+                                    </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input type="submit" value="Pesan" name="bayar" class="btn btn-red btn-block">
-                                </div>
-                                </form>
-                            </div>
+                            </form>
                         </div>
                     </div>
 

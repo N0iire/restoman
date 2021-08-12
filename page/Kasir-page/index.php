@@ -62,6 +62,10 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "kasir") {
         echo '<script>berhasilHapus();</script>';
     } else if ($_GET['msg'] == 'delete-failed') {
         echo '<script>gagalHapus();</script';
+    } else if ($_GET['msg'] == 'pembayaran-success') {
+        echo '<script>berhasilBayar();</script';
+    } else if ($_GET['msg'] == 'pembayaran-failed') {
+        echo '<script>gagalBayar();</script';
     } else if ($_GET['msg'] == 'login-success') {
         echo '<script>sukses();</script';
     }
