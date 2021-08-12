@@ -43,13 +43,13 @@
                             <div>
                                 <div class="form-group">
                                     <label for="id_meja">Nama Backup</label>
-                                    <input type="text" class="form-control" id="id_meja" name="id_meja" value="<?php  ?>" required>
+                                    <input type="text" class="form-control" id="id_meja" name="id_meja" value="<?php  ?>" readonly>
                                 </div>
                             </div>
                             <br><br><br><br>
                             <div class=row>
                                 <div class="col">
-                                    <input type="submit" name="edit_meja" value="Backup" class="btn btn-green btn-block">
+                                    <input type="submit" name="backup" value="Backup" class="btn btn-green btn-block">
                                 </div>
                                 <div class="col">
                                     <input type="button" name="Batal" value="Restore" class="btn btn-grey btn-block" onclick="location.href='?p=';" />

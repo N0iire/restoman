@@ -23,7 +23,7 @@ class Backup
     {
         $table_name = "pembayaran";
         $date = date("Y-m-d-H-i-s");
-        $backup_file  = "percobaan$date.sql";
+        $backup_file  = "Backup$date.sql";
         $sql = "SELECT * INTO OUTFILE " . "'D:/" . "$backup_file'
             FIELDS 
             TERMINATED BY '-' 
