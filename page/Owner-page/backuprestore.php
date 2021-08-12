@@ -1,3 +1,8 @@
+<?php
+if (isset($_GET['d_backup'])) {
+    $backup->destroy($_GET['d_backup']);
+}
+?>
 <div class="row" style="margin-top: 10px; margin-left: -20px;">
     <!-- left card -->
     <div class="col-sm-4">
@@ -93,7 +98,7 @@
                                             Pilih
                                         </button>
                                     </a>
-                                    <a href="?p=backuprestore&backup=<?php echo $data['id'] ?>" onclick="konfirmasi(event)">
+                                    <a href="?p=backuprestore&d_backup=<?php echo $data['id'] ?>" onclick="konfirmasi(event)">
                                         <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
                                             <span class="icon">
                                                 <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
