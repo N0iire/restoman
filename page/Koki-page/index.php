@@ -169,4 +169,6 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "koki") {
 
     </div>
     <!-- end body -->
-    <?php include '../../footer.php' ?>
+<?php
+                }
+                include '../../footer.php'; ?>
