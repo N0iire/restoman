@@ -201,7 +201,7 @@
                                 <td><?php echo $data['total'] ?></td>
                                 <td>
                                     <a href="index.php?i=<?php echo $data['id_pesanan'] ?>">
-                                        <button class="btn btn-blue btn-block">
+                                        <button class="btn btn-grey btn-block">
                                             Pilih
                                         </button>
                                     </a>

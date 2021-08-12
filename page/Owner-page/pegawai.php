@@ -42,9 +42,9 @@
 
                         <br><br><br>
                         <div>
-                            <input type="submit" onclick="berhasil(event)" name="store" value="Tambah" class="btn btn-blue">
+                            <input type="submit" onclick="berhasil(event)" name="store" value="Tambah" class="btn blue-head text-white">
                             <!--alertnya belum dipanggil untuk yg tambah -->
-                            <input type="reset" name="reset" value="Batal" class="btn btn-secondary ">
+                            <input type="reset" name="reset" value="Batal" class="btn btn-grey ">
                         </div>
                     </form>
                 </tbody>

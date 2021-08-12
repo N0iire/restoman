@@ -29,7 +29,7 @@
                             <td><?php echo $data['total_transaksi'] ?></td>
                             <td>
                                 <a href="#myModal">
-                                    <button class="btn btn-dark btn-block" data-toggle="modal" id="custId" data-id="<?php echo $data['id_pesanan'] ?>" data-target="#myModal">
+                                    <button class="btn btn-grey btn-block" data-toggle="modal" id="custId" data-id="<?php echo $data['id_pesanan'] ?>" data-target="#myModal">
                                         Detail
                                     </button>
                                 </a>

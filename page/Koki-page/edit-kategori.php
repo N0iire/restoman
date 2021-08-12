@@ -71,7 +71,7 @@ $data_edit = $kategori->view($id_for_edit);
                                 <td><?php echo $data['nama_kategori'] ?></td>
                                 <td>
                                     <a href="?p=edit-kategori&e=<?php echo $id ?>">
-                                        <button class="btn btn-dark btn-block">
+                                        <button class="btn btn-grey btn-block">
                                             Pilih
                                         </button>
                                     </a>

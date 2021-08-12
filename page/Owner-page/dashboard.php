@@ -8,12 +8,7 @@
 
     .card:hover {
         background: rgb(86, 204, 242);
-        background: rgba(29, 151, 108, 1) 100%;
-        color: #fff !important;
-    }
-
-    .card .teks:hover {
-        background: rgba(29, 151, 108, 1) 100%;
+        background: #585e59 !important;
         color: #fff !important;
     }
 
