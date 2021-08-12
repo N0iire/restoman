@@ -33,7 +33,7 @@ $data_edit = $kategori->view($id_for_edit);
                         <br><br><br>
                         <div>
                             <input type="submit" name="edit_kategori" value="Ubah" class="btn btn-green">
-                            <input type="button" name="reset" value="Batal" class="btn btn-secondary " onclick="location.href='?p=kategori';">
+                            <input type="button" name="reset" value="Batal" class="btn btn-grey " onclick="location.href='?p=kategori';">
                         </div>
                     </form>
                 </tbody>

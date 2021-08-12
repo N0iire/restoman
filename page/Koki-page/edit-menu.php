@@ -55,7 +55,7 @@ $data_kategori = $kategori->get_all();
                         <br><br><br>
                         <div>
                             <input type="submit" name="edit_menu" value="Ubah" class="btn btn-green">
-                            <input type="button" name="reset" value="Batal" class="btn btn-secondary " onclick="location.href='?p=menu';">
+                            <input type="button" name="reset" value="Batal" class="btn btn-grey " onclick="location.href='?p=menu';">
                         </div>
                     </form>
                 </tbody>
@@ -99,7 +99,7 @@ $data_kategori = $kategori->get_all();
                                 <td><?php echo $data['stok'] ?></td>
                                 <td>
                                     <a href="?p=edit-menu&e=<?php echo $id ?>">
-                                        <button class="btn btn-dark btn-block">
+                                        <button class="btn btn-grey btn-block">
                                             Pilih
                                         </button>
                                     </a>
