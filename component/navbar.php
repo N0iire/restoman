@@ -12,7 +12,7 @@
 </style>
 
 <nav class="navbar navbar-expand-md navbar-light bg-light shadow fixed-top">
-    <a class="navbar-brand" href=""><img src="../../assets/images/Restoman-sm.png" height="45px" alt="Logo" srcset=""></a>
+    <a class="navbar-brand" href=""><img src="../../assets/images/kalasenja-text.png" height="55px" alt="Logo" srcset=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
