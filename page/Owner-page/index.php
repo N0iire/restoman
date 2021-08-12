@@ -11,6 +11,7 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "owner") {
     include_once('../../function/SSL.php');
     include_once('../../controller/PembayaranController.php');
     include_once('../../controller/PesananController.php');
+    include_once('../../controller/BackupController.php');
 
 
     $user = new User();
@@ -18,6 +19,7 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "owner") {
     $pembayaran = new Pembayaran();
     $pesanan = new Pesanan();
     $encrypt = new SSL();
+    $backup = new Backup();
 
     if (isset($_POST['store'])) {
         $id_pegawai = $user->db->escape_string($_POST['id_pegawai']);
@@ -31,6 +33,14 @@ if ($_SESSION['login'] && $_SESSION['kategori_p'] == "owner") {
         } else {
             // If Failed Sweet Alert Here
         }
+    }
+
+    if (isset($_POST['backup'])) {
+        $backup->store();
+    }
+
+    if (isset($_POST['restore'])) {
+        $backup->restore();
     }
 
     if (isset($_GET['e'])) {

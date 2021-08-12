@@ -16,24 +16,48 @@
             </div>
             <div class="card-body">
                 <tbody>
-                    <form method="POST" enctype="multipart/form-data">
-                        <div>
-                            <div class="form-group">
-                                <label for="id_meja">Nama Backup</label>
-                                <input type="text" class="form-control" id="id_meja" name="id_meja" value="<?php  ?>" required>
+                    <?php if (isset($_GET['backup'])) {
+                        $edit_backup = $backup->view_backup($_GET['backup']);
+                    ?>
+                        <form method="POST" enctype="multipart/form-data">
+                            <div>
+                                <div class="form-group">
+                                    <label for="id_meja">Nama Backup</label>
+                                    <input type="text" class="form-control" id="id_meja" name="nama_backup" value="<?php echo $edit_backup['name'] ?>" readonly>
+                                    <input type="hidden" class="form-control" id="id_meja" name="id" value="<?php echo $edit_backup['id'] ?>">
+                                </div>
                             </div>
-                        </div>
-                        <br><br><br><br>
-                        <div class=row>
-                            <div class="col">
-                                <input type="submit" name="edit_meja" value="Backup" class="btn btn-green btn-block">
-                            </div>
-                            <div class="col">
-                                <input type="button" name="Batal" value="Restore" class="btn btn-grey btn-block" onclick="location.href='?p=';" />
-                            </div>
+                            <br><br><br><br>
+                            <div class=row>
+                                <div class="col">
+                                    <input type="submit" name="backup" value="Backup" class="btn btn-green btn-block">
+                                </div>
+                                <div class="col">
+                                    <input type="submit" name="restore" value="Restore" class="btn btn-grey btn-block">
+                                </div>
 
-                        </div>
-                    </form>
+                            </div>
+                        </form>
+                    <?php } else { ?>
+                        <form method="POST" enctype="multipart/form-data">
+                            <div>
+                                <div class="form-group">
+                                    <label for="id_meja">Nama Backup</label>
+                                    <input type="text" class="form-control" id="id_meja" name="id_meja" value="<?php  ?>" required>
+                                </div>
+                            </div>
+                            <br><br><br><br>
+                            <div class=row>
+                                <div class="col">
+                                    <input type="submit" name="edit_meja" value="Backup" class="btn btn-green btn-block">
+                                </div>
+                                <div class="col">
+                                    <input type="button" name="Batal" value="Restore" class="btn btn-grey btn-block" onclick="location.href='?p=';" />
+                                </div>
+
+                            </div>
+                        </form>
+                    <?php } ?>
                 </tbody>
             </div>
         </div>
@@ -58,31 +82,29 @@
                     <tbody>
                         <tr>
                             <?php
-
+                            $data_backup = $backup->get_backup();
+                            foreach ($data_backup as $data) {
                             ?>
-                            <td><?php  ?></td>
-                            <td><?php  ?></td>
-                            <td>
-                                <?php
-
-                                ?>
-                                <a href="">
-                                    <button class="btn btn-grey btn-block">
-                                        Pilih
-                                    </button>
-                                </a>
-                                <a href="" onclick="konfirmasi(event)">
-                                    <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
-                                        <span class="icon">
-                                            <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
-                                        </span>
-                                    </button>
-                                </a>
-                            </td>
+                                <td><?php echo $data['id'] ?></td>
+                                <td><?php echo $data['name'] ?></td>
+                                <td>
+                                    <a href="?p=backuprestore&backup=<?php echo $data['id'] ?>">
+                                        <button class="btn btn-grey btn-block">
+                                            Pilih
+                                        </button>
+                                    </a>
+                                    <a href="?p=backuprestore&backup=<?php echo $data['id'] ?>" onclick="konfirmasi(event)">
+                                        <button class="btn btn-red btn-block" style="padding: 5px; margin-top: 5px">
+                                            <span class="icon">
+                                                <ion-icon name="trash-outline" style="font-size: 25px;"></ion-icon>
+                                            </span>
+                                        </button>
+                                    </a>
+                                </td>
                         </tr>
-                        <?php
-
-                        ?>
+                    <?php
+                            }
+                    ?>
                     </tbody>
                 </table>
             </div>
