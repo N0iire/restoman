@@ -54,7 +54,7 @@ $data_kategori = $kategori->get_all();
                         </div>
                         <br><br><br>
                         <div>
-                            <input type="submit" name="edit_menu" value="Ubah" class="btn btn-blue">
+                            <input type="submit" name="edit_menu" value="Ubah" class="btn btn-green">
                             <input type="button" name="reset" value="Batal" class="btn btn-secondary " onclick="location.href='?p=menu';">
                         </div>
                     </form>
@@ -91,7 +91,7 @@ $data_kategori = $kategori->get_all();
                             $id = $encrypt->encr();
                         ?>
                             <tr>
-                                <td><img src="../../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 100px; width: 100px; border-radius: 15px;"></td>
+                                <td><img src="../../assets/images/<?php echo $data['gambar'] ?>" alt="" style="height: 75px; width: 75px; border-radius: 10px;"></td>
                                 <td><?php echo $data['id_menu'] ?></td>
                                 <td><?php echo $data['nama_kategori'] ?></td>
                                 <td><?php echo $data['nama_menu'] ?></td>
