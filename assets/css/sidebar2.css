@@ -143,7 +143,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #242f3f;
+    background-color: #1c302c;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,7 +153,7 @@ body {
     position: relative;
     width: 2em;
     height: 2em;
-    border: 3px solid #2F80ED;
+    border: 3px solid rgba(29,151,108,1);
     overflow: hidden;
     animation: spin 3s ease infinite;
 }
@@ -165,7 +165,7 @@ body {
     left: -3px;
     width: 2em;
     height: 2em;
-    background-color: hsla(185, 100%, 62%, 0.75);
+    background-color: rgba(52,214,113,1);
     transform-origin: center bottom;
     transform: scaleY(1);
     animation: fill 3s linear infinite;
