@@ -24,9 +24,14 @@
                             </div>
                         </div>
                         <br><br><br><br>
-                        <div>
-                            <input type="submit" name="edit_meja" value="Backup" class="btn btn-green">
-                            <input type="button" name="Batal" value="Restore" class="btn btn-grey " onclick="location.href='?p=';" />
+                        <div class=row>
+                            <div class="col">
+                                <input type="submit" name="edit_meja" value="Backup" class="btn btn-green btn-block">
+                            </div>
+                            <div class="col">
+                                <input type="button" name="Batal" value="Restore" class="btn btn-grey btn-block" onclick="location.href='?p=';" />
+                            </div>
+
                         </div>
                     </form>
                 </tbody>
