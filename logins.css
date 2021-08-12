@@ -9,8 +9,12 @@
 
 /* ---------- GENERAL ---------- */
 body {
-  background: #7f7fd5;
-  background: linear-gradient(31deg, #7f7fd5 0%, #86a8e7 50%, #91eae4 100%);
+  background: #1D976C;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#93F9B9), to(#1D976C));
+  background: linear-gradient(to right, #93F9B9, #1D976C);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-size: 400% 400%;
   -webkit-animation: gradient 15s ease infinite;
           animation: gradient 15s ease infinite;
@@ -59,8 +63,8 @@ input {
 }
 
 #login .top {
-  background: #56ccf2;
-  background: linear-gradient(31deg, #56ccf2 0%, #2f80ed 100%);
+  background: #38ef7d;
+  /* fallback for old browsers */
   border-radius: 20px 20px 0 0;
   color: #fff;
   font-size: 28px;
@@ -87,9 +91,9 @@ input {
 }
 
 .grad {
-  background: #56ccf2;
-  background: -webkit-gradient(linear, left top, right top, from(#2f80ed), color-stop(51%, #56ccf2), to(#2f80ed));
-  background: linear-gradient(to right, #2f80ed 0%, #56ccf2 51%, #2f80ed 100%);
+  background: #11998e;
+  background: -webkit-gradient(linear, left top, right top, from(#1d976c), color-stop(51%, #93f9b9), to(#1d976c));
+  background: linear-gradient(to right, #1d976c 0%, #93f9b9 51%, #1d976c 100%);
 }
 
 .grad {

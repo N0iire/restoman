@@ -19,8 +19,10 @@
 
 
 body {
-	background: rgb(127,127,213);
-background: linear-gradient(31deg, rgba(127,127,213,1) 0%, rgba(134,168,231,1) 50%, rgba(145,234,228,1) 100%);
+	background: #1D976C;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
@@ -58,8 +60,9 @@ input {
 }
 
 #login .top {
-    background: rgb(86,204,242);
-    background: linear-gradient(31deg, rgba(86,204,242,1) 0%, rgba(47,128,237,1) 100%);
+  background: #38ef7d;  /* fallback for old browsers */
+
+
 	border-radius: 20px 20px 0 0;
 	color: #fff;
 	font-size: 28px;
@@ -95,8 +98,12 @@ input {
 
 
 
-.grad {background: rgb(86,204,242);
-  background: linear-gradient(to right, rgba(47,128,237,1)  0%, rgba(86,204,242,1)  51%, rgba(47,128,237,1)  100%);}
+.grad {background: rgba(17,153,142,1);
+  background: linear-gradient(to right, rgba(29,151,108,1)  0%, rgba(147,249,185,1)  51%, rgba(29,151,108,1)  100%);
+ 
+  
+}
+  
 .grad {
    margin: 10px;
    padding: 15px 45px;

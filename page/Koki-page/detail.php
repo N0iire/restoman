@@ -24,14 +24,7 @@ if ($_POST['rowid']) {
     }
     ?>
     <br><br>
-    <div class="row">
-        <div class="col ml-2">
-            <h5>Total Harga</h5>
-        </div>
-        <div class="col">
-            <h5>Rp. <?php echo $jumlah ?></h5>
-        </div>
-    </div>
+
 <?php
 
 }

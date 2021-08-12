@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
 
         <form action="" method="POST">
             <div class="top">
-                <h2><span class="fontawesome-lock"></span>Restoman Login</h2>
+                <img src="assets/images/kalasenja-text.png" alt="kalasenja">
             </div>
 
             <fieldset style="padding: 20px 40px; justify-content: center;" class="shadow">
