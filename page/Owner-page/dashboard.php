@@ -8,10 +8,14 @@
 
     .card:hover {
         background: rgb(86, 204, 242);
-        background: rgba(47, 128, 237, 1) 100%;
+        background: rgba(29, 151, 108, 1) 100%;
         color: #fff !important;
     }
 
+    .card .teks:hover {
+        background: rgba(29, 151, 108, 1) 100%;
+        color: #fff !important;
+    }
 
     .icon-pencil:hover {
         color: #fff !important;
@@ -40,7 +44,7 @@
                             <div class="card-body cleartfix">
                                 <div class="media align-items-stretch">
                                     <div class="align-self-center">
-                                        <h1 class="mr-2" style="color: #18ab6b;">Rp.<?php echo $data_pendapatan['pendapatan'] ?></h1>
+                                        <h1 class="teks mr-2" style="color: #18ab6b;">Rp.<?php echo $data_pendapatan['pendapatan'] ?></h1>
                                     </div>
                                     <div class="media-body text-right mr-1">
                                         <h4>Total <br>Pendapatan</h4>
