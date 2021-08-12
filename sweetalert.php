@@ -69,10 +69,38 @@
         })
     }
 
+    function berhasilBayar(ev) {
+        Toast.fire({
+            icon: 'success',
+            title: 'Pembayaran Sukses!'
+        })
+    }
+
+    function berhasilPesan(ev) {
+        Toast.fire({
+            icon: 'success',
+            title: 'Pemesanan Berhasil!'
+        })
+    }
+
+    function gagalPesan(ev) {
+        Toast.fire({
+            icon: 'error',
+            title: 'Pemesanan Gagal!'
+        })
+    }
+
     function gagalTambah(ev) {
         Toast.fire({
             icon: 'error',
             title: 'Gagal menambah data!'
+        })
+    }
+
+    function gagalBayar(ev) {
+        Toast.fire({
+            icon: 'error',
+            title: 'Pembayaran Gagal!'
         })
     }
 
